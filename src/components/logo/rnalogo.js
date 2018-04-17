@@ -8,10 +8,10 @@ import { U } from '../glyphs/U';
 import Logo from './logo';
 
 const _glyphmap = [
-    { component: A, color: "green" },
+    { component: A, color: "red" },
     { component: C, color: "blue" },
     { component: G, color: "orange" },
-    { component: U, color: "red" }
+    { component: U, color: "green" }
 ];
 
 const RNALogo = ({ pwm, scale, startpos, mode }) => (

@@ -8,10 +8,10 @@ import { T } from '../glyphs/T';
 import Logo from './logo';
 
 const _glyphmap = [
-    { component: A, color: "green" },
+    { component: A, color: "red" },
     { component: C, color: "blue" },
     { component: G, color: "orange" },
-    { component: T, color: "red" }
+    { component: T, color: "green" }
 ];
 
 const DNALogo = ({ pwm, scale, startpos, mode }) => (
