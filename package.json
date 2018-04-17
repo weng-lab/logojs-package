@@ -1,11 +1,9 @@
 {
-  "name": "logoz-alpha",
-  "version": "0.0.1",
-  "description": "React sequence logo components",
+  "name": "logos-to-go-react",
+  "version": "0.0.2",
+  "description": "React Components for rendering sequence logos",
   "main": "index.js",
-  "repository": "https://github.com/weng-lab/logoz",
   "author": "Henry Pratt",
-  "private": true,
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-react": "^6.24.1",
