@@ -1,0 +1,19 @@
+{
+  "name": "logoz-alpha",
+  "version": "0.0.1",
+  "description": "React sequence logo components",
+  "main": "index.js",
+  "repository": "https://github.com/weng-lab/logoz",
+  "author": "Henry Pratt",
+  "private": true,
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-react": "^6.24.1",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1"
+  },
+  "scripts": {
+    "compile": "babel -d lib/ src/ --no-comments",
+    "prepublish": "npm run compile"
+  }
+}
