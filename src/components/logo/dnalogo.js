@@ -7,15 +7,15 @@ import { T } from '../glyphs/T';
 
 import Logo from './logo';
 
-const _glyphmap = [
-    { component: A, color: "red" },
-    { component: C, color: "blue" },
-    { component: G, color: "orange" },
-    { component: T, color: "green" }
+export const DNAGlyphmap = [
+    { component: A, regex: "A", color: "red" },
+    { component: C, regex: "C", color: "blue" },
+    { component: G, regex: "G", color: "orange" },
+    { component: T, regex: "T", color: "green" }
 ];
 
 const DNALogo = ({ pwm, scale, startpos, mode }) => (
-    <Logo pwm={pwm} glyphmap={_glyphmap} scale={scale}
+    <Logo pwm={pwm} glyphmap={DNAGlyphmap} scale={scale}
       startpos={startpos} mode={mode} />
 );
 export default DNALogo;

@@ -25,33 +25,33 @@ import { Z } from '../glyphs/Z';
 
 import Logo from './logo';
 
-const _glyphmap = [
-    { component: A, color: 'maroon' },
-    { component: B, color: 'red' },
-    { component: C, color: 'purple' },
-    { component: D, color: 'green' },
-    { component: E, color: 'olive' },
-    { component: F, color: 'navy' },
-    { component: G, color: 'teal' },
-    { component: H, color: 'orange' },
-    { component: I, color: 'cadetblue' },
-    { component: K, color: 'chocolate' },
-    { component: L, color: 'coral' },
-    { component: M, color: 'darkolivegreen' },
-    { component: N, color: 'darkorange' },
-    { component: P, color: 'darkorchid' },
-    { component: Q, color: 'darkslateblue' },
-    { component: R, color: 'firebrick' },
-    { component: S, color: 'darkslategrey' },
-    { component: T, color: 'indianred' },
-    { component: V, color: 'indigo' },
-    { component: W, color: 'mediumseagreen' },
-    { component: Y, color: 'palevioletred' },
-    { component: Z, color: 'peru' }
+export const AAGlyphmap = [
+    { component: A, regex: "A", color: 'maroon' },
+    { component: B, regex: "B", color: 'red' },
+    { component: C, regex: "C", color: 'purple' },
+    { component: D, regex: "D", color: 'green' },
+    { component: E, regex: "E", color: 'olive' },
+    { component: F, regex: "F", color: 'navy' },
+    { component: G, regex: "G", color: 'teal' },
+    { component: H, regex: "H", color: 'orange' },
+    { component: I, regex: "I", color: 'cadetblue' },
+    { component: K, regex: "K", color: 'chocolate' },
+    { component: L, regex: "L", color: 'coral' },
+    { component: M, regex: "M", color: 'darkolivegreen' },
+    { component: N, regex: "N", color: 'darkorange' },
+    { component: P, regex: "P", color: 'darkorchid' },
+    { component: Q, regex: "Q", color: 'darkslateblue' },
+    { component: R, regex: "R", color: 'firebrick' },
+    { component: S, regex: "S", color: 'darkslategrey' },
+    { component: T, regex: "T", color: 'indianred' },
+    { component: V, regex: "V", color: 'indigo' },
+    { component: W, regex: "W", color: 'mediumseagreen' },
+    { component: Y, regex: "Y", color: 'palevioletred' },
+    { component: Z, regex: "Z", color: 'peru' }
 ];
 
 const AALogo = ({ pwm, scale, startpos, mode }) => (
-    <Logo pwm={pwm} glyphmap={_glyphmap} scale={scale}
+    <Logo pwm={pwm} glyphmap={AAGlyphmap} scale={scale}
       mode={mode} startpos={startpos} />
 );
 export default AALogo;
