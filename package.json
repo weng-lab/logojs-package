@@ -1,11 +1,12 @@
 {
   "name": "logos-to-go-react",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "React Components for rendering sequence logos",
   "main": "index.js",
   "author": "Henry Pratt",
   "dependencies": {
     "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "react": "^16.3.1",
     "react-dom": "^16.3.1"
