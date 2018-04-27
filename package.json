@@ -1,6 +1,6 @@
 {
   "name": "logos-to-go-react",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "React Components for rendering sequence logos",
   "main": "index.js",
   "author": "Henry Pratt",
