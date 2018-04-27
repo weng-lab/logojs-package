@@ -4,6 +4,7 @@ import { logLikelihood, sortedIndices, FREQUENCY } from '../../common/utils';
 import GlyphStack from './glyphstack';
 import XAxis from './xaxis';
 import YAxis from './yaxis';
+import YAxisFrequency from './yaxisfreq';
 
 const _position = (width, height) => (lv, transform, key, glyphmap) => {
     let indices = sortedIndices(lv); // tallest on top
@@ -33,16 +34,18 @@ const Logo = ({ pwm, mode, glyphmap, scale, startpos }) => {
     let glyphWidth = maxHeight / 6.0;
     
     /* compute viewBox */
-    let viewBoxW = likelihood.length * glyphWidth + 50;
+    let viewBoxW = likelihood.length * glyphWidth + 80;
     let viewBoxH = maxHeight + 60;
     let gposition = _position(glyphWidth, maxHeight);
     
     return (
 	<svg width={viewBoxW * scale} height={viewBoxH * scale} viewBox={'0 0 ' + viewBoxW + ' ' + viewBoxH}>
-            <XAxis transform={'translate(50,' + (maxHeight + 20) + ')'} n={likelihood.length}
+            <XAxis transform={'translate(80,' + (maxHeight + 20) + ')'} n={likelihood.length}
 	      glyphWidth={glyphWidth} startpos={startpos} />
-            <YAxis transform="translate(0,10)" width={45} height={maxHeight} bits={maxHeight / 100.0} />
-            <g transform="translate(50,10)">
+	    { mode === FREQUENCY
+	      ? <YAxisFrequency transform="translate(0,10)" width={65} height={maxHeight} ticks={2} />
+              : <YAxis transform="translate(0,10)" width={65} height={maxHeight} bits={maxHeight / 100.0} /> }
+            <g transform="translate(80,10)">
                 {likelihood.map((lv, i) =>
 	            gposition(lv, 'translate(' + glyphWidth * i + ',0)', i, glyphmap)
                 )}
