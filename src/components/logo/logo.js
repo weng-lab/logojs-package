@@ -35,7 +35,7 @@ const Logo = ({ pwm, mode, glyphmap, scale, startpos }) => {
     
     /* compute viewBox */
     let viewBoxW = likelihood.length * glyphWidth + 80;
-    let viewBoxH = maxHeight + 60;
+    let viewBoxH = maxHeight + 120;
     let gposition = _position(glyphWidth, maxHeight);
     
     return (
