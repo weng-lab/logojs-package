@@ -5,6 +5,7 @@ import GlyphStack from './glyphstack';
 import XAxis from './xaxis';
 import YAxis from './yaxis';
 import YAxisFrequency from './yaxisfreq';
+import { YGridlines } from './ygridlines';
 
 const _position = (width, height) => (lv, transform, key, glyphmap) => {
     let indices = sortedIndices(lv); // tallest on top
@@ -15,7 +16,7 @@ const _position = (width, height) => (lv, transform, key, glyphmap) => {
     );
 };
 
-const Logo = ({ pwm, mode, glyphmap, scale, startpos }) => {
+const Logo = ({ pwm, mode, glyphmap, scale, startpos, showGridLines = false }) => {
 
     /* compute likelihood; need at least one entry to continue */
     if (pwm.length === 0 || pwm[0].length === 0) {
@@ -37,10 +38,22 @@ const Logo = ({ pwm, mode, glyphmap, scale, startpos }) => {
     let viewBoxW = likelihood.length * glyphWidth + 80;
     let viewBoxH = maxHeight + 120;
     let gposition = _position(glyphWidth, maxHeight);
-    
+
     return (
 	<svg width={viewBoxW * scale} height={viewBoxH * scale} viewBox={'0 0 ' + viewBoxW + ' ' + viewBoxH}>
-            <XAxis transform={'translate(80,' + (maxHeight + 20) + ')'} n={likelihood.length}
+        {showGridLines && (
+            <YGridlines
+                {...{
+                    minrange: startpos,
+                    maxrange: startpos+pwm.length,
+                    xstart: 70,
+                    width: viewBoxW,
+                    height: maxHeight,
+                    xaxis_y: 10,
+                    numberofgridlines: 10 * likelihood.length //10 grid lines per glyph
+                }}/>
+        )}
+        <XAxis transform={'translate(80,' + (maxHeight + 20) + ')'} n={likelihood.length}
 	      glyphWidth={glyphWidth} startpos={startpos} />
 	    { mode === FREQUENCY
 	      ? <YAxisFrequency transform="translate(0,10)" width={65} height={maxHeight} ticks={2} />
@@ -49,8 +62,8 @@ const Logo = ({ pwm, mode, glyphmap, scale, startpos }) => {
                 {likelihood.map((lv, i) =>
 	            gposition(lv, 'translate(' + glyphWidth * i + ',0)', i, glyphmap)
                 )}
-            </g>
-        </svg>
+            </g>           
+    </svg>
     );
 	
 };
