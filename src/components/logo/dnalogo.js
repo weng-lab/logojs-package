@@ -1,10 +1,6 @@
 import React from 'react';
 
-import { A } from '../glyphs/A';
-import { C } from '../glyphs/C';
-import { G } from '../glyphs/G';
-import { T } from '../glyphs/T';
-
+import { A, C, G, T } from '../glyphs';
 import Logo from './logo';
 
 export const DNAGlyphmap = [

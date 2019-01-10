@@ -1,10 +1,6 @@
 import React from 'react';
 
-import { A } from '../glyphs/A';
-import { C } from '../glyphs/C';
-import { G } from '../glyphs/G';
-import { U } from '../glyphs/U';
-
+import { A, C, G, U } from '../glyphs';
 import Logo from './logo';
 
 export const RNAGlyphmap = [
