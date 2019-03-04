@@ -38,8 +38,8 @@ const Logo = ({ pwm, mode, glyphmap, scale, startpos, showGridLines = false }) =
     let viewBoxW = likelihood.length * glyphWidth + 80;
     let viewBoxH = maxHeight + 120;
     let gposition = _position(glyphWidth, maxHeight);
-    let width = scale && scale * viewBoxW;
-    let height = scale && scale * viewBoxH;
+    let width = scale ? scale * viewBoxW : "";
+    let height = scale ? scale * viewBoxH : "";
 
     return (
 	<svg width={width} height={height} viewBox={'0 0 ' + viewBoxW + ' ' + viewBoxH}>
