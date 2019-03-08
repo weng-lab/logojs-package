@@ -16,7 +16,7 @@ const _position = (width, height) => (lv, transform, key, glyphmap) => {
     );
 };
 
-const Logo = ({ pwm, mode, glyphmap, scale, startpos, showGridLines = false }) => {
+const Logo = ({ pwm, mode, height, width, glyphmap, scale, startpos, showGridLines = false }) => {
 
     /* compute likelihood; need at least one entry to continue */
     if (pwm.length === 0 || pwm[0].length === 0) {
@@ -38,8 +38,8 @@ const Logo = ({ pwm, mode, glyphmap, scale, startpos, showGridLines = false }) =
     let viewBoxW = likelihood.length * glyphWidth + 80;
     let viewBoxH = maxHeight + 120;
     let gposition = _position(glyphWidth, maxHeight);
-    let width = scale ? scale * viewBoxW : "";
-    let height = scale ? scale * viewBoxH : "";
+    if (scale)
+	viewBoxW > viewBoxH ? width = scale : height = scale;
 
     return (
 	<svg width={width} height={height} viewBox={'0 0 ' + viewBoxW + ' ' + viewBoxH}>
