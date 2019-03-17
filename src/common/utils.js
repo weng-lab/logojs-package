@@ -14,6 +14,13 @@ export const sortedIndices = ( x ) => {
     ));
 }
 
+export const sortedIndicesNegative = ( x ) => {
+    let indices = x.map( (_, i) => i);
+    return indices.sort( (a, b) => (
+	x[a] < x[b] ? 1 : (x[a] === x[b] ? 0 : -1)
+    ));
+}
+
 export const xrange = ( n ) => (
     [...Array(Math.floor(n)).keys()]
 );
@@ -21,3 +28,15 @@ export const xrange = ( n ) => (
 export const onehot = ( l ) => ( x ) => (
     xrange(l).map( (_, i) => i === x ? 1 : 0 )
 );
+
+export const possum = x => {
+    let s = 0.0;
+    x.filter(x => x > 0.0).forEach(x => { s += x });
+    return s;
+};
+
+export const negsum = x => {
+    let s = 0.0;
+    x.filter(x => x < 0.0).forEach(x => { s += x });
+    return s;
+};
