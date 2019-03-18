@@ -59,6 +59,11 @@ const LogoWithNegatives = ({ pwm, mode, height, width, glyphmap, scale, startpos
         <XAxis transform={'translate(80,' + (maxHeight + 20) + ')'} n={pwm.length}
 	      glyphWidth={glyphWidth} startpos={startpos} />
 	    {<YAxisWithNegatives transform="translate(0,10)" width={65} height={maxHeight} min={-mvalue} max={mvalue} />}
+	    <line style={{ fill: 'none', stroke: '#000000', strokeWidth: 2.0, strokeLinecap: 'butt',
+			   strokeLinejoin: 'miter', strokeOpacity: 1, strokeMiterlimit: 4,
+			   strokeDasharray: '0.53,1.59', strokeDashoffset: 0 }}
+	          transform={"translate(80," + (11 + maxHeight / 2) + ')'}
+	          x1={0} x2={viewBoxW - 80} />
             <g transform="translate(80,10)">
                 {pwm.map((lv, i) =>
 		    gposition(lv.map(x => x > 0.0 ? x / mvalue : 0.0), 'translate(' + glyphWidth * i + ',0)', i, glyphmap)
