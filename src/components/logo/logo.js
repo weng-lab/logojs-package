@@ -47,13 +47,13 @@ const Logo = ({ pwm, mode, height, width, glyphmap, scale, startpos, showGridLin
             <YGridlines
                 {...{
                     minrange: startpos,
-                    maxrange: startpos+pwm.length,
+                    maxrange: startpos + pwm.length,
                     xstart: 70,
                     width: viewBoxW,
                     height: maxHeight,
                     xaxis_y: 10,
                     numberofgridlines: 10 * likelihood.length //10 grid lines per glyph
-                }}/>
+                }} />
         )}
         <XAxis transform={'translate(80,' + (maxHeight + 20) + ')'} n={likelihood.length}
 	      glyphWidth={glyphWidth} startpos={startpos} />
