@@ -25,5 +25,27 @@ import { X } from './X';
 import { Y } from './Y';
 import { Z } from './Z';
 
+import { a } from './lc_a';
+import { b } from './lc_b';
+import { d } from './lc_d';
+import { e } from './lc_e';
+import { f } from './lc_f';
+import { g } from './lc_g';
+import { h } from './lc_h';
+import { i } from './lc_i';
+import { j } from './lc_j';
+import { k } from './lc_k';
+import { l } from './lc_l';
+import { m } from './lc_m';
+import { n } from './lc_n';
+import { p } from './lc_p';
+import { q } from './lc_q';
+import { r } from './lc_r';
+import { t } from './lc_t';
+import { u } from './lc_u';
+import { y } from './lc_y';
+
 export { A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P,
 	 Q, R, S, T, U, V, W, X, Y, Z };
+export { a, b, d, e, f, g, h, i, j, k, l, m, n, p,
+	 q, r, t, u, y };
