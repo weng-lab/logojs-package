@@ -4,7 +4,7 @@ import { A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P,
 	 Q, R, S, T, U, V, W, X, Y, Z } from '../glyphs';
 import { a, b, d, e, f, g, h, i, j, k, l, m, n, p,
 	 q, r, t, u, y } from '../glyphs';
-import { N1, N2, N3, N7, N8 } from '../glyphs';
+import { N1, N2, N3, N4, N5, N6, N7, N8, N9 } from '../glyphs';
 import Logo from './logo';
 
 export const CompleteGlyphmap = [
@@ -63,8 +63,12 @@ export const CompleteGlyphmap = [
     { component: N1, regex: "1", color: 'red' },
     { component: N2, regex: "2", color: "green" },
     { component: N3, regex: "3", color: "blue" },
+    { component: N4, regex: "4", color: "blue" },
+    { component: N5, regex: "5", color: "blue" },
+    { component: N6, regex: "6", color: "gold" },
     { component: N7, regex: "7", color: "gold" },
-    { component: N8, regex: "8", color: "slate" }
+    { component: N8, regex: "8", color: "slate" },
+    { component: N9, regex: "9", color: "gold" }
 ];
 
 const CompleteLogo = ({ pwm, scale, startpos, mode }) => (

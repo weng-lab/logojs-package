@@ -48,11 +48,15 @@ import { y } from './lc_y';
 import { N1 } from './n_1';
 import { N2 } from './n_2';
 import { N3 } from './n_3';
+import { N4 } from './n_4';
+import { N5 } from './n_5';
+import { N6 } from './n_6';
 import { N7 } from './n_7';
 import { N8 } from './n_8';
+import { N9 } from './n_9';
 
 export { A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P,
 	 Q, R, S, T, U, V, W, X, Y, Z };
 export { a, b, d, e, f, g, h, i, j, k, l, m, n, p,
 	 q, r, t, u, y };
-export { N1, N2, N3, N7, N8 }
+export { N1, N2, N3, N4, N5, N6, N7, N8, N9 }
