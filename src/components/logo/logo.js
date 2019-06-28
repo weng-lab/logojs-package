@@ -28,8 +28,8 @@ const Logo = ({ pwm, mode, height, width, glyphmap, scale, startpos, showGridLin
 		       : pwm.map(x => x.map(v => v * Math.log2(alphabetSize))) );
     
     /* misc options */
-    startpos = (startpos !== null ? startpos : 1);
-    
+    startpos = startpos || 1;
+
     /* compute scaling factors */
     let maxHeight = 100.0 * Math.log2(alphabetSize);
     let glyphWidth = maxHeight / 6.0;
