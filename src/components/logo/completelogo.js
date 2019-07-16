@@ -2,6 +2,9 @@ import React from 'react';
 
 import { A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P,
 	 Q, R, S, T, U, V, W, X, Y, Z } from '../glyphs';
+import { a, b, d, e, f, g, h, i, j, k, l, m, n, p,
+	 q, r, t, u, y } from '../glyphs';
+import { N1, N2, N3, N4, N5, N6, N7, N8, N9 } from '../glyphs';
 import Logo from './logo';
 
 export const CompleteGlyphmap = [
@@ -30,7 +33,42 @@ export const CompleteGlyphmap = [
     { component: W, regex: "W", color: 'mediumseagreen' },
     { component: X, regex: "X", color: 'black' },
     { component: Y, regex: "Y", color: 'palevioletred' },
-    { component: Z, regex: "Z", color: 'peru' }
+    { component: Z, regex: "Z", color: 'peru' },
+    { component: a, regex: "a", color: 'maroon' },
+    { component: b, regex: "b", color: 'red' },
+    { component: C, regex: "c", color: 'purple' },
+    { component: d, regex: "d", color: 'green' },
+    { component: e, regex: "e", color: 'olive' },
+    { component: f, regex: "f", color: 'navy' },
+    { component: g, regex: "g", color: 'teal' },
+    { component: h, regex: "h", color: 'orange' },
+    { component: i, regex: "i", color: 'cadetblue' },
+    { component: j, regex: "j", color: 'lavender' },
+    { component: k, regex: "k", color: 'chocolate' },
+    { component: l, regex: "l", color: 'coral' },
+    { component: m, regex: "m", color: 'darkolivegreen' },
+    { component: n, regex: "n", color: 'darkorange' },
+    { component: O, regex: "o", color: 'gold' },
+    { component: p, regex: "p", color: 'darkorchid' },
+    { component: q, regex: "q", color: 'darkslateblue' },
+    { component: r, regex: "r", color: 'firebrick' },
+    { component: S, regex: "s", color: 'darkslategrey' },
+    { component: t, regex: "t", color: 'indianred' },
+    { component: u, regex: "u", color: 'darkkhaki' },
+    { component: V, regex: "v", color: 'indigo' },
+    { component: W, regex: "w", color: 'mediumseagreen' },
+    { component: X, regex: "x", color: 'black' },
+    { component: y, regex: "y", color: 'palevioletred' },
+    { component: Z, regex: "z", color: 'peru' },
+    { component: N1, regex: "1", color: 'red' },
+    { component: N2, regex: "2", color: "green" },
+    { component: N3, regex: "3", color: "blue" },
+    { component: N4, regex: "4", color: "blue" },
+    { component: N5, regex: "5", color: "blue" },
+    { component: N6, regex: "6", color: "gold" },
+    { component: N7, regex: "7", color: "gold" },
+    { component: N8, regex: "8", color: "slate" },
+    { component: N9, regex: "9", color: "gold" }
 ];
 
 const CompleteLogo = ({ pwm, scale, startpos, mode }) => (
