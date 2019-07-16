@@ -3,4 +3,10 @@ sudo: required
 language: node_js
 node_js: 10.16
 script:
-  - scripts/build.sh
+- scripts/build.sh
+deploy:
+  api_key:
+    secure: V3pzOo77dZ+xZOYx/yuirTobcROlul0/ejdG59bnqgAtKaO95rW2eqZsQzdYiG8O10rQ7ScA/BwbPT1UzZXRIzEHLU92s70A6QLSnLNT/MgQdEi6+H2t3koQzBahdTtMUGmS14v9uATPU7JcabCf3BCmNZ3EB02VhgUGspwRf4X3Xi7lS9oSb6Kq/GeLZYQT+p2RbEPLAnNvM/+cc+HPvo9hPVSkRHy7UUeqSPoqFgP7wraxdH5AX9wW2uj4H8R+b6WjmcOgKqeIl+IV/mjnoXGKuqi6SCgE7N38Vo7OwB0XjhGeJWh/ntQyQITs5g63QyjSe+WXXP1Y7ds5aXz3w2ogAmr1C1WC3PMX+F/UssYcB4QftdeKS+5TaEE+gZTXHV2LXrUAWruAutulQ6TC8T/6PIyhIKto6lam5BhnHFvUqxhBGUPBoeerFriAX3BIJclexcLiHP9+XQd5ejcFquE+JXAaOm564cdhaB6qHjiSLAx6xun1QbZFzWx8nSgGGJwhAiZ7kyihIRBH0nsUkEJ/kUGKi2FO4mRUTIl63hZw2wCWBGRhpZ2FMmDZQxn149ETI84810e4A9QLcsKV7xgbmelRzVJZaKq+SCw9Uai7FcPf8AgyTZsIDPCJd7DuwZRRHO4zs12rCkyk8vRoy+U6u0jkBoSJotlp446TOQ0=
+  provider: npm
+  on:
+    tags: true
