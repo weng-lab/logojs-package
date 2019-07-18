@@ -10,17 +10,32 @@ const GlyphStack = ({ height, width, indices, glyphmap, lv, transform }) => {
     
     /* stack glyphs in order */
     let glyphs = indices.map( index => {
-	if (!glyphmap[index]) { return null; }
+	
+	if (!glyphmap[index] || !glyphmap[index].component) { return null; }
 	if (lv[index] === 0.0) { return null; }
-	let G = glyphmap[index].component;
+
 	cy -= lv[index] * 100.0;
-	return (
-            <g transform={"translate(0," + cy + ")"} key={index}>
-		<Glyph xscale={xscale} yscale={lv[index]}>
-		    <G fill={glyphmap[index].color} />
-		</Glyph>
-	    </g>
-	);
+	
+	if (!glyphmap[index].component.map) {
+	    let G = glyphmap[index].component;
+	    return (
+              <g transform={"translate(0," + cy + ")"} key={index}>
+	        <Glyph xscale={xscale} yscale={lv[index]}>
+	          <G fill={glyphmap[index].color} />
+	        </Glyph>
+	      </g>
+	    );
+	}
+
+	let _xscale = xscale / glyphmap[index].component.length;
+	return glyphmap[index].component.map( (G, i) => (
+	  <g transform={"translate(" + (i * width / glyphmap[index].component.length) + "," + cy + ")"} key={index + "_" + i}>
+	    <Glyph xscale={_xscale} yscale={lv[index]}>
+	      <G fill={glyphmap[index].color} />
+	    </Glyph>
+	  </g>	    
+	));
+	
     });
     
     /* wrap glyphs in g */
