@@ -16,7 +16,7 @@ const _position = (width, height) => (lv, transform, key, glyphmap) => {
     );
 };
 
-const Logo = ({ pwm, mode, height, width, glyphmap, scale, startpos, showGridLines = false }) => {
+const Logo = ({ pwm, mode, height, width, glyphmap, glyphwidth, scale, startpos, showGridLines = false }) => {
 
     /* compute likelihood; need at least one entry to continue */
     if (pwm.length === 0 || pwm[0].length === 0) {
@@ -32,11 +32,11 @@ const Logo = ({ pwm, mode, height, width, glyphmap, scale, startpos, showGridLin
 
     /* compute scaling factors */
     let maxHeight = 100.0 * Math.log2(alphabetSize);
-    let glyphWidth = maxHeight / 6.0;
+    let glyphWidth = maxHeight / 6.0 * (glyphwidth || 1.0);
     
     /* compute viewBox */
     let viewBoxW = likelihood.length * glyphWidth + 80;
-    let viewBoxH = maxHeight + 120;
+    let viewBoxH = maxHeight + 20 * (Math.log10(Math.max(Math.abs(startpos), startpos + pwm.length)) + 1);
     let gposition = _position(glyphWidth, maxHeight);
     if (scale)
 	viewBoxW > viewBoxH ? width = scale : height = scale;

@@ -5,11 +5,11 @@ import DNALogo, { DNAGlyphmap } from './components/logo/dnalogo';
 import RNALogo, { RNAGlyphmap } from './components/logo/rnalogo';
 import CompleteLogo, { CompleteGlyphmap } from './components/logo/completelogo';
 import TestLogo from './components/logo/testlogo';
-import { xrange } from './common/utils';
+import { xrange, disymbolGlyphmap } from './common/utils';
 import { embedDNALogo } from './js/embed';
 
 import { INFORMATION_CONTENT, FREQUENCY } from './common/utils';
 
 export { Logo, AALogo, DNALogo, RNALogo, AAGlyphmap, DNAGlyphmap, RNAGlyphmap,
 	 CompleteLogo, CompleteGlyphmap, INFORMATION_CONTENT, FREQUENCY, xrange,
-	 LogoWithNegatives, embedDNALogo };
+	 LogoWithNegatives, embedDNALogo, disymbolGlyphmap };
