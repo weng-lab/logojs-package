@@ -16,6 +16,13 @@ const _position = (width, height) => (lv, transform, key, glyphmap) => {
     );
 };
 
+export const RawLogo = ({ pwm, glyphWidth, stackHeight, glyphmap }) => {
+    let gposition = _position(glyphWidth, stackHeight);
+    return pwm.map((lv, i) =>
+	gposition(lv, 'translate(' + glyphWidth * i + ',0)', i, glyphmap)
+    )
+};
+
 const Logo = ({ pwm, mode, height, width, glyphmap, glyphwidth, scale, startpos, showGridLines = false }) => {
 
     /* compute likelihood; need at least one entry to continue */
@@ -37,7 +44,6 @@ const Logo = ({ pwm, mode, height, width, glyphmap, glyphwidth, scale, startpos,
     /* compute viewBox */
     let viewBoxW = likelihood.length * glyphWidth + 80;
     let viewBoxH = maxHeight + 20 * (Math.log10(Math.max(Math.abs(startpos), startpos + pwm.length)) + 1);
-    let gposition = _position(glyphWidth, maxHeight);
     if (scale)
 	viewBoxW > viewBoxH ? width = scale : height = scale;
 
@@ -61,9 +67,7 @@ const Logo = ({ pwm, mode, height, width, glyphmap, glyphwidth, scale, startpos,
 	      ? <YAxisFrequency transform="translate(0,10)" width={65} height={maxHeight} ticks={2} />
               : <YAxis transform="translate(0,10)" width={65} height={maxHeight} bits={maxHeight / 100.0} /> }
             <g transform="translate(80,10)">
-                {likelihood.map((lv, i) =>
-	            gposition(lv, 'translate(' + glyphWidth * i + ',0)', i, glyphmap)
-                )}
+                <RawLogo pwm={likelihood} glyphWidth={glyphWidth} stackHeight={maxHeight} glyphmap={glyphmap} />
             </g>           
     </svg>
     );
