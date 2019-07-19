@@ -1,3 +1,5 @@
+import namedColors from 'color-name-list';
+
 export const INFORMATION_CONTENT = 'INFORMATION_CONTENT';
 export const FREQUENCY = 'FREQUENCY';
 
@@ -51,4 +53,49 @@ export const disymbolGlyphmap = x => (
 	    }]
 	), []) ]
     ), [])
+);
+
+export const hexFromColorName = name => {
+    if (name[0] === '#') { return name; }
+    if (!name || !name[0]) { return "#888888"; }
+    let color = namedColors.find(x => x.name === name[0].toUpperCase() + name.substring(1));
+    return (color && color.hex) || "#888888";
+};
+
+const validHex = color => {
+
+    /* validate color is a hex color */
+    color = String(color).replace(/[^0-9a-f]/gi, '');
+    if (color.length === 3)
+        color = color[0] + color[0] + color[1] + color[1] + color[2] + color[2];
+    if (color.length === 8)
+        color = color.substring(0, 6);
+    if (color.length !== 6) throw new Error(color + " is not a valid hex color");
+
+    /* return the first 6 hex digits */
+    return color;
+    
+};
+
+/**
+ * Convert a color to a ligher shade.
+ *
+ * @param color the original color as a hex string (e.g. #fff or ABCDEF)
+ * @param luminosity the fraction by which to change the brightness, from 0 to 1
+ */
+export const lighten = ( color, luminosity ) => {
+
+    /* validate color is a hex color */
+    color = validHex(hexFromColorName(color));
+    return '#' + color + Math.round((1 - luminosity) * 255).toString(16);
+    
+};
+
+/**
+ * Validates a hex color and parses it to an integer.
+ *
+ * @param color the color as a hex string (e.g. #fff or ABCDEF)
+ */
+export const parseHex = color => (
+    parseInt(validHex(color), 16)
 );

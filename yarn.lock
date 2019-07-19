@@ -682,6 +682,11 @@ collection-visit@^1.0.0:
     map-visit "^1.0.0"
     object-visit "^1.0.0"
 
+color-name-list@^4.10.0:
+  version "4.10.0"
+  resolved "https://registry.yarnpkg.com/color-name-list/-/color-name-list-4.10.0.tgz#e86f64bbbfd82af5bf6afb12a72f0dcfb4ebe4b2"
+  integrity sha512-6U3ej4nWpUryklMvqX+TJuHvoA+4u8NROxH6vM1DHkxFKbSb4BFURrkLucnH1BHoehAy2dbRJF3FDju1ohcv0g==
+
 commander@^2.11.0:
   version "2.19.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.19.0.tgz#f6198aa84e5b83c46054b94ddedbfed5ee9ff12a"

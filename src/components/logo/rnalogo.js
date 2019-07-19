@@ -7,7 +7,7 @@ export const RNAGlyphmap = [
     { component: A, regex: "A", color: "red" },
     { component: C, regex: "C", color: "blue" },
     { component: G, regex: "G", color: "orange" },
-    { component: U, regex: "U", color: "green" }
+    { component: U, regex: "U", color: "#228b22" }
 ];
 
 const RNALogo = ({ pwm, scale, startpos, mode }) => (

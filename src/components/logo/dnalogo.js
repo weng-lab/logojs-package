@@ -7,7 +7,7 @@ export const DNAGlyphmap = [
     { component: A, regex: "A", color: "red" },
     { component: C, regex: "C", color: "blue" },
     { component: G, regex: "G", color: "orange" },
-    { component: T, regex: "T", color: "green" }
+    { component: T, regex: "T", color: "#228b22" }
 ];
 
 const DNALogo = ({ pwm, scale, startpos, mode }) => (

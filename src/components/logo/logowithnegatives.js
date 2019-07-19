@@ -7,16 +7,16 @@ import YAxis from './yaxis';
 import YAxisWithNegatives from './yaxisneg';
 import { YGridlines } from './ygridlines';
 
-const _position = (width, height) => (lv, transform, key, glyphmap, negative) => {
+const _position = (width, height, alpha, inverted) => (lv, transform, key, glyphmap, negative) => {
     let indices = negative ? sortedIndicesNegative(lv) : sortedIndices(lv); // tallest on top
     return (
-	<GlyphStack indices={indices} glyphmap={glyphmap}
+      <GlyphStack indices={indices} glyphmap={glyphmap} alpha={alpha}
 	  lv={lv} transform={transform} width={width} height={height}
-	  key={key} />
+	  key={key} inverted={inverted} />
     );
 };
 
-const LogoWithNegatives = ({ pwm, mode, height, width, glyphmap, scale, startpos, showGridLines = false }) => {
+const LogoWithNegatives = ({ pwm, mode, height, width, glyphmap, scale, startpos, negativealpha, showGridLines, inverted }) => {
 
     /* compute likelihood; need at least one entry to continue */
     if (pwm.length === 0 || pwm[0].length === 0) {
@@ -26,6 +26,8 @@ const LogoWithNegatives = ({ pwm, mode, height, width, glyphmap, scale, startpos
 
     /* misc options */
     startpos = (startpos !== null ? startpos : 1);
+    negativealpha = (negativealpha < 0 ? 0 : negativealpha);
+    negativealpha = negativealpha > 255 ? 255 : negativealpha;
 
     /* compute scaling factors */
     let maxes = pwm.map(possum);
@@ -36,9 +38,9 @@ const LogoWithNegatives = ({ pwm, mode, height, width, glyphmap, scale, startpos
 
     /* compute viewBox */
     let viewBoxW = pwm.length * glyphWidth + 80;
-    let viewBoxH = maxHeight + 120;
-    let gposition = _position(glyphWidth, maxHeight / 2);
-    let nposition = _position(glyphWidth, -maxHeight / 2);
+    let viewBoxH = maxHeight +  + 20 * (Math.log10(Math.max(Math.abs(startpos), startpos + pwm.length)) + 1);
+    let gposition = _position(glyphWidth, maxHeight / 2.05);
+    let nposition = _position(glyphWidth, -maxHeight / 2.05, negativealpha / 255.0, inverted);
     if (scale)
 	viewBoxW > viewBoxH ? width = scale : height = scale;
     
