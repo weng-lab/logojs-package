@@ -40,3 +40,15 @@ export const negsum = x => {
     x.filter(x => x < 0.0).forEach(x => { s += x });
     return s;
 };
+
+export const disymbolGlyphmap = x => (
+    x.reduce( (ci, ix) => (
+	[ ...ci, ...x.reduce( (cj, jx) => (
+	    [...cj, {
+		component: [ ix.component, jx.component ],
+		color: [ ix.color, jx.color ],
+		regex: ix.regex + jx.regex
+	    }]
+	), []) ]
+    ), [])
+);
