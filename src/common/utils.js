@@ -56,9 +56,10 @@ export const disymbolGlyphmap = x => (
 );
 
 export const hexFromColorName = name => {
+    const _namedColors = (namedColors.find ? namedColors : namedColors.colorNameList);
     if (name[0] === '#') { return name; }
     if (!name || !name[0]) { return "#888888"; }
-    let color = namedColors.find(x => x.name === name[0].toUpperCase() + name.substring(1));
+    let color = _namedColors.find(x => x.name === name[0].toUpperCase() + name.substring(1));
     return (color && color.hex) || "#888888";
 };
 
