@@ -85,7 +85,7 @@ export const loadGlyphComponents = glyphmap => (
 	    return Object.assign({}, glyph, { component: regexMap[glyph.regex].component });
 	let r = Object.assign({}, glyph, { component: [], color: glyph.color.length ? glyph.color : [] });
 	for (let i = 0; i < r.regex.length; ++i) {
-	    glyph.component.push(regexMap[r.regex[i]].component);
+	    r.component.push(regexMap[r.regex[i]].component);
 	    if (r.color.length === i) r.color.push(glyph.color);
 	}
 	return r;
