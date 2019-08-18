@@ -1,14 +1,20 @@
 import React from 'react';
-export const YGridlines = props => {
-    const { minrange, maxrange, xstart, width, height, xaxis_y, numberofgridlines } = props;
-    let xls = LinearScale([minrange, maxrange], [xstart, width]);
-    let xRange = maxrange - minrange;
-    let h = xaxis_y + height;
+
+const linearScale = (d, r) => v => (
+    r[0] + (r[1] - r[0]) * ((v - d[0]) / (d[1] - d[0]))
+);
+
+export const YGridlines = ({ minrange, maxrange, xstart, width, height, xaxis_y, numberofgridlines, stroke }) => {
+    
+    const xls = linearScale([minrange, maxrange], [xstart, width]);
+    const xRange = maxrange - minrange;
+    const h = xaxis_y + height;
     const deltaX = Math.ceil(xRange) / numberofgridlines;
     const nbins = Math.ceil(xRange / deltaX);
     const bins = Array.from(Array(nbins).keys());
+    
     return (
-        <g stroke="#ccc">
+        <g stroke={stroke}>
             {bins.map(i => {
                 const v = minrange + deltaX * i;
                 return <line key={i} x1={xls(v)} x2={xls(v)} y1={xaxis_y} y2={h} />;
@@ -16,7 +22,5 @@ export const YGridlines = props => {
             <line x1={xls(maxrange)} x2={xls(maxrange)} y1={xaxis_y} y2={h} />;
         </g>
     );
+    
 };
-export const LinearScale = (d, r) => (v) =>
-    // https://gist.github.com/vectorsize/7031902
-    r[0] + (r[1] - r[0]) * ((v - d[0]) / (d[1] - d[0]));

@@ -16,14 +16,35 @@ const _position = (width, height) => (lv, transform, key, glyphmap) => {
     );
 };
 
+/**
+ * Renders a logo without axes.
+ *
+ * @prop pwm matrix containing symbol values.
+ * @prop glyphWidth the width of a single glyph, relative to the containing SVG.
+ * @prop stackHeight the height of each position, relative to the containing SVG.
+ * @prop glyphmap symbol list mapping columns to colored glyphs.
+ */
 export const RawLogo = ({ pwm, glyphWidth, stackHeight, glyphmap }) => {
     let gposition = _position(glyphWidth, stackHeight);
-    return pwm.map((lv, i) =>
+    return pwm.map((lv, i) => (
 	gposition(lv, 'translate(' + glyphWidth * i + ',0)', i, glyphmap)
-    )
+    ));
 };
 
-const Logo = ({ pwm, mode, height, width, glyphmap, glyphwidth, scale, startpos, showGridLines = false }) => {
+/**
+ * Renders a logo with x- and y-axes.
+ *
+ * @prop pwm matrix containing the symbol heights.
+ * @prop mode determines how symbol heights are computed; either FREQUENCY or INFORMATION_CONTENT.
+ * @prop height the height of the logo relative to the containing SVG.
+ * @prop width the width of the logo relative to the containing SVG.
+ * @prop glyphmap symbol list mapping columns to colored glyphs.
+ * @prop startpos number of the first position in the logo; defaults to 1.
+ * @prop negativealpha if set, gives negative symbols a lighter shade than positive symbols.
+ * @prop showGridLines if set, shows vertical grid lines.
+ * @prop inverted if set, renders negative letters upright rather than upside down.
+ */
+const Logo = ({ pwm, mode, height, width, glyphmap, glyphwidth, scale, startpos, showGridLines }) => {
 
     /* compute likelihood; need at least one entry to continue */
     if (pwm.length === 0 || pwm[0].length === 0) {
@@ -49,8 +70,8 @@ const Logo = ({ pwm, mode, height, width, glyphmap, glyphwidth, scale, startpos,
 
     return (
 	<svg width={width} height={height} viewBox={'0 0 ' + viewBoxW + ' ' + viewBoxH}>
-        {showGridLines && (
-            <YGridlines
+          {showGridLines && (
+              <YGridlines
                 {...{
                     minrange: startpos,
                     maxrange: startpos + pwm.length,
@@ -60,16 +81,16 @@ const Logo = ({ pwm, mode, height, width, glyphmap, glyphwidth, scale, startpos,
                     xaxis_y: 10,
                     numberofgridlines: 10 * likelihood.length //10 grid lines per glyph
                 }} />
-        )}
-        <XAxis transform={'translate(80,' + (maxHeight + 20) + ')'} n={likelihood.length}
-	      glyphWidth={glyphWidth} startpos={startpos} />
-	    { mode === FREQUENCY
-	      ? <YAxisFrequency transform="translate(0,10)" width={65} height={maxHeight} ticks={2} />
-              : <YAxis transform="translate(0,10)" width={65} height={maxHeight} bits={maxHeight / 100.0} /> }
-            <g transform="translate(80,10)">
-                <RawLogo pwm={likelihood} glyphWidth={glyphWidth} stackHeight={maxHeight} glyphmap={glyphmap} />
-            </g>           
-    </svg>
+          )}
+          <XAxis transform={'translate(80,' + (maxHeight + 20) + ')'} n={likelihood.length}
+	         glyphWidth={glyphWidth} startpos={startpos} />
+	  { mode === FREQUENCY
+	    ? <YAxisFrequency transform="translate(0,10)" width={65} height={maxHeight} ticks={2} />
+            : <YAxis transform="translate(0,10)" width={65} height={maxHeight} bits={maxHeight / 100.0} /> }
+          <g transform="translate(80,10)">
+            <RawLogo pwm={likelihood} glyphWidth={glyphWidth} stackHeight={maxHeight} glyphmap={glyphmap} />
+          </g>           
+        </svg>
     );
 	
 };

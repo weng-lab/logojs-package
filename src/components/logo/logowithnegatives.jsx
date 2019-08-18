@@ -16,7 +16,19 @@ const _position = (width, height, alpha, inverted) => (lv, transform, key, glyph
     );
 };
 
-const LogoWithNegatives = ({ pwm, mode, height, width, glyphmap, scale, startpos, negativealpha, showGridLines, inverted }) => {
+/**
+ * Renders a logo with positive and negative symbol heights.
+ *
+ * @prop pwm matrix containing the symbol heights.
+ * @prop height the height of the logo relative to the containing SVG.
+ * @prop width the width of the logo relative to the containing SVG.
+ * @prop glyphmap symbol list mapping columns to colored glyphs.
+ * @prop startpos number of the first position in the logo; defaults to 1.
+ * @prop negativealpha if set, gives negative symbols a lighter shade than positive symbols.
+ * @prop showGridLines if set, shows vertical grid lines.
+ * @prop inverted if set, renders negative letters upright rather than upside down.
+ */
+const LogoWithNegatives = ({ pwm, height, width, glyphmap, scale, startpos, negativealpha, showGridLines, inverted }) => {
 
     /* compute likelihood; need at least one entry to continue */
     if (pwm.length === 0 || pwm[0].length === 0) {
