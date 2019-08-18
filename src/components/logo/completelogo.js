@@ -71,6 +71,27 @@ export const CompleteGlyphmap = [
     { component: N9, regex: "9", color: "gold" }
 ];
 
+const regexMap = ( () => {
+    let r = {};
+    CompleteGlyphmap.forEach(glyph => {
+	r[glyph.regex] = glyph;
+    });
+    return r;
+})();
+
+export const loadGlyphComponents = glyphmap => (
+    glyphmap.map( glyph => {
+	if (glyph.regex.length === 1)
+	    return Object.assign({}, glyph, { component: regexMap[glyph.regex].component });
+	let r = Object.assign({}, glyph, { component: [], color: glyph.color.length ? glyph.color : [] });
+	for (let i = 0; i < r.regex.length; ++i) {
+	    r.component.push(regexMap[r.regex[i]].component);
+	    if (r.color.length === i) r.color.push(glyph.color);
+	}
+	return r;
+    })
+);
+
 const CompleteLogo = ({ pwm, scale, startpos, mode }) => (
     <Logo pwm={pwm} glyphmap={CompleteGlyphmap} scale={scale}
       mode={mode} startpos={startpos} />

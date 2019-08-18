@@ -1,5 +1,4 @@
 # yarn and node
-/lib
 /node_modules
 yarn-error.log
 
