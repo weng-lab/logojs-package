@@ -1,8 +1,10 @@
 import React from 'react';
 
-import { lighten } from '../../common/utils';
 import Glyph from '../glyphs/glyph';
 
+/**
+ * 
+ */
 const GlyphStack = ({ height, width, indices, glyphmap, lv, transform, alpha, inverted }) => {
     
     /* move up from bottom */

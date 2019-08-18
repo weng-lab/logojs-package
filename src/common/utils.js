@@ -3,31 +3,31 @@ import namedColors from 'color-name-list';
 export const INFORMATION_CONTENT = 'INFORMATION_CONTENT';
 export const FREQUENCY = 'FREQUENCY';
 
-export const logLikelihood = ( alphabetSize ) => ( r ) => {
+export const logLikelihood = alphabetSize => r => {
     let sum = 0.0;
     r.map( x => ( sum += x === 0 ? 0 : x * Math.log2(x * alphabetSize) ) );
     return r.map( x => x * sum );
 };
 
-export const sortedIndices = ( x ) => {
+export const sortedIndices = x => {
     let indices = x.map( (_, i) => i);
     return indices.sort( (a, b) => (
 	x[a] < x[b] ? -1 : (x[a] === x[b] ? 0 : 1)
     ));
 }
 
-export const sortedIndicesNegative = ( x ) => {
+export const sortedIndicesNegative = x => {
     let indices = x.map( (_, i) => i);
     return indices.sort( (a, b) => (
 	x[a] < x[b] ? 1 : (x[a] === x[b] ? 0 : -1)
     ));
 }
 
-export const xrange = ( n ) => (
+export const xrange = n => (
     [...Array(Math.floor(n)).keys()]
 );
 
-export const onehot = ( l ) => ( x ) => (
+export const onehot = l => x => (
     xrange(l).map( (_, i) => i === x ? 1 : 0 )
 );
 
@@ -76,20 +76,6 @@ const validHex = color => {
 
     /* return the first 6 hex digits */
     return color;
-    
-};
-
-/**
- * Convert a color to a ligher shade.
- *
- * @param color the original color as a hex string (e.g. #fff or ABCDEF)
- * @param luminosity the fraction by which to change the brightness, from 0 to 1
- */
-export const lighten = ( color, luminosity ) => {
-
-    /* validate color is a hex color */
-    color = validHex(hexFromColorName(color));
-    return '#' + color + Math.round((1 - luminosity) * 255).toString(16);
     
 };
 
