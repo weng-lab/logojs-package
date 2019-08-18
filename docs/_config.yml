@@ -9,9 +9,9 @@ remote_branch: master
 copyright: "Copyright &copy; 2019 Weng Lab"
 
 navbar-links:
-  - 'Basic logos':
-    - 'DNA and RNA': dnalogo.md
-    - 'Protein': proteinlogo.md
+  Basic logos:
+    - DNA and RNA: "dnalogo"
+    - Protein: "proteinlogo"
 
 plugins:
   - jekyll-paginate
