@@ -1,6 +1,6 @@
 import Logo, { RawLogo } from './components/logo/logo';
 import LogoWithNegatives from './components/logo/logowithnegatives';
-import ProteinLogo, { ProteinGlyphmap } from './components/logo/aalogo';
+import ProteinLogo, { ProteinGlyphmap } from './components/logo/proteinlogo';
 import DNALogo, { DNAGlyphmap } from './components/logo/dnalogo';
 import RNALogo, { RNAGlyphmap } from './components/logo/rnalogo';
 import CompleteLogo, { CompleteGlyphmap } from './components/logo/completelogo';
