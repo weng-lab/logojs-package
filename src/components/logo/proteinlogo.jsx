@@ -4,7 +4,13 @@ import { A, B, C, D, E, F, G, H, I, K, L, M, N, P,
 	 Q, R, S, T, V, W, X, Y, Z } from '../glyphs';
 import Logo from './logo';
 
-export const AAGlyphmap = [
+/**
+ * Represents the protein alphabet, with 22 amino acids plus B and Z
+ * for N/D and Q/E. Acidic amino acids are red shades, basic amino acids
+ * are blue shades, non-polar amino acids are black shades, and B and Z
+ * are gold shades.
+ */
+export const ProteinGlyphmap = [
     { component: A, regex: "A", color: 'black' },
     { component: B, regex: "B", color: '#bb8800' },
     { component: C, regex: "C", color: '#008811' },
@@ -29,8 +35,16 @@ export const AAGlyphmap = [
     { component: Z, regex: "Z", color: '#aaaa00' }
 ];
 
-const AALogo = ({ pwm, scale, startpos, mode }) => (
-    <Logo pwm={pwm} glyphmap={AAGlyphmap} scale={scale}
-      mode={mode} startpos={startpos} />
+/**
+ * Renders a logo with the protein alphabet, with amino acids colored according
+ * to chemical properties (acidic, basic, and non-polar are red, blue, and black
+ * shades, respectively).
+ *
+ * @prop pwm matrix containing values; rows are positions, columns are amino acids, alphabetically.
+ * @prop mode the mode to use when computing letter heights; either information content or frequency.
+ * @prop startpos number to assign the first position in the logo; defaults to 1.
+ */
+const ProteinLogo = props => (
+    <Logo glyphmap={ProteinGlyphmap} {...props} />
 );
-export default AALogo;
+export default ProteinLogo;

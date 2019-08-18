@@ -7,6 +7,9 @@ import { a, b, d, e, f, g, h, i, j, k, l, m, n, p,
 import { N1, N2, N3, N4, N5, N6, N7, N8, N9 } from '../glyphs';
 import Logo from './logo';
 
+/**
+ * A glyphmap making use of all available symbols and a variety of colors.
+ */
 export const CompleteGlyphmap = [
     { component: A, regex: "A", color: 'maroon' },
     { component: B, regex: "B", color: 'red' },
@@ -70,27 +73,6 @@ export const CompleteGlyphmap = [
     { component: N8, regex: "8", color: "slate" },
     { component: N9, regex: "9", color: "gold" }
 ];
-
-const regexMap = ( () => {
-    let r = {};
-    CompleteGlyphmap.forEach(glyph => {
-	r[glyph.regex] = glyph;
-    });
-    return r;
-})();
-
-export const loadGlyphComponents = glyphmap => (
-    glyphmap.map( glyph => {
-	if (glyph.regex.length === 1)
-	    return Object.assign({}, glyph, { component: regexMap[glyph.regex].component });
-	let r = Object.assign({}, glyph, { component: [], color: glyph.color.length ? glyph.color : [] });
-	for (let i = 0; i < r.regex.length; ++i) {
-	    r.component.push(regexMap[r.regex[i]].component);
-	    if (r.color.length === i) r.color.push(glyph.color);
-	}
-	return r;
-    })
-);
 
 const CompleteLogo = ({ pwm, scale, startpos, mode }) => (
     <Logo pwm={pwm} glyphmap={CompleteGlyphmap} scale={scale}

@@ -1,7 +1,36 @@
 import namedColors from 'color-name-list';
+import { CompleteGlyphmap } from '../components/logo/completelogo';
 
 export const INFORMATION_CONTENT = 'INFORMATION_CONTENT';
 export const FREQUENCY = 'FREQUENCY';
+
+const regexMap = ( () => {
+    let r = {};
+    CompleteGlyphmap.forEach(glyph => {
+	r[glyph.regex] = glyph;
+    });
+    return r;
+})();
+
+/**
+ * Populates a glyphmap with the appropriate components for rendering its symbols.
+ * Each entry should have a regex field listing the symbols it renders; these may
+ * be a single character or multiple. Supported symbols are A-Z, a-z, and 0-9.
+ *
+ * @param glyphmap the symbol list to populate; array of objects with regex and color fields.
+ */
+export const loadGlyphComponents = glyphmap => (
+    glyphmap.map( glyph => {
+	if (glyph.regex.length === 1)
+	    return Object.assign({}, glyph, { component: regexMap[glyph.regex].component });
+	let r = Object.assign({}, glyph, { component: [], color: glyph.color.length ? glyph.color : [] });
+	for (let i = 0; i < r.regex.length; ++i) {
+	    r.component.push(regexMap[r.regex[i]].component);
+	    if (r.color.length === i) r.color.push(glyph.color);
+	}
+	return r;
+    })
+);
 
 export const logLikelihood = alphabetSize => r => {
     let sum = 0.0;
