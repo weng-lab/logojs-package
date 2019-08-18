@@ -12,3 +12,7 @@ navbar-links:
   - 'Basic logos':
     - 'DNA and RNA': dnalogo.md
     - 'Protein': proteinlogo.md
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
