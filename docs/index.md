@@ -6,15 +6,16 @@ LogosJ is a Javascript package for creating, embedding, and sharing
 biological sequence logos. The package supports a wide range of custom
 logo types, alphabets, and annotations in addition to common DNA and
 protein logos. All logos are rendered as vector graphics to facilitate
-downstream customization and figure generation. Our companion webapp,
-https://logosj.wenglab.org, supports batch conversion of output from
-common tools such as the MEME Suite.
+downstream customization and figure generation. Our
+[companion webapp](https://logosj.wenglab.org) supports batch conversion
+of output from common tools such as the MEME Suite.
 
 Looking for some quick examples to get started? Our companion website has
 a [gallery](https://logosj.wenglab.org/app/gallery) of common and advanced
-logos with the code to render them, both with and without ReactJS.
+logos with the code to render them, both with and without
+[ReactJS](https://reactjs.org/).
 
-# Quick Example: React
+## Quick Example
 
 Creating a React component which renders the consensus sequence for CTCF
 requires just a few lines of code:
@@ -38,7 +39,9 @@ export const CTCFLogo = props => (
 ```
 
 A `<CTCFLogo />` tag will then give you the CTCF logo:
+
 <img alt="CTCF logo" src="https://logostogo.wenglab.org/svg/eyJwd20iOltbMC4wOSwwLjMxLDAuMDgsMC41XSxbMC4xOCwwLjE1LDAuNDUsMC4yXSxbMC4zLDAuMDUsMC40OSwwLjE0XSxbMC4wNiwwLjg3LDAuMDIsMC4wM10sWzAsMC45OCwwLDAuMDJdLFswLjgxLDAuMDEsMC4wNywwLjA5XSxbMC4wNCwwLjU3LDAuMzYsMC4wMV0sWzAuMTEsMC40NywwLjA1LDAuMzVdLFswLjkzLDAuMDEsMC4wMywwLjAxXSxbMCwwLDAuOTksMC4wMV0sWzAuMzYsMCwwLjY0LDBdLFswLjA1LDAuMDEsMC41NSwwLjM3XSxbMC4wMywwLDAuOTcsMF0sWzAuMDYsMCwwLjg1LDAuMDddLFswLjExLDAuOCwwLDAuMDddLFswLjQsMC4wMSwwLjU1LDAuMDFdLFswLjA5LDAuNTMsMC4zMywwLjA0XSxbMC4xMiwwLjM1LDAuMDgsMC40M10sWzAuNDQsMC4xOSwwLjI5LDAuMDZdXSwidHlwZWlkIjowLCJzY2FsZSI6MSwiaXNmcmVxIjpmYWxzZSwiZmlyc3RiYXNlIjoxLCJnbHlwaG1hcCI6W3sicmVnZXgiOiJBIiwiY29sb3IiOiJyZWQifSx7InJlZ2V4IjoiQyIsImNvbG9yIjoiYmx1ZSJ9LHsicmVnZXgiOiJHIiwiY29sb3IiOiJvcmFuZ2UifSx7InJlZ2V4IjoiVCIsImNvbG9yIjoiIzIyOGIyMiJ9XX0=" width="400" />
+
 
 You don't need to use React:
 
@@ -58,8 +61,13 @@ You don't need to use React:
         [0.40, 0.01, 0.55, 0.01], [0.09, 0.53, 0.33, 0.04], [0.12, 0.35, 0.08, 0.43], 
         [0.44, 0.19, 0.29, 0.06]
       ];
-      logosj.embedDNALogo(document.getElementById("logo"), { pwm: CTCF_PWM, mode: "FREQUENCY" });
+      logosj.embedDNALogo(document.getElementById("logo"), { pwm: CTCF_PWM });
     </script>
   </body>
 </html>
 ```
+
+
+LogosJ supports many other common and custom logo types out of
+the box. Use the links at left to see details and advanced use case
+examples.
