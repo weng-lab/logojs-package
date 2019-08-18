@@ -1,0 +1,13 @@
+site_name: LogosJ
+repo_name: logosj-package
+repo_url: https://www.github.com/weng-lab/logosj-package
+site_description: "LogosJ Javascript sequence logos"
+site_author: Henry Pratt
+remote_branch: master
+
+copyright: "Copyright &copy; 2019 Weng Lab"
+
+nav:
+  - 'Basic logos':
+    - 'DNA and RNA': dnalogo.md
+    - 'Protein': proteinlogo.md
