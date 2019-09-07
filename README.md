@@ -35,7 +35,7 @@ The transcription factor CTCF binds a well-known consensus DNA sequence, rendere
 
 If you use ReactJS, the following code creates the CTCF consensus binding logo:
 
-```js
+```jsx
 import { DNALogo } from 'logosj-react';
 
 const CTCF_PWM = [
