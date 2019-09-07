@@ -5,3 +5,6 @@ yarn-error.log
 # backups
 *~
 \#*\#
+/docs/_site
+/out
+/site

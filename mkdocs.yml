@@ -1,0 +1,50 @@
+site_name: LogosJ
+repo_name: logosj-package
+repo_url: https://github.com/weng-lab/logosj-package
+site_description: "LogosJ embeddable sequence logos"
+site_author: Henry Pratt
+remote_branch: master
+
+copyright: 'Copyright &copy; 2019 Weng Lab'
+
+theme:
+  name: 'material'
+  logo: img/krews_logo_white.png
+  favicon: img/favicon.ico
+  palette:
+    primary: 'blue grey'
+    accent: 'amber'
+
+extra_css:
+  - 'css/extra.css'
+
+markdown_extensions:
+  - admonition
+  - meta
+  - smarty
+  - codehilite:
+      guess_lang: false
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+
+nav:
+  - 'Quick start: common logos':
+      - 'DNA logos': dna_logos.md
+      - 'RNA logos': rna_logos.md
+      - 'Protein logos': protein_logos.md
+  - 'Building blocks: glyphs and alphabets':
+      - 'Glyphs and custom symbols': glyph.md
+      - 'Built-in and custom alphabets': alphabet.md
+  - 'Custom logos':
+      - 'Custom alphabets': custom#alphabets
+      - 'Negative letters': custom#negatives
+      - 'Logos without axes': custom#rawlogo
+      - 'Advanced annotations': custom#advanced
