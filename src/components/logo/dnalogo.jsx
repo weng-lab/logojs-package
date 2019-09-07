@@ -7,7 +7,7 @@ import Logo from './logo';
  * Represents the DNA alphabet, with the four nucleotides colored
  * in a similar scheme to the MEME default.
  */
-export const DNAGlyphmap = [
+export const DNAAlphabet = [
     { component: A, regex: "A", color: "red" },
     { component: C, regex: "C", color: "blue" },
     { component: G, regex: "G", color: "orange" },
@@ -22,6 +22,6 @@ export const DNAGlyphmap = [
  * @prop startpos number to assign the first position in the logo; defaults to 1.
  */
 const DNALogo = props => (
-    <Logo glyphmap={DNAGlyphmap} {...props} />
+    <Logo alphabet={DNAAlphabet} {...props} />
 );
 export default DNALogo;

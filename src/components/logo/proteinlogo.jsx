@@ -10,7 +10,7 @@ import Logo from './logo';
  * are blue shades, non-polar amino acids are black shades, and B and Z
  * are gold shades.
  */
-export const ProteinGlyphmap = [
+export const ProteinAlphabet = [
     { component: A, regex: "A", color: 'black' },
     { component: B, regex: "B", color: '#bb8800' },
     { component: C, regex: "C", color: '#008811' },
@@ -45,6 +45,6 @@ export const ProteinGlyphmap = [
  * @prop startpos number to assign the first position in the logo; defaults to 1.
  */
 const ProteinLogo = props => (
-    <Logo glyphmap={ProteinGlyphmap} {...props} />
+    <Logo alphabet={ProteinAlphabet} {...props} />
 );
 export default ProteinLogo;

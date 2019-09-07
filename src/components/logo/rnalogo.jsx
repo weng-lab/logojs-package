@@ -7,7 +7,7 @@ import Logo from './logo';
  * Represents the RNA alphabet, with the four nucleotides colored
  * in a similar scheme to the MEME default (U is green like T).
  */
-export const RNAGlyphmap = [
+export const RNAAlphabet = [
     { component: A, regex: "A", color: "red" },
     { component: C, regex: "C", color: "blue" },
     { component: G, regex: "G", color: "orange" },
@@ -22,6 +22,6 @@ export const RNAGlyphmap = [
  * @prop startpos number to assign the first position in the logo; defaults to 1.
  */
 const RNALogo = props => (
-    <Logo glyphmap={RNAGlyphmap} {...props} />
+    <Logo alphabet={RNAAlphabet} {...props} />
 );
 export default RNALogo;

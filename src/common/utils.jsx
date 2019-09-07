@@ -1,26 +1,26 @@
 import namedColors from 'color-name-list';
-import { CompleteGlyphmap } from '../components/logo/completelogo';
+import { CompleteAlphabet } from '../components/logo/completelogo';
 
 export const INFORMATION_CONTENT = 'INFORMATION_CONTENT';
 export const FREQUENCY = 'FREQUENCY';
 
 const regexMap = ( () => {
     let r = {};
-    CompleteGlyphmap.forEach(glyph => {
+    CompleteAlphabet.forEach(glyph => {
 	r[glyph.regex] = glyph;
     });
     return r;
 })();
 
 /**
- * Populates a glyphmap with the appropriate components for rendering its symbols.
+ * Populates a alphabet with the appropriate components for rendering its symbols.
  * Each entry should have a regex field listing the symbols it renders; these may
  * be a single character or multiple. Supported symbols are A-Z, a-z, and 0-9.
  *
- * @param glyphmap the symbol list to populate; array of objects with regex and color fields.
+ * @param alphabet the symbol list to populate; array of objects with regex and color fields.
  */
-export const loadGlyphComponents = glyphmap => (
-    glyphmap.map( glyph => {
+export const loadGlyphComponents = alphabet => (
+    alphabet.map( glyph => {
 	if (glyph.regex.length === 1)
 	    return Object.assign({}, glyph, { component: regexMap[glyph.regex].component });
 	let r = Object.assign({}, glyph, { component: [], color: glyph.color.length ? glyph.color : [] });
@@ -72,7 +72,7 @@ export const negsum = x => {
     return s;
 };
 
-export const disymbolGlyphmap = x => (
+export const disymbolAlphabet = x => (
     x.reduce( (ci, ix) => (
 	[ ...ci, ...x.reduce( (cj, jx) => (
 	    [...cj, {

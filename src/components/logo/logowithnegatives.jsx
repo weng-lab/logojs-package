@@ -7,10 +7,10 @@ import YAxis from './yaxis';
 import YAxisWithNegatives from './yaxisneg';
 import { YGridlines } from './ygridlines';
 
-const _position = (width, height, alpha, inverted) => (lv, transform, key, glyphmap, negative) => {
+const _position = (width, height, alpha, inverted) => (lv, transform, key, alphabet, negative) => {
     let indices = negative ? sortedIndicesNegative(lv) : sortedIndices(lv); // tallest on top
     return (
-      <GlyphStack indices={indices} glyphmap={glyphmap} alpha={alpha}
+      <GlyphStack indices={indices} alphabet={alphabet} alpha={alpha}
 	  lv={lv} transform={transform} width={width} height={height}
 	  key={key} inverted={inverted} />
     );
@@ -22,13 +22,13 @@ const _position = (width, height, alpha, inverted) => (lv, transform, key, glyph
  * @prop pwm matrix containing the symbol heights.
  * @prop height the height of the logo relative to the containing SVG.
  * @prop width the width of the logo relative to the containing SVG.
- * @prop glyphmap symbol list mapping columns to colored glyphs.
+ * @prop alphabet symbol list mapping columns to colored glyphs.
  * @prop startpos number of the first position in the logo; defaults to 1.
  * @prop negativealpha if set, gives negative symbols a lighter shade than positive symbols.
  * @prop showGridLines if set, shows vertical grid lines.
  * @prop inverted if set, renders negative letters upright rather than upside down.
  */
-const LogoWithNegatives = ({ pwm, height, width, glyphmap, scale, startpos, negativealpha, showGridLines, inverted }) => {
+const LogoWithNegatives = ({ pwm, height, width, alphabet, scale, startpos, negativealpha, showGridLines, inverted }) => {
 
     /* compute likelihood; need at least one entry to continue */
     if (pwm.length === 0 || pwm[0].length === 0) {
@@ -80,10 +80,10 @@ const LogoWithNegatives = ({ pwm, height, width, glyphmap, scale, startpos, nega
 	          x1={0} x2={viewBoxW - 80} />
             <g transform="translate(80,10)">
                 {pwm.map((lv, i) =>
-		    gposition(lv.map(x => x > 0.0 ? x / mvalue : 0.0), 'translate(' + glyphWidth * i + ',0)', i, glyphmap)
+		    gposition(lv.map(x => x > 0.0 ? x / mvalue : 0.0), 'translate(' + glyphWidth * i + ',0)', i, alphabet)
 	        )}
 	        {pwm.map((lv, i) =>
-		    nposition(lv.map(x => x < 0.0 ? x / mvalue : 0.0), 'translate(' + glyphWidth * i + ',' + maxHeight + ')', i, glyphmap, true)
+		    nposition(lv.map(x => x < 0.0 ? x / mvalue : 0.0), 'translate(' + glyphWidth * i + ',' + maxHeight + ')', i, alphabet, true)
                 )}
             </g>           
     </svg>

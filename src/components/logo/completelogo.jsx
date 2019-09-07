@@ -8,9 +8,9 @@ import { N1, N2, N3, N4, N5, N6, N7, N8, N9 } from '../glyphs';
 import Logo from './logo';
 
 /**
- * A glyphmap making use of all available symbols and a variety of colors.
+ * A alphabet making use of all available symbols and a variety of colors.
  */
-export const CompleteGlyphmap = [
+export const CompleteAlphabet = [
     { component: A, regex: "A", color: 'maroon' },
     { component: B, regex: "B", color: 'red' },
     { component: C, regex: "C", color: 'purple' },
@@ -75,7 +75,7 @@ export const CompleteGlyphmap = [
 ];
 
 const CompleteLogo = ({ pwm, scale, startpos, mode }) => (
-    <Logo pwm={pwm} glyphmap={CompleteGlyphmap} scale={scale}
+    <Logo pwm={pwm} alphabet={CompleteAlphabet} scale={scale}
       mode={mode} startpos={startpos} />
 );
 export default CompleteLogo;
