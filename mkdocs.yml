@@ -9,7 +9,7 @@ copyright: 'Copyright &copy; 2019 Weng Lab'
 
 theme:
   name: 'material'
-  logo: img/krews_logo_white.png
+  logo: img/logosj.svg
   favicon: img/favicon.ico
   palette:
     primary: 'blue grey'
