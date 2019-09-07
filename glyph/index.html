@@ -1,0 +1,646 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="LogosJ embeddable sequence logos">
+      
+      
+      
+        <meta name="author" content="Henry Pratt">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+    
+    
+      
+        <title>Glyphs and custom symbols - LogosJ</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.30686662.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#546e7a">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue-grey" data-md-color-accent="amber">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#built-in-and-custom-glyphs" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="LogosJ" class="md-header-nav__button md-logo">
+          
+            <img src="../img/logosj.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              LogosJ
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Glyphs and custom symbols
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/weng-lab/logosj-package/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    logosj-package
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="LogosJ" class="md-nav__button md-logo">
+      
+        <img src="../img/logosj.svg" width="48" height="48">
+      
+    </a>
+    LogosJ
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/weng-lab/logosj-package/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    logosj-package
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Quick start: common logos
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Quick start: common logos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dna_logos/" title="DNA logos" class="md-nav__link">
+      DNA logos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rna_logos/" title="RNA logos" class="md-nav__link">
+      RNA logos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../protein_logos/" title="Protein logos" class="md-nav__link">
+      Protein logos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Building blocks: glyphs and alphabets
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Building blocks: glyphs and alphabets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Glyphs and custom symbols
+      </label>
+    
+    <a href="./" title="Glyphs and custom symbols" class="md-nav__link md-nav__link--active">
+      Glyphs and custom symbols
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#glyph-overview" class="md-nav__link">
+    Glyph overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#built-in-glyphs" class="md-nav__link">
+    Built-in glyphs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-glyphs" class="md-nav__link">
+    Custom glyphs
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../alphabet/" title="Built-in and custom alphabets" class="md-nav__link">
+      Built-in and custom alphabets
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Custom logos
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Custom logos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../custom#alphabets" title="Custom alphabets" class="md-nav__link">
+      Custom alphabets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../custom#negatives" title="Negative letters" class="md-nav__link">
+      Negative letters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../custom#rawlogo" title="Logos without axes" class="md-nav__link">
+      Logos without axes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../custom#advanced" title="Advanced annotations" class="md-nav__link">
+      Advanced annotations
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#glyph-overview" class="md-nav__link">
+    Glyph overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#built-in-glyphs" class="md-nav__link">
+    Built-in glyphs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-glyphs" class="md-nav__link">
+    Custom glyphs
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/weng-lab/logosj-package/edit/master/docs/glyph.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="built-in-and-custom-glyphs">Built-in and custom glyphs<a class="headerlink" href="#built-in-and-custom-glyphs" title="Permanent link">&para;</a></h1>
+<h2 id="glyph-overview">Glyph overview<a class="headerlink" href="#glyph-overview" title="Permanent link">&para;</a></h2>
+<p>Glyphs are the smallest building blocks of LogosJ logos. Each glyph is a self-contained SVG
+object which renders itself within a 100 by 100 square. Logo components are responsible for
+applying the appropriate transforms to the glyph objects they contain to adjust their positions
+within the logo and their heights.  </p>
+<h2 id="built-in-glyphs">Built-in glyphs<a class="headerlink" href="#built-in-glyphs" title="Permanent link">&para;</a></h2>
+<p>LogosJ uses a custom font to render its glyphs, which include the capital letters A-Z, the lower
+case letters a-z, and the digits 0-9. Most glyphs contain a single SVG <code>path</code> element, and apply
+their props directly to it. You can apply properties including, but not limited to:</p>
+<ul>
+<li><strong>fill</strong>: the color of the glyph.</li>
+<li><strong>fillOpacity</strong>: number from 0 to 1 representing transparency, with 0 being transparent and 1
+being opaque.</li>
+</ul>
+<p>In general, it is not necessary to render glyphs directly; instead, they should be passed as
+properties to logo components in alphabet arrays (see the alphabet page for details). When you need
+to include built-in symbols in a custom alphabet, you can import built-in glyphs directly from the
+LogosJ package. Capital letters are their own components; lower case letters are represented as LC_a,
+LC_b, etc. and numbers as N1, N2, etc. For example the following code imports capital A,
+lower case a, and the number 1:</p>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">A</span><span class="p">,</span> <span class="nx">LC_a</span><span class="p">,</span> <span class="nx">N1</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;logosj&#39;</span><span class="p">;</span>
+</pre></div>
+
+<p>In plain Javascript, these are available in the <code>logosj</code> namespace as <code>logosj.A</code>, <code>logosj.LC_a</code>,
+<code>logosj.N1</code>, etc.</p>
+<h2 id="custom-glyphs">Custom glyphs<a class="headerlink" href="#custom-glyphs" title="Permanent link">&para;</a></h2>
+<p>If you want to add a custom symbol which is not built in to LogosJ, you can make a custom glyph
+component. Glyph components should render an SVG element, such as a <code>path</code> or a collection of
+<code>path</code>s contained with a <code>g</code>, with a width of 100 and a height of 100. When rendered in a logo,
+your custom glyph will be scaled automatically.</p>
+<p>It is best practice to pass the full collection of properties your glyph receives on to the SVG
+element it renders. For example, here is the source code for LogosJ&rsquo;s built-in <strong>C</strong>, which passes
+all its properties on to a single child <code>path</code>:</p>
+<div class="codehilite"><pre><span></span><span class="kr">const</span> <span class="nx">_path</span> <span class="o">=</span> <span class="sb">`M 100 28 C 100 -13 0 -13 0 50</span>
+<span class="sb">         C 0 113 100 113 100 72 L 75 72</span>
+<span class="sb">         C 75 90 30 90 30 50 C 30 10 75 10 75 28</span>
+<span class="sb">         L 100 28`</span><span class="p">;</span>
+
+<span class="kr">export</span> <span class="kr">const</span> <span class="nx">C</span> <span class="o">=</span> <span class="nx">props</span> <span class="p">=&gt;</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">path</span> <span class="p">{...</span><span class="nx">props</span><span class="p">}</span> <span class="nx">d</span><span class="o">=</span><span class="p">{</span><span class="nx">_path</span><span class="p">}</span> <span class="o">/&gt;</span>
+<span class="p">);</span>
+</pre></div>
+
+<p>To render a custom symbol, you could simply replace the <code>path</code> data above with your own.
+At the very least, your custom glyph should support <strong>fill</strong> which determines its color and
+<strong>fillOpacity</strong> which determines its transparency. For instructions on how to include your
+custom glyph in a logo, see the custom alphabets section.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../protein_logos/" title="Protein logos" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Protein logos
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../alphabet/" title="Built-in and custom alphabets" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Built-in and custom alphabets
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 Weng Lab
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.c648116f.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>

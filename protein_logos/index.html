@@ -1,0 +1,649 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="LogosJ embeddable sequence logos">
+      
+      
+      
+        <meta name="author" content="Henry Pratt">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+    
+    
+      
+        <title>Protein logos - LogosJ</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.30686662.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#546e7a">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue-grey" data-md-color-accent="amber">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#rendering-protein-logos" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="LogosJ" class="md-header-nav__button md-logo">
+          
+            <img src="../img/logosj.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              LogosJ
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Protein logos
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/weng-lab/logosj-package/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    logosj-package
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="LogosJ" class="md-nav__button md-logo">
+      
+        <img src="../img/logosj.svg" width="48" height="48">
+      
+    </a>
+    LogosJ
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/weng-lab/logosj-package/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    logosj-package
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+    
+    <label class="md-nav__link" for="nav-1">
+      Quick start: common logos
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Quick start: common logos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dna_logos/" title="DNA logos" class="md-nav__link">
+      DNA logos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rna_logos/" title="RNA logos" class="md-nav__link">
+      RNA logos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Protein logos
+      </label>
+    
+    <a href="./" title="Protein logos" class="md-nav__link md-nav__link--active">
+      Protein logos
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#with-react-proteinlogo-component" class="md-nav__link">
+    With React: ProteinLogo component
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#without-react-embedproteinlogo-function" class="md-nav__link">
+    Without React: embedProteinLogo function
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Building blocks: glyphs and alphabets
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Building blocks: glyphs and alphabets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../glyph/" title="Glyphs and custom symbols" class="md-nav__link">
+      Glyphs and custom symbols
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../alphabet/" title="Built-in and custom alphabets" class="md-nav__link">
+      Built-in and custom alphabets
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Custom logos
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Custom logos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../custom#alphabets" title="Custom alphabets" class="md-nav__link">
+      Custom alphabets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../custom#negatives" title="Negative letters" class="md-nav__link">
+      Negative letters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../custom#rawlogo" title="Logos without axes" class="md-nav__link">
+      Logos without axes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../custom#advanced" title="Advanced annotations" class="md-nav__link">
+      Advanced annotations
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#with-react-proteinlogo-component" class="md-nav__link">
+    With React: ProteinLogo component
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#without-react-embedproteinlogo-function" class="md-nav__link">
+    Without React: embedProteinLogo function
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/weng-lab/logosj-package/edit/master/docs/protein_logos.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="rendering-protein-logos">Rendering Protein logos<a class="headerlink" href="#rendering-protein-logos" title="Permanent link">&para;</a></h1>
+<h2 id="with-react-proteinlogo-component">With React: ProteinLogo component<a class="headerlink" href="#with-react-proteinlogo-component" title="Permanent link">&para;</a></h2>
+<p>The <code>ProteinLogo</code> component renders a logo with the <code>ProteinAlphabet</code> (22 amino acids plus <strong>B</strong> and <strong>Z</strong>)
+with accompanying x- and y-axes. The color scheme corresponds to the chemical properties of the amino acids:
+acidic is red, basic is blue, non-polar is black, and ambiguous (<strong>B</strong> - <strong>N</strong> or <strong>D</strong> and <strong>Z</strong> - <strong>Q</strong> or <strong>E</strong>)
+are gold. The logo can use either information content (0-4.5 bits) or amino acid frequency (0%-100%) for letter heights
+at each position. If you need custom axes, custom colors, or a custom alphabet, use the <code>Logo</code> or <code>RawLogo</code> compoenent instead.
+If you need negative letter heights, use the <code>LogoWithNegatives</code> component instead. The following is a logo for the
+<strong>helix turn helix</strong> motif of the <strong>catabolite activator protein</strong> (CAP) family:</p>
+<p><img src="https://logostogo.wenglab.org/svg/eyJwd20iOltbMC4wMSwwLDAuMDIsMCwwLDAuMDQsMCwwLDAuMjEsMCwwLjU1LDAsMCwwLDAsMCwwLDAsMC4wNywwLDAsMF0sWzAuMDMsMCwwLDAuMDMsMCwwLDAsMCwwLDAuMTksMCwwLDAuMDUsMC4zNSwwLjAxLDAuMTEsMC4wMiwwLjE2LDAuMDMsMCwwLjAxLDBdLFswLjAxLDAsMC4wMSwwLDAsMCwwLDAsMC4yLDAsMC4zNSwwLjM5LDAsMCwwLDAsMCwwLDAuMDUsMCwwLDBdLFswLjAyLDAsMC4wMSwwLDAuMDEsMCwwLjAxLDAsMCwwLjA0LDAsMCwwLjAxLDAuMDIsMCwwLDAuMzcsMC41MSwwLDAsMCwwXSxbMCwwLDAsMCwwLDAsMCwwLDAsMCwwLjAyLDAuMDEsMCwwLDAsMCwwLDAsMCwwLDAsMF0sWzAsMCwwLDAsMCwwLDAsMCwwLDAsMCwwLDAuMDIsMCwwLDAsMC4wMSwwLDAsMCwwLDBdLFswLjAxLDAsMCwwLDAsMCwwLDAuMTYsMC4wMSwwLjAyLDAuMDIsMC4wMSwwLjAzLDAsMC4wOCwwLjYzLDAuMDEsMC4wMSwwLDAuMDEsMCwwXSxbMC4xMywwLDAsMC4wMSwwLjExLDAsMC4xOCwwLjAxLDAsMC4wNCwwLjAxLDAuMDEsMC4wNCwwLDAuNCwwLjA0LDAsMC4wMywwLDAsMCwwXSxbMC4wOSwwLDAsMC40NCwwLjQsMCwwLDAsMCwwLDAsMC4wMiwwLjAxLDAsMC4wMywwLDAsMCwwLjAxLDAsMC4wMSwwXSxbMCwwLDAsMCwwLDAsMCwwLDAuNzQsMCwwLjE4LDAuMDYsMCwwLDAsMCwwLDAuMDEsMC4wMSwwLDAsMF0sWzAuNTgsMCwwLDAsMCwwLDAuMzgsMCwwLDAsMCwwLDAsMCwwLDAsMC4wNCwwLDAsMCwwLDBdLFswLjAzLDAsMCwwLjI3LDAuMTQsMCwwLDAuMDEsMCwwLjA0LDAsMC4wMSwwLjI0LDAsMC4xNSwwLjA0LDAuMDcsMC4wMSwwLDAsMCwwXSxbMC4xMiwwLDAsMCwwLDAuMTUsMCwwLjA0LDAuMTEsMCwwLjA4LDAuMTEsMCwwLDAsMC4wMywwLjAxLDAsMC4wMSwwLDAuMzUsMF0sWzAsMCwwLjAzLDAsMCwwLDAsMCwwLjEzLDAsMC41MiwwLDAsMCwwLDAsMC4wNSwwLjA0LDAuMjMsMCwwLDBdLFswLjAzLDAsMCwwLDAsMCwwLjk1LDAsMCwwLDAsMCwwLDAsMCwwLDAuMDIsMCwwLDAsMCwwXSxbMC4wNywwLDAuMTQsMCwwLDAsMCwwLDAsMCwwLjUsMC4wMiwwLDAsMC4wMSwwLDAuMTIsMC4xMywwLjAyLDAsMCwwXSxbMC4wOSwwLDAuMDEsMCwwLDAsMCwwLDAsMC4wMiwwLDAsMCwwLDAsMC4wMSwwLjIxLDAuNjYsMCwwLDAsMF0sWzAuMDEsMCwwLDAsMCwwLDAsMCwwLjE5LDAsMC4xMSwwLDAuMDEsMC4wNiwwLDAuNDEsMCwwLjAxLDAuMjEsMCwwLDBdLFswLDAsMCwwLDAuNzcsMCwwLDAuMDMsMC4wMSwwLDAsMCwwLDAsMC4wNCwwLDAuMDIsMCwwLjEzLDAsMCwwXSxbMCwwLDAsMCwwLDAsMCwwLjAyLDAsMCwwLDAuMDMsMCwwLDAsMCwwLjAzLDAuOTEsMCwwLjAxLDAsMF0sWzAuMDQsMCwwLDAsMCwwLjAxLDAsMCwwLjI0LDAsMC4wMSwwLjAxLDAsMCwwLDAsMCwwLjAyLDAuNjcsMCwwLDBdLFswLjAyLDAsMC4wMSwwLDAsMCwwLjE0LDAsMC4wMSwwLDAsMCwwLjA4LDAsMCwwLDAuNTgsMC4xNiwwLDAsMCwwXSxbMC4wMSwwLDAsMCwwLDAsMCwwLjA0LDAsMC4wNCwwLDAuMDEsMCwwLDAsMC44OSwwLDAuMDEsMCwwLDAsMF0sWzAuMDUsMCwwLjAxLDAsMCwwLDAsMCwwLjE1LDAuMDUsMC4yNywwLjA1LDAsMCwwLjEsMCwwLjAyLDAuMTIsMC4xNSwwLDAsMF0sWzAsMCwwLDAsMCwwLjA5LDAsMCwwLjA4LDAsMC42NSwwLjA4LDAsMCwwLDAsMCwwLDAuMDYsMCwwLDBdLFswLjA0LDAsMCwwLDAsMCwwLjI4LDAsMCwwLjIyLDAsMCwwLjAzLDAsMCwwLjA0LDAuMTQsMC4yMiwwLDAsMCwwXSxbMC4wOCwwLDAsMC4xNCwwLjA2LDAsMC4wMSwwLDAuMDEsMC4xOCwwLjAzLDAuMTEsMCwwLDAuMDMsMC4yOSwwLjAxLDAsMC4wMSwwLDAuMDEsMF0sWzAsMCwwLDAsMCwwLjI3LDAsMCwwLDAsMC42NSwwLDAsMCwwLDAsMCwwLDAsMC4wNCwwLDBdLFswLjA4LDAsMCwwLDAuMjUsMCwwLjAxLDAuMDQsMCwwLjA4LDAsMCwwLDAsMC4yMiwwLjI3LDAuMDEsMC4wMSwwLDAsMCwwXSxbMC4wNywwLDAuMDEsMC4xMywwLjE2LDAsMC4wMSwwLjAyLDAsMC4yOCwwLDAsMC4wMSwwLDAuMTMsMC4wOCwwLjAyLDAuMDUsMCwwLDAsMF0sWzAuMDEsMCwwLDAuMTIsMC4xNywwLDAuMDIsMC4wMSwwLjAxLDAuMDcsMC4wNCwwLjAxLDAuMDYsMCwwLjE4LDAuMSwwLjE0LDAsMC4wMSwwLjAxLDAuMDEsMF0sWzAsMCwwLDAuMDEsMC4wNiwwLDAuNjIsMC4wMywwLDAuMDYsMCwwLDAuMTUsMCwwLjAyLDAsMC4wMSwwLDAsMCwwLDBdLFswLjAyLDAsMCwwLDAsMC4wMywwLDAsMC4wOSwwLjAxLDAuNDEsMC4xMiwwLDAsMCwwLjAxLDAsMC4wMSwwLjIxLDAuMDUsMC4wMSwwXSxbMCwwLDAsMCwwLDAsMCwwLDAuNjUsMCwwLjE3LDAsMCwwLDAsMCwwLDAsMC4xNCwwLDAsMF1dLCJ0eXBlaWQiOjIsInNjYWxlIjoxLCJpc2ZyZXEiOmZhbHNlLCJmaXJzdGJhc2UiOjEsImdseXBobWFwIjpbeyJyZWdleCI6IkEiLCJjb2xvciI6ImJsYWNrIn0seyJyZWdleCI6IkIiLCJjb2xvciI6IiNiYjg4MDAifSx7InJlZ2V4IjoiQyIsImNvbG9yIjoiIzAwODgxMSJ9LHsicmVnZXgiOiJEIiwiY29sb3IiOiIjZmYwMDAwIn0seyJyZWdleCI6IkUiLCJjb2xvciI6IiNmZjAwMjIifSx7InJlZ2V4IjoiRiIsImNvbG9yIjoiIzMzMzMzMyJ9LHsicmVnZXgiOiJHIiwiY29sb3IiOiIjMDA3NzAwIn0seyJyZWdleCI6IkgiLCJjb2xvciI6IiMyMjAwOTkifSx7InJlZ2V4IjoiSSIsImNvbG9yIjoiIzExMTExMSJ9LHsicmVnZXgiOiJLIiwiY29sb3IiOiIjMDAwMGFhIn0seyJyZWdleCI6IkwiLCJjb2xvciI6IiMwMDIyMjIifSx7InJlZ2V4IjoiTSIsImNvbG9yIjoiIzIyMDAyMiJ9LHsicmVnZXgiOiJOIiwiY29sb3IiOiIjMDA5OTExIn0seyJyZWdleCI6IlAiLCJjb2xvciI6IiMwODA4MDgifSx7InJlZ2V4IjoiUSIsImNvbG9yIjoiIzAwYWEwMCJ9LHsicmVnZXgiOiJSIiwiY29sb3IiOiIjMDAyMmFhIn0seyJyZWdleCI6IlMiLCJjb2xvciI6IiMwMDhmMDAifSx7InJlZ2V4IjoiVCIsImNvbG9yIjoiIzAwNjYwMCJ9LHsicmVnZXgiOiJWIiwiY29sb3IiOiIjMjIyMjAwIn0seyJyZWdleCI6IlciLCJjb2xvciI6IiMwODA4MDgifSx7InJlZ2V4IjoiWSIsImNvbG9yIjoiIzAwYTgwMCJ9LHsicmVnZXgiOiJaIiwiY29sb3IiOiIjYWFhYTAwIn1dfQ==" alt="protein logo" width="100%"></p>
+<p><code>ProteinLogo</code> takes the following properties:</p>
+<ul>
+<li><strong>pwm</strong>: a matrix containing nucleotide frequencies at each position. Each
+row is a position in the logo, and the columns are alphabetical.</li>
+<li><strong>mode</strong>: determines how letter heights are computed; may be either
+<code>"INFORMATION_CONTENT"</code> (default) or <code>"FREQUENCY"</code>.</li>
+<li><strong>startpos</strong>: if set, the first base in the logo will be numbered with a
+value other than the default of 1.</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">ProteinLogo</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;logosj-react&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">CAP_PWM</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">[</span><span class="mf">0.09</span><span class="p">,</span> <span class="mf">0.31</span><span class="p">,</span> <span class="mf">0.08</span><span class="p">,</span> <span class="mf">0.50</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.18</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.45</span><span class="p">,</span> <span class="mf">0.20</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.30</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.49</span><span class="p">,</span> <span class="mf">0.14</span><span class="p">],</span>
+  <span class="p">[</span><span class="mf">0.06</span><span class="p">,</span> <span class="mf">0.87</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.98</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.81</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.07</span><span class="p">,</span> <span class="mf">0.09</span><span class="p">],</span> 
+  <span class="p">[</span><span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.57</span><span class="p">,</span> <span class="mf">0.36</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.11</span><span class="p">,</span> <span class="mf">0.47</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.93</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">],</span>
+  <span class="p">[</span><span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.36</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.64</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.55</span><span class="p">,</span> <span class="mf">0.37</span><span class="p">],</span> 
+  <span class="p">[</span><span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.97</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.06</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">,</span> <span class="mf">0.07</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.11</span><span class="p">,</span> <span class="mf">0.80</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.07</span><span class="p">],</span>
+  <span class="p">[</span><span class="mf">0.40</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.55</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.09</span><span class="p">,</span> <span class="mf">0.53</span><span class="p">,</span> <span class="mf">0.33</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.12</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">,</span> <span class="mf">0.08</span><span class="p">,</span> <span class="mf">0.43</span><span class="p">],</span> 
+  <span class="p">[</span><span class="mf">0.44</span><span class="p">,</span> <span class="mf">0.19</span><span class="p">,</span> <span class="mf">0.29</span><span class="p">,</span> <span class="mf">0.06</span><span class="p">]</span>
+<span class="p">];</span>
+
+<span class="kr">export</span> <span class="kr">const</span> <span class="nx">CAPLogo</span> <span class="o">=</span> <span class="nx">props</span> <span class="p">=&gt;</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">ProteinLogo</span> <span class="nx">pwm</span><span class="o">=</span><span class="p">{</span><span class="nx">CAP_PWM</span><span class="p">}</span> <span class="o">/&gt;</span>
+<span class="p">);</span>
+</pre></div>
+
+<h2 id="without-react-embedproteinlogo-function">Without React: embedProteinLogo function<a class="headerlink" href="#without-react-embedproteinlogo-function" title="Permanent link">&para;</a></h2>
+<p>Outside of React, use the <code>logosj.embedProteinLogo</code> function to embed a <code>ProteinLogo</code> component in a <code>div</code>.
+<code>logosj.embedProteinLogo</code> takes two arguments:</p>
+<ul>
+<li><strong>div</strong>: HTML element in which to embed the Protein logo; its <code>innerHTML</code> will be
+replaced by the rendered logo.</li>
+<li><strong>properties</strong>: an object containing the above properties.</li>
+</ul>
+<p>If you don&rsquo;t use React, the following code embeds the Protein logo in a <code>div</code> element:</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;!doctype html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://package.logosj.wenglab.org/bundle.js&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;logo&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width:500px&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+      <span class="kr">const</span> <span class="nx">CAP_PWM</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">[</span><span class="mf">0.09</span><span class="p">,</span> <span class="mf">0.31</span><span class="p">,</span> <span class="mf">0.08</span><span class="p">,</span> <span class="mf">0.50</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.18</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.45</span><span class="p">,</span> <span class="mf">0.20</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.30</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.49</span><span class="p">,</span> <span class="mf">0.14</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">0.06</span><span class="p">,</span> <span class="mf">0.87</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.98</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.81</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.07</span><span class="p">,</span> <span class="mf">0.09</span><span class="p">],</span> 
+        <span class="p">[</span><span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.57</span><span class="p">,</span> <span class="mf">0.36</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.11</span><span class="p">,</span> <span class="mf">0.47</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.93</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.36</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.64</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.55</span><span class="p">,</span> <span class="mf">0.37</span><span class="p">],</span> 
+        <span class="p">[</span><span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.97</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.06</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">,</span> <span class="mf">0.07</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.11</span><span class="p">,</span> <span class="mf">0.80</span><span class="p">,</span> <span class="mf">0.00</span><span class="p">,</span> <span class="mf">0.07</span><span class="p">],</span>
+        <span class="p">[</span><span class="mf">0.40</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.55</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.09</span><span class="p">,</span> <span class="mf">0.53</span><span class="p">,</span> <span class="mf">0.33</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.12</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">,</span> <span class="mf">0.08</span><span class="p">,</span> <span class="mf">0.43</span><span class="p">],</span> 
+        <span class="p">[</span><span class="mf">0.44</span><span class="p">,</span> <span class="mf">0.19</span><span class="p">,</span> <span class="mf">0.29</span><span class="p">,</span> <span class="mf">0.06</span><span class="p">]</span>
+      <span class="p">];</span>
+      <span class="nx">logosj</span><span class="p">.</span><span class="nx">embedProteinLogo</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;logo&quot;</span><span class="p">),</span> <span class="p">{</span> <span class="nx">pwm</span><span class="o">:</span> <span class="nx">CAP_PWM</span> <span class="p">});</span>
+    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../rna_logos/" title="RNA logos" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                RNA logos
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../glyph/" title="Glyphs and custom symbols" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Glyphs and custom symbols
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 Weng Lab
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.c648116f.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>

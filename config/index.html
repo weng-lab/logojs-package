@@ -1,0 +1,1108 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="LogosJ embeddable sequence logos">
+      
+      
+      
+        <meta name="author" content="Henry Pratt">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+    
+    
+      
+        <title>Configuration - LogosJ</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.30686662.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#546e7a">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue-grey" data-md-color-accent="amber">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#configuration" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="LogosJ" class="md-header-nav__button md-logo">
+          
+            <img src="../img/logosj.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              LogosJ
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Configuration
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/weng-lab/logosj-package/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    logosj-package
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="LogosJ" class="md-nav__button md-logo">
+      
+        <img src="../img/logosj.svg" width="48" height="48">
+      
+    </a>
+    LogosJ
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/weng-lab/logosj-package/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    logosj-package
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      Quick start: common logos
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        Quick start: common logos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../dna_logos/" title="DNA logos" class="md-nav__link">
+      DNA logos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rna_logos/" title="RNA logos" class="md-nav__link">
+      RNA logos
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../protein_logos/" title="Protein logos" class="md-nav__link">
+      Protein logos
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Building blocks: glyphs and alphabets
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Building blocks: glyphs and alphabets
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../glyph/" title="Glyphs and custom symbols" class="md-nav__link">
+      Glyphs and custom symbols
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../alphabet/" title="Built-in and custom alphabets" class="md-nav__link">
+      Built-in and custom alphabets
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Custom logos
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Custom logos
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../custom#alphabets" title="Custom alphabets" class="md-nav__link">
+      Custom alphabets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../custom#negatives" title="Negative letters" class="md-nav__link">
+      Negative letters
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../custom#rawlogo" title="Logos without axes" class="md-nav__link">
+      Logos without axes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../custom#advanced" title="Advanced annotations" class="md-nav__link">
+      Advanced annotations
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#workflow-configurations" class="md-nav__link">
+    Workflow Configurations
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-workflow-configurations" class="md-nav__link">
+    Common Workflow Configurations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-docker-execution-specific" class="md-nav__link">
+    Local Docker Execution Specific
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-cloud-execution-specific" class="md-nav__link">
+    Google Cloud Execution Specific
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slurm-execution-specific" class="md-nav__link">
+    Slurm Execution Specific
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-configurations" class="md-nav__link">
+    Task Configurations
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-task-configurations" class="md-nav__link">
+    Common Task Configurations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-cloud-execution-specific_1" class="md-nav__link">
+    Google Cloud Execution Specific
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slurm-execution-specific_1" class="md-nav__link">
+    Slurm Execution Specific
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameters" class="md-nav__link">
+    Parameters
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workflow-parameters" class="md-nav__link">
+    Workflow Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#task-parameters" class="md-nav__link">
+    Task Parameters
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ambiguity-in-deserialization" class="md-nav__link">
+    Ambiguity in Deserialization
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#input-files-as-parameters" class="md-nav__link">
+    Input Files as Parameters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/weng-lab/logosj-package/edit/master/docs/config.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h1>
+<p>Krews requires configuration files to run. These files, along with command line arguments allow you to tweak <em>how</em>
+your workflow runs without touching or building your Krews application. The application itself is more concerned 
+with <em>what</em> runs. In this way it is a means of 
+<a href="https://en.wikipedia.org/wiki/Separation_of_concerns">separation of concerns</a>. </p>
+<p>Configurations cover things like execution environment settings and parallelism. They also cover special parameters 
+that you set up in your Krews Application to pass in differently for each run. They allow you to provide your 
+workflow to 3<sup>rd</sup> parties as an executable. The only thing your users would then need to worry about is creating 
+a config.</p>
+<p>Krews configuration files are written in a superset of JSON called 
+<a href="https://github.com/lightbend/config/blob/master/HOCON.md">HOCON</a>. It&rsquo;s just JSON with some additional syntax sugar 
+that helps keep it concise and readable. These files conventionally use the extension <code>.conf</code>.</p>
+<p>There are two types of configurations, workflow scope and task scope.</p>
+<h2 id="workflow-configurations">Workflow Configurations<a class="headerlink" href="#workflow-configurations" title="Permanent link">&para;</a></h2>
+<p>Workflow scope configurations apply to the entire workflow. They live at the top level of your configuration documents.</p>
+<h3 id="common-workflow-configurations">Common Workflow Configurations<a class="headerlink" href="#common-workflow-configurations" title="Permanent link">&para;</a></h3>
+<p>The following are workflow configurations common for running against any execution environment.</p>
+<table>
+<thead>
+<tr>
+<th>config name</th>
+<th>description</th>
+<th>required</th>
+<th>default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>parallelism</td>
+<td>The maximum number of tasks allowed to run concurrently. Set to an integer or &ldquo;unlimited&rdquo;</td>
+<td>no</td>
+<td>unlimited</td>
+</tr>
+<tr>
+<td>report-generation-delay</td>
+<td>Delay (in seconds) between generating updated status reports</td>
+<td>no</td>
+<td>60</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="codehilite"><pre><span></span>parallelism = 10
+report-generation-delay = 180
+</pre></div>
+
+<h3 id="local-docker-execution-specific">Local Docker Execution Specific<a class="headerlink" href="#local-docker-execution-specific" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>description</th>
+<th>required</th>
+<th>default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>local.docker</td>
+<td>Docker client configurations. In most cases you should not need to set these.</td>
+<td>no</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>local.docker.uri</td>
+<td>URI of docker daemon</td>
+<td>no</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>local.docker.certificates-path</td>
+<td>Path to certificate for TLS enabled docker daemon</td>
+<td>no</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>local.docker.connect-timeout</td>
+<td>Timeout (in milliseconds) for connecting to docker daemon</td>
+<td>no</td>
+<td>5000</td>
+</tr>
+<tr>
+<td>local.docker.read-timeout</td>
+<td>Timeout (in milliseconds) for reading data from docker daemon</td>
+<td>no</td>
+<td>30000</td>
+</tr>
+<tr>
+<td>local.docker.connection-pool-size</td>
+<td>Connection pool size for docker client</td>
+<td>no</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="codehilite"><pre><span></span>local {
+    docker {
+        uri = &quot;localhost:1234&quot;
+        certificate-path = &quot;~/my-path/my-cert.cert&quot;
+        connect-timeout = 10000
+        read-timeout = 60000
+        connection-pool-size = 200
+    }
+}
+</pre></div>
+
+<h3 id="google-cloud-execution-specific">Google Cloud Execution Specific<a class="headerlink" href="#google-cloud-execution-specific" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>description</th>
+<th>required</th>
+<th>default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>google.project-id</td>
+<td>Google Cloud project ID</td>
+<td>yes</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>google.regions</td>
+<td>List of regions in which we&rsquo;re allow to create VMs</td>
+<td>no</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>google.bucket</td>
+<td>Google Cloud Storage bucket where we will be keeping our workflow files</td>
+<td>yes</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>google.job-completion-poll-interval</td>
+<td>Interval (in seconds) between checks for pipeline job completion</td>
+<td>no</td>
+<td>10</td>
+</tr>
+<tr>
+<td>google.log-upload-interval</td>
+<td>Interval (in seconds) between  pipeline job log uploads to storage</td>
+<td>no</td>
+<td>60</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="codehilite"><pre><span></span>google {
+    project-id = my-project
+    regions = [us-east1, us-east2]
+    bucket = my-bucket
+    job-completion-poll-interval = 60
+    log-upload-interval = 120
+}
+</pre></div>
+
+<h3 id="slurm-execution-specific">Slurm Execution Specific<a class="headerlink" href="#slurm-execution-specific" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>description</th>
+<th>required</th>
+<th>default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>slurm.job-completion-poll-interval</td>
+<td>Interval (in seconds) between checks for pipeline job completion</td>
+<td>no</td>
+<td>10</td>
+</tr>
+<tr>
+<td>slurm.ssh</td>
+<td>Used to connect to Slurm head node to run sbatch jobs and poll job status. Enables running remote machines that can ssh to slurm head node with passwordless login</td>
+<td>no</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>slurm.ssh.user</td>
+<td>User for Slurm head node ssh</td>
+<td>no</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>slurm.ssh.host</td>
+<td>Slurm head node host name</td>
+<td>no</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>slurm.ssh.port</td>
+<td>Slurm head node ssh port</td>
+<td>no</td>
+<td>22</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="codehilite"><pre><span></span>slurm {
+    job-completion-poll-interval = 30
+    ssh {
+        user = jbrooks
+        host = slurm018
+        port = 23
+    }
+}
+</pre></div>
+
+<h2 id="task-configurations">Task Configurations<a class="headerlink" href="#task-configurations" title="Permanent link">&para;</a></h2>
+<p>Task scope configurations apply to only individual tasks. They live under special sections of your configuration files. </p>
+<div class="codehilite"><pre><span></span>// task configs in this section apply to ALL tasks
+task.default {
+    //...
+}
+
+// task configs in this section apply to tasks with a name matching &quot;my-task-name&quot;
+task.my-task-name {
+    //...
+}
+
+// task configs in this section apply to tasks with a label matching &quot;my-task-label&quot;
+task.my-task-label {
+    //...
+}
+</pre></div>
+
+<p>Some of these sections match our application tasks based on names and labels. These are based on fields 
+you use when you create your tasks.</p>
+<div class="codehilite"><pre><span></span><span class="n">task</span><span class="p">&lt;</span><span class="n">MyTaskInput</span><span class="p">&gt;(</span><span class="s">&quot;my-task-name&quot;</span><span class="p">,</span> <span class="s">&quot;my-task-label&quot;</span><span class="p">,</span> <span class="s">&quot;my-other-task-label&quot;</span><span class="p">)</span> <span class="p">{</span> 
+    <span class="c1">// ... </span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Note that these fields must be hyphenated-snake-case but names. Since labels are free-form string fields, if you use a 
+string like &ldquo;My Task.Name!&rdquo;, it will automatically be converted to deserialize from &ldquo;my-task-name&rdquo;. It is recommended 
+you make all task names and labels hyphenated-snake-case to match configurations.</p>
+<p>Task configurations will be merged for each task before deserializing, so you could set one setting in <code>task.default</code>, 
+one in <code>task.my-task-name</code>, and one in <code>task.my-task-label</code> they could all be passed into a task. </p>
+<h3 id="common-task-configurations">Common Task Configurations<a class="headerlink" href="#common-task-configurations" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>description</th>
+<th>required</th>
+<th>default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>parallelism</td>
+<td>The maximum number of <em>this</em> task that can run concurrently. Set to an integer or &ldquo;unlimited.&rdquo;</td>
+<td>no</td>
+<td>unlimited</td>
+</tr>
+<tr>
+<td>grouping</td>
+<td>The number of task runs that are submitted per job for this task. Not applicable to Local Docker Execution.</td>
+<td>no</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="codehilite"><pre><span></span>task.my-task-name {
+    parallelism = 10
+    grouping = 5
+}
+</pre></div>
+
+<h3 id="google-cloud-execution-specific_1">Google Cloud Execution Specific<a class="headerlink" href="#google-cloud-execution-specific_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>description</th>
+<th>required</th>
+<th>default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>google.machine-type</td>
+<td>A native google compute engine machine type (See <a href="https://cloud.google.com/compute/docs/machine-types">here</a> for complete list). If this is set, it&rsquo;s always used regardless of other configs.</td>
+<td>no</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>google.machine-class</td>
+<td>A class of machine. Useful for when you don&rsquo;t know the needed resources until runtime. Options are: standard, highmem, highcpu, ultramem, custom</td>
+<td>no</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>google.cpus</td>
+<td>Number of CPUs. Can be used to override the runtime value.</td>
+<td>no</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>google.mem</td>
+<td>Amount of memory. Can be used to override the runtime value.</td>
+<td>no</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>google.mem-per-cpu</td>
+<td>An optional memory per cpu ratio used when you don&rsquo;t have both fields available and don&rsquo;t want to use a machine class.</td>
+<td>no</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>google.disk-size</td>
+<td>Disk capacity. Can be used to override the runtime value.</td>
+<td>no</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>google.disk-type</td>
+<td>Type of disk, HDD vs SSD.</td>
+<td>no</td>
+<td>hdd</td>
+</tr>
+</tbody>
+</table>
+<p>*Please note most of these settings are mutually exclusive. For example, a machine-class is not needed if you have 
+a machine-type set.</p>
+<p><strong>Example</strong></p>
+<div class="codehilite"><pre><span></span>task.my-task-name {
+    google {
+        machine-type = n1-standard-2
+        machine-class = standard
+        cpus = 2
+        mem = 8GB
+        mem-per-cpu = 2GB
+        disk-size = 1TB
+        disk-type = ssd
+    }
+}
+</pre></div>
+
+<h3 id="slurm-execution-specific_1">Slurm Execution Specific<a class="headerlink" href="#slurm-execution-specific_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>description</th>
+<th>required</th>
+<th>default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>slurm.cpus</td>
+<td>Number of cpus. Can be used to override the runtime value.</td>
+<td>no</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>slurm.mem</td>
+<td>Amount of memory. Can be used to override the runtime value.</td>
+<td>no</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>slurm.time</td>
+<td>Time limit on the run time for the job in minutes.</td>
+<td>no</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>slurm.partition</td>
+<td>SBatch partition to use.</td>
+<td>no</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td>slurm.sbatch-args</td>
+<td>Additional sbatch args used with our sbatch commands to initiate jobs. See <a href="https://slurm.schedmd.com/sbatch.html">reference</a>.</td>
+<td>no</td>
+<td><em>none</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="codehilite"><pre><span></span>task.my-task-name {
+    slurm {
+        cpus = 4
+        mem = 16GB
+        time = 120
+        partition = my-partition
+        sbatch-args = &quot;--nodes=2 --overcommit -priority=TOP&quot;
+    }
+}
+</pre></div>
+
+<h2 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h2>
+<p>As mentioned in the workflows section, workflows and tasks have parameters customized in your application that get 
+injected from configuration files. These are registered in your application as classes.</p>
+<p>The process of turning JSON (and HOCON) into objects of these classes is called deserialization. We do this 
+using the <a href="https://github.com/FasterXML/jackson">Jackson</a> library.</p>
+<h3 id="workflow-parameters">Workflow Parameters<a class="headerlink" href="#workflow-parameters" title="Permanent link">&para;</a></h3>
+<p>If your workflow contains the following</p>
+<div class="codehilite"><pre><span></span><span class="k">data</span> <span class="k">class</span> <span class="nc">SampleParams</span><span class="p">(</span>
+    <span class="k">val</span> <span class="py">message</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span>
+    <span class="c1">// The ? means this is optional and will be null by default</span>
+    <span class="k">val</span> <span class="py">flag</span><span class="p">:</span> <span class="n">Boolean</span><span class="p">?,</span>
+    <span class="c1">// This has a default value of 10, so we don&#39;t actually need to set it in our config</span>
+    <span class="k">val</span> <span class="py">rangeMax</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">10</span>
+<span class="p">)</span>
+
+<span class="k">val</span> <span class="py">sampleWorkflow</span> <span class="p">=</span> <span class="n">workflow</span><span class="p">(</span><span class="s">&quot;sample-workflow&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">val</span> <span class="py">params</span> <span class="p">=</span> <span class="n">params</span><span class="p">&lt;</span><span class="n">SampleParams</span><span class="p">&gt;()</span>
+    <span class="c1">//...</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>You will be able to inject the following as parameters</p>
+<div class="codehilite"><pre><span></span>params {
+    message = &quot;Hello World!&quot;
+    range-max = 5
+}
+</pre></div>
+
+<p>Notice that the <code>rangeMax</code> data class field was automatically converted to a hyphenated-snake-case version <code>range-max</code>. 
+This will happen for all params.</p>
+<h3 id="task-parameters">Task Parameters<a class="headerlink" href="#task-parameters" title="Permanent link">&para;</a></h3>
+<p>Just like for workflows, we have custom parameters that can be injected into each task.</p>
+<div class="codehilite"><pre><span></span><span class="k">data</span> <span class="k">class</span> <span class="nc">MyTaskParams</span><span class="p">(</span><span class="k">val</span> <span class="py">someSetting</span><span class="p">:</span> <span class="n">Boolean</span><span class="p">)</span>
+
+<span class="n">task</span><span class="p">&lt;</span><span class="n">MyTaskInput</span><span class="p">&gt;(</span><span class="s">&quot;my-task-name&quot;</span><span class="p">,</span> <span class="s">&quot;my-task-label&quot;</span><span class="p">,</span> <span class="s">&quot;my-other-task-label&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">val</span> <span class="py">taskParams</span> <span class="p">=</span> <span class="n">taskParams</span><span class="p">&lt;</span><span class="n">MyTaskParams</span><span class="p">&gt;</span>
+    <span class="c1">//...</span>
+<span class="p">}</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span>task.my-task-name {
+    params {
+        some-setting = true
+    }
+}
+</pre></div>
+
+<h3 id="ambiguity-in-deserialization">Ambiguity in Deserialization<a class="headerlink" href="#ambiguity-in-deserialization" title="Permanent link">&para;</a></h3>
+<p>For abstract classes and interfaces, we have special considerations in deserialization. Consider the following:</p>
+<div class="codehilite"><pre><span></span><span class="c1">// In model/Pet.kt</span>
+<span class="k">interface</span> <span class="nc">Pet</span>
+<span class="k">data</span> <span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="k">val</span> <span class="py">barkVolume</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">:</span> <span class="n">Pet</span>
+<span class="k">data</span> <span class="k">class</span> <span class="nc">Cat</span><span class="p">(</span><span class="k">val</span> <span class="py">meowVolume</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">:</span> <span class="n">Pet</span>
+
+<span class="c1">// In App.kt</span>
+<span class="k">data</span> <span class="k">class</span> <span class="nc">SampleParams</span><span class="p">(</span><span class="k">val</span> <span class="py">pet</span><span class="p">:</span> <span class="n">Pet</span><span class="p">)</span>
+
+<span class="k">val</span> <span class="py">sampleWorkflow</span> <span class="p">=</span> <span class="n">workflow</span><span class="p">(</span><span class="s">&quot;sample-workflow&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">val</span> <span class="py">params</span> <span class="p">=</span> <span class="n">params</span><span class="p">&lt;</span><span class="n">SampleParams</span><span class="p">&gt;()</span>
+    <span class="c1">//...</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>Since the <code>pet</code> parameter in HOCON is a type that is not concrete, Krews allows you to provide the concrete type.</p>
+<div class="codehilite"><pre><span></span>params {
+    pet {
+        -type = &quot;model.Dog&quot;
+        bark-volume = 50
+    }
+}
+</pre></div>
+
+<h3 id="input-files-as-parameters">Input Files as Parameters<a class="headerlink" href="#input-files-as-parameters" title="Permanent link">&para;</a></h3>
+<p>One of the most common uses of params is to provide files for each run. These files will be provided as InputFiles. 
+The InputFile class is abstract, so when we pass them in we need to pass in implementations like GSInputFile for 
+files in Google Cloud Storage and LocalInputFile for files on your local file system.</p>
+<p>Here&rsquo;s an example params for a list of InputFiles</p>
+<div class="codehilite"><pre><span></span><span class="k">data</span> <span class="k">class</span> <span class="nc">SampleParams</span><span class="p">(</span><span class="k">val</span> <span class="py">myFiles</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">InputFile</span><span class="p">&gt;)</span>
+
+<span class="k">val</span> <span class="py">sampleWorkflow</span> <span class="p">=</span> <span class="n">workflow</span><span class="p">(</span><span class="s">&quot;sample-workflow&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">val</span> <span class="py">params</span> <span class="p">=</span> <span class="n">params</span><span class="p">&lt;</span><span class="n">SampleParams</span><span class="p">&gt;()</span>
+    <span class="c1">//...</span>
+<span class="p">}</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span>params {
+    my-files = [
+        {
+            -type = &quot;krews.file.GSInputFile&quot;
+            bucket = &quot;my-bucket&quot;
+            object-path = &quot;some/object/path/file1.tar&quot;
+            path = &quot;path/file1.tar&quot;
+        },
+        {
+            -type = &quot;krews.file.GSInputFile&quot;
+            bucket = &quot;my-bucket&quot;
+            object-path = &quot;some/object/path/file2.tar&quot;
+            path = &quot;path/file2.tar&quot;
+        }
+    ]
+}
+</pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 Weng Lab
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.c648116f.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>
