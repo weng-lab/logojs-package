@@ -14,7 +14,7 @@ If you need negative letter heights, use the `LogoWithNegatives` component inste
 
 `ProteinLogo` takes the following properties:
 
-* **pwm**: a matrix containing nucleotide frequencies at each position. Each
+* **pwm**: a matrix containing amino acid frequencies at each position. Each
 row is a position in the logo, and the columns are alphabetical.
 * **mode**: determines how letter heights are computed; may be either
 `"INFORMATION_CONTENT"` (default) or `"FREQUENCY"`.
