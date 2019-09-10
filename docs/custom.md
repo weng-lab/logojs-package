@@ -73,7 +73,7 @@ rather than upside-down, which is the default.
 The following complete example renders a DNA logo with some negative letters:
 
 ```js
-import { LogoWithNegatives, DNAGlyphmap } from 'logosj-react';
+import { LogoWithNegatives, DNAAlphabet } from 'logosj-react';
 const DNA_PWM = [
   [0,0,0,0], [-0.5,0.5,-0.5,0.5], [0.5,-2,-2,3],
   [2.5,-2,0.5,-0.5], [4.5,-1,-2,-2.5], [-1,-1,0,2],
@@ -82,7 +82,7 @@ const DNA_PWM = [
 ];
 
 export const DNALogo = props => (
-    <LogoWithNegatives pwm={DNA_PWM} glyphmap={DNAGlyphmap} negativealpha={101} />
+    <LogoWithNegatives pwm={DNA_PWM} alphabet={DNAAlphabet} negativealpha={101} />
 );
 ```
 
@@ -134,7 +134,7 @@ const ANNOTATED_PWM = [
   [0,2,0,0,0,0,0,0]
   [0,0,0,2,0,0,0,0]
 ];
-const ANNOTATED_GLYPHMAP = [
+const ANNOTATED_ALPHABET = [
   {"regex":"A","color":"red"}
   {"regex":"C","color":"blue"}
   {"regex":"G","color":"orange"}
@@ -148,7 +148,7 @@ const ANNOTATED_GLYPHMAP = [
 export const AnnotatedLogo = props => (
   <svg viewBox="0 0 1530 330">
     <g transform="translate(20,-40)" id="logo">
-      <RawLogo pwm={ANNOTATED_PWM} glyphmap={ANNOTATED_GLYPHMAP} glyphWidth={100} stackHeight={300} />
+      <RawLogo pwm={ANNOTATED_PWM} alphabet={ANNOTATED_ALPHABET} glyphWidth={100} stackHeight={300} />
     </g>
   </svg>
 );
@@ -169,7 +169,7 @@ a reference sequence with a SNP and the other a motif interrupted by the SNP. Th
 and the logos labeled with text labels. For more examples, see our companion site, https://logosj.wenglab.org/.
 
 ```js
-import { RawLogo, DNAGlyphmap } from 'logosj-react';
+import { RawLogo, DNAAlphabet } from 'logosj-react';
 const SNP_PWM = [
   [0.05,0.05,0,0]
   [0,0,0.3,0.7]
@@ -195,10 +195,10 @@ export const SNPLogo = props => (
   <svg viewBox="0 0 1100 420">
     <rect x={600} width={100} height={420} fill="#bbbbbb" />
     <g transform="translate(300,0)">
-      <RawLogo glyphmap={DNAGlyphmap} pwm={SNP_PWM} glyphWidth={100} stackHeight={200} />
+      <RawLogo alphabet={DNAAlphabet} pwm={SNP_PWM} glyphWidth={100} stackHeight={200} />
     </g>
     <g transform="translate(300, 220)">
-      <RawLogo glyphmap={DNAGlyphmap} pwm={REFERENCE_PWM} glyphWidth={100} stackHeight={200} />
+      <RawLogo alphabet={DNAAlphabet} pwm={REFERENCE_PWM} glyphWidth={100} stackHeight={200} />
     </g>
     <text y={150} x={260} textAnchor="end" style={{ fontSize: "50px" }}>PWM</text>
     <text y={350} x={260} textAnchor="end" style={{ fontSize: "50px" }}>reference</text>
