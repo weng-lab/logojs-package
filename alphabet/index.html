@@ -416,7 +416,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../custom#alphabets" title="Custom alphabets" class="md-nav__link">
+    <a href="../custom/#custom-alphabets" title="Custom alphabets" class="md-nav__link">
       Custom alphabets
     </a>
   </li>
@@ -428,7 +428,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../custom#negatives" title="Negative letters" class="md-nav__link">
+    <a href="../custom/#negative-letters" title="Negative letters" class="md-nav__link">
       Negative letters
     </a>
   </li>
@@ -440,7 +440,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../custom#rawlogo" title="Logos without axes" class="md-nav__link">
+    <a href="../custom/#logos-without-axes" title="Logos without axes" class="md-nav__link">
       Logos without axes
     </a>
   </li>
@@ -452,7 +452,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../custom#advanced" title="Advanced annotations" class="md-nav__link">
+    <a href="../custom/#custom-annotations" title="Advanced annotations" class="md-nav__link">
       Advanced annotations
     </a>
   </li>
@@ -546,12 +546,14 @@ letter, a single value may be used in place of an array.</li>
 <li><strong>component</strong> an array of components used to render the glyphs in this symbol. Should be the
 same length as <strong>color</strong>. If your alphabet uses custom glyphs, import your custom glyph
 components and use them here. If the symbol is only one letter, a single component may be used
-in place of an array. LogosJ can populate this field for you using the <code>loadGlyphComponents</code>
+in place of an array. If you are only using letters and digits which are built in to LogosJ, you
+can use the <strong>regex</strong> field instead, and LogosJ will populate this field for you using the
+<code>loadGlyphComponents</code> function.
 function.</li>
 <li><strong>regex</strong> a string representing the sequence of letters in this symbol. This field is not
 required, but may be used as a shorthand rather than explicitly including components in the
-<strong>component</strong> field. LogosJ will then populate the <strong>components</strong> field for you if you call
-the <code>loadGlyphComponents</code> function.</li>
+<strong>component</strong> field. LogosJ will populate the <strong>components</strong> field for you automatically with
+matching built-in letters and digits if you leave it empty.</li>
 </ul>
 <h2 id="built-in-alphabets">Built-in alphabets<a class="headerlink" href="#built-in-alphabets" title="Permanent link">&para;</a></h2>
 <p>LogosJ provides built-in alphabets for common use cases for convenience. If you need to render
