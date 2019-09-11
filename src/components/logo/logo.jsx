@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { logLikelihood, sortedIndices, FREQUENCY } from '../../common/utils';
+import { logLikelihood, sortedIndices, loadGlyphComponents, FREQUENCY } from '../../common/utils';
 import GlyphStack from './glyphstack';
 import XAxis from './xaxis';
 import YAxis from './yaxis';
@@ -26,6 +26,12 @@ const _position = (width, height) => (lv, transform, key, alphabet) => {
  */
 export const RawLogo = ({ pwm, glyphWidth, stackHeight, alphabet }) => {
     let gposition = _position(glyphWidth, stackHeight);
+    for (const symbol in alphabet) {
+        if (!symbol.component) {
+            alphabet = loadGlyphComponents(alphabet);
+            break;
+        }
+    }
     return pwm.map((lv, i) => (
 	gposition(lv, 'translate(' + glyphWidth * i + ',0)', i, alphabet)
     ));
