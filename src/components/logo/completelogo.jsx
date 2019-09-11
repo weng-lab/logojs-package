@@ -63,6 +63,7 @@ export const CompleteAlphabet = [
     { component: X, regex: "x", color: 'black' },
     { component: y, regex: "y", color: 'palevioletred' },
     { component: Z, regex: "z", color: 'peru' },
+    { component: O, regex: "0", color: 'red' },
     { component: N1, regex: "1", color: 'red' },
     { component: N2, regex: "2", color: "green" },
     { component: N3, regex: "3", color: "blue" },
