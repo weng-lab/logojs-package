@@ -37,7 +37,7 @@ const LogoWithNegatives = ({ pwm, height, width, alphabet, scale, startpos, nega
     let alphabetSize = pwm[0].length;
 
     /* misc options */
-    startpos = (startpos !== null ? startpos : 1);
+    startpos = (startpos !== null && startpos !== undefined ? startpos : 1);
     negativealpha = (negativealpha < 0 ? 0 : negativealpha);
     negativealpha = negativealpha > 255 ? 255 : negativealpha;
 
