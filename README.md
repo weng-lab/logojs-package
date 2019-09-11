@@ -49,7 +49,7 @@ const CTCF_PWM = [
 ];
 
 export const CTCFLogo = props => (
-    <DNALogo pwm={CTCF_PWM} mode="FREQUENCY" />
+    <DNALogo pwm={CTCF_PWM} />
 );
 ```
 
@@ -71,7 +71,7 @@ If you don't use React, the following code embeds the DNA logo in a `div` elemen
         [0.40, 0.01, 0.55, 0.01], [0.09, 0.53, 0.33, 0.04], [0.12, 0.35, 0.08, 0.43], 
         [0.44, 0.19, 0.29, 0.06]
       ];
-      logosj.embedDNALogo(document.getElementById("logo"), { pwm: CTCF_PWM, mode: "FREQUENCY" });
+      logosj.embedDNALogo(document.getElementById("logo"), { pwm: CTCF_PWM });
     </script>
   </body>
 </html>
