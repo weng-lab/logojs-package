@@ -44,7 +44,7 @@ nav:
       - 'Glyphs and custom symbols': glyph.md
       - 'Built-in and custom alphabets': alphabet.md
   - 'Custom logos':
-      - 'Custom alphabets': custom#alphabets
-      - 'Negative letters': custom#negatives
-      - 'Logos without axes': custom#rawlogo
-      - 'Advanced annotations': custom#advanced
+      - 'Custom alphabets': custom/#custom-alphabets
+      - 'Negative letters': custom/#negative-letters
+      - 'Logos without axes': custom/#logos-without-axes
+      - 'Advanced annotations': custom/#custom-annotations

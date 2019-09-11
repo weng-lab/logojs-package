@@ -18,12 +18,14 @@ letter, a single value may be used in place of an array.
 * **component** an array of components used to render the glyphs in this symbol. Should be the
 same length as **color**. If your alphabet uses custom glyphs, import your custom glyph
 components and use them here. If the symbol is only one letter, a single component may be used
-in place of an array. LogosJ can populate this field for you using the `loadGlyphComponents`
+in place of an array. If you are only using letters and digits which are built in to LogosJ, you
+can use the **regex** field instead, and LogosJ will populate this field for you using the
+`loadGlyphComponents` function.
 function.
 * **regex** a string representing the sequence of letters in this symbol. This field is not
 required, but may be used as a shorthand rather than explicitly including components in the
-**component** field. LogosJ will then populate the **components** field for you if you call
-the `loadGlyphComponents` function.
+**component** field. LogosJ will populate the **components** field for you automatically with
+matching built-in letters and digits if you leave it empty.
 
 ## Built-in alphabets
 
