@@ -11,8 +11,8 @@ import { INFORMATION_CONTENT, FREQUENCY } from './common/utils';
 
 import { A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P,
 	 Q, R, S, T, U, V, W, X, Y, Z, a, b, d, e, f, g, h,
-	 i, j, k, l, m, n, p, q, r, t, u, y } from 'components/glyphs';
-import { N1, N2, N3, N4, N5, N6, N7, N8, N9 } from 'components/glyphs';
+	 i, j, k, l, m, n, p, q, r, t, u, y } from './components/glyphs';
+import { N1, N2, N3, N4, N5, N6, N7, N8, N9 } from './components/glyphs';
 
 const LC_a = a, LC_b = b, LC_c = C, LC_d = d, LC_e = e, LC_f = f, LC_g = g, LC_h = h,
       LC_i = i, LC_j = j, LC_k = k, LC_l = l, LC_m = m, LC_n = n, LC_o = O, LC_p = p,
