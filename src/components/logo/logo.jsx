@@ -37,6 +37,13 @@ export const RawLogo = ({ pwm, glyphWidth, stackHeight, alphabet }) => {
     ));
 };
 
+const maxLabelLength = (startpos, length) => {
+    let max = ("" + startpos).length;
+    for (let i = startpos + 1; i < startpos + length; ++i)
+        if (("" + i).length > max) max = ("" + i).length;
+    return max;
+};
+
 /**
  * Renders a logo with x- and y-axes.
  *
@@ -62,15 +69,15 @@ const Logo = ({ pwm, mode, height, width, alphabet, glyphwidth, scale, startpos,
 		       : pwm.map(x => x.map(v => v * Math.log2(alphabetSize))) );
     
     /* misc options */
-    startpos = startpos || 1;
+    startpos = !isNaN(parseFloat(startpos)) && isFinite(startpos) ? startpos : 1;
 
     /* compute scaling factors */
     let maxHeight = 100.0 * Math.log2(alphabetSize);
     let glyphWidth = maxHeight / 6.0 * (glyphwidth || 1.0);
     
-    /* compute viewBox */
+    /* compute viewBox and padding for the x-axis labels */
     let viewBoxW = likelihood.length * glyphWidth + 80;
-    let viewBoxH = maxHeight + 20 * (Math.log10(Math.max(Math.abs(startpos), startpos + pwm.length)) + 1);
+    let viewBoxH = maxHeight + 18 * (maxLabelLength(startpos, likelihood.length) + 1);
     if (scale)
 	viewBoxW > viewBoxH ? width = scale : height = scale;
 
