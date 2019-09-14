@@ -3,7 +3,7 @@ import { renderToStaticMarkup } from 'react-dom/server';
 
 import DNALogo from '../components/logo/dnalogo';
 import RNALogo from '../components/logo/rnalogo';
-import AALogo from '../components/logo/aalogo';
+import ProteinLogo from '../components/logo/proteinlogo';
 import LogoWithNegatives from '../components/logo/logowithnegatives';
 import Logo, { RawLogo } from '../components/logo/logo';
 
@@ -34,7 +34,7 @@ export const embedRNALogo = (div, props) => {
  * @param props object containing the logo's properties.
  */
 export const embedProteinLogo = (div, props) => {
-    div.innerHTML = renderToStaticMarkup(<AALogo {...props} />);
+    div.innerHTML = renderToStaticMarkup(<ProteinLogo {...props} />);
 };
 
 /**
