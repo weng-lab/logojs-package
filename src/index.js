@@ -5,7 +5,7 @@ import DNALogo, { DNAAlphabet } from './components/logo/dnalogo';
 import RNALogo, { RNAAlphabet } from './components/logo/rnalogo';
 import CompleteLogo, { CompleteAlphabet } from './components/logo/completelogo';
 import { xrange, disymbolAlphabet, loadGlyphComponents } from './common/utils';
-import { embedDNALogo, embedRNALogo, embedProteinLogo, embedLogo, embedRawLogo } from './js/embed';
+import { embedDNALogo, embedRNALogo, embedProteinLogo, embedLogo, embedLogoWithNegatives, embedRawLogo } from './js/embed';
 import { INFORMATION_CONTENT, FREQUENCY } from './common/utils';
 
 import { A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P,
@@ -21,7 +21,7 @@ const LC_a = a, LC_b = b, LC_c = C, LC_d = d, LC_e = e, LC_f = f, LC_g = g, LC_h
 export { Logo, ProteinLogo, DNALogo, RNALogo, ProteinAlphabet, DNAAlphabet, RNAAlphabet,
 	 CompleteLogo, CompleteAlphabet, INFORMATION_CONTENT, FREQUENCY, xrange,
 	 LogoWithNegatives, embedDNALogo, disymbolAlphabet, RawLogo, embedRNALogo,
-	 embedProteinLogo, embedLogo, embedRawLogo, loadGlyphComponents };
+	 embedLogoWithNegatives, embedProteinLogo, embedLogo, embedRawLogo, loadGlyphComponents };
 
 export { A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P,
 	 Q, R, S, T, U, V, W, X, Y, Z, LC_a, LC_b, LC_c, LC_d, LC_e, LC_f, LC_g, LC_h,
