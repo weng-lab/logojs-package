@@ -1,6 +1,6 @@
 {
   "name": "logosj-react",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "React Components for rendering sequence logos",
   "main": "index.js",
   "author": "Henry Pratt",
