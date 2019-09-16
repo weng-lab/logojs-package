@@ -1,0 +1,84 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: logosj-package-deployment
+  labels:
+    app: logosj-package
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: logosj-package
+  template:
+    metadata:
+      labels:
+        app: logosj-package
+    spec:
+      containers:
+      - name: logosj-package
+        image: gcr.io/devenv-215523/logosj-package
+        env:
+        - name: ENVIRONMENT
+          value: staging
+        ports:
+        - containerPort: 80
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 5
+        resources:
+          requests:
+            cpu: 100m
+            memory: 256Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: logosj-package-service
+  labels:
+    app: logosj-package
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: logosj-package
+---
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: staging-logosj-package-tls
+  namespace: default
+spec:
+  secretName: logosj-package-tls
+  issuerRef:
+    name: letsencrypt
+    kind: ClusterIssuer
+  commonName: bundle.logosj.wenglab.org
+  dnsNames:
+  - bundle.logosj.wenglab.org
+  acme:
+    config:
+    - http01:
+        ingress: logosj-package-ingress
+      domains:
+      - bundle.logosj.wenglab.org
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: logosj-package-ingress
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: "logosj-package-external-ip"
+spec:
+  backend:
+    serviceName: logosj-package-service
+    servicePort: 80
+  tls:
+  - secretName: logosj-package-tls
+    hosts:
+    - bundle.logosj.wenglab.org

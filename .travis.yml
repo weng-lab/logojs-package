@@ -4,12 +4,21 @@ language: node_js
 node_js: 10.16
 script:
 - scripts/build.sh
+- scripts/build-image.sh $TRAVIS_TAG
 deploy:
-  provider: npm
-  email: hpratt111@live.com
-  api_key:
-    secure: xVseQRVvIKs/+TZnq6E4+3j91AIZjxPqyStrF1wO+BzdQ6AvYpe5Pqwf4RDyfcymRXZnNov6vr8tniVW4HjYnnK368gSAFHLdnXjGDrY5gDKA3hsOivPuMPwcHn/gy/7RjySCv71NCTw1jXkrd4N9Jyf4BAXlMd2JZ7DdOR0k2olp+1XINthfJtoy/CLw+jsC5+hzeDhtkQ5+0/lYAoj8LHvtELs6KYZSJaZ4gsarUGlcZHw/9WyYjhIe3cLJyH/ek810wyRJZvxxRrQnpUB/PLmOd6pReCmFOquURgpCmeJUjIjA0MSBaakgWFJXkDI5o5fJuJBPZKPMwaA3HGb9pHbUiRauf8jyz9OldAjZx14oDijOmDuv7AeDzRpGjtizM5mtv1v1kSMnPVYj9+HseKgS9RWk95U04KG5n/jb1yiBF8882n/JDNgTBuWekNpd3NxmjbXtNQ0WjhK2UEm337ftgTjubd8vLVU7TCaYQquyrRb+qHVhUJ+Tzb7cKPENm2EIppxHLZn5UEmeLA3T2r3qK68DoLiS260n/omy/MyGWttSY7qVQ2ksMhv11YfAfKYHFsSLzWxCPJGkr/PCDmeES3D85nJ31cGZMD61Syuv3iZ1oRz0hx0fzRY9pB/pb32hX9hWiTYkAeEu1GNWrwwNSj6BSY9UlbBjtV9rzg=
-  on:
-    tags: true
-    repo: weng-lab/logosj-package
-  skip_cleanup: true
+  - provider: npm
+    email: hpratt111@live.com
+    api_key:
+      secure: xVseQRVvIKs/+TZnq6E4+3j91AIZjxPqyStrF1wO+BzdQ6AvYpe5Pqwf4RDyfcymRXZnNov6vr8tniVW4HjYnnK368gSAFHLdnXjGDrY5gDKA3hsOivPuMPwcHn/gy/7RjySCv71NCTw1jXkrd4N9Jyf4BAXlMd2JZ7DdOR0k2olp+1XINthfJtoy/CLw+jsC5+hzeDhtkQ5+0/lYAoj8LHvtELs6KYZSJaZ4gsarUGlcZHw/9WyYjhIe3cLJyH/ek810wyRJZvxxRrQnpUB/PLmOd6pReCmFOquURgpCmeJUjIjA0MSBaakgWFJXkDI5o5fJuJBPZKPMwaA3HGb9pHbUiRauf8jyz9OldAjZx14oDijOmDuv7AeDzRpGjtizM5mtv1v1kSMnPVYj9+HseKgS9RWk95U04KG5n/jb1yiBF8882n/JDNgTBuWekNpd3NxmjbXtNQ0WjhK2UEm337ftgTjubd8vLVU7TCaYQquyrRb+qHVhUJ+Tzb7cKPENm2EIppxHLZn5UEmeLA3T2r3qK68DoLiS260n/omy/MyGWttSY7qVQ2ksMhv11YfAfKYHFsSLzWxCPJGkr/PCDmeES3D85nJ31cGZMD61Syuv3iZ1oRz0hx0fzRY9pB/pb32hX9hWiTYkAeEu1GNWrwwNSj6BSY9UlbBjtV9rzg=
+    on:
+      tags: true
+      repo: weng-lab/logosj-package
+    skip_cleanup: true
+  - provider: script
+    script: scripts/push-image.sh $TRAVIS_TAG
+    on:
+      tags: true
+  - provider: script
+    script: scripts/deploy.sh staging $TRAVIS_TAG
+    on:
+      tags: true
