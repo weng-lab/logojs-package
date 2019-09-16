@@ -166,7 +166,7 @@ arguments:
 When a `RawLogo` is rendered within an `svg`, a variety of custom annotations can be layered on as desired
 using custom SVG components. The following example renders two logos on top of each other, one representing
 a reference sequence with a SNP and the other a motif interrupted by the SNP. The SNP is highlighted in gray
-and the logos labeled with text labels. For more examples, see our companion site, https://logosj.wenglab.org/.
+and the logos labeled with text labels. For more examples, see our companion site, http://logosj.wenglab.org/.
 
 ```js
 import { RawLogo, DNAAlphabet } from 'logosj-react';
