@@ -53,7 +53,7 @@ If you don't use React, the following code embeds the DNA logo in a `div` elemen
 <!doctype html>
 <html>
   <body>
-    <script src="http://package.logosj.wenglab.org/bundle.js" type="text/javascript"></script>
+    <script src="http://bundle.logosj.wenglab.org/bundle.js" type="text/javascript"></script>
     <div id="logo" style="width:500px"></div>
     <script type="text/javascript">
       const CTCF_PWM = [
