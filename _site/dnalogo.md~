@@ -54,7 +54,7 @@ Or without React:
 <!doctype html>
 <html>
   <body>
-    <script src="https://package.logosj.wenglab.org/bundle.js" type="text/javascript"></script>
+    <script src="https://bundle.logosj.wenglab.org/bundle.js" type="text/javascript"></script>
     <div id="logo" style="width:500px"></div>
     <script type="text/javascript">
       const RNA_PWM = [
