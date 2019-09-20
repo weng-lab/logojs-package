@@ -23,18 +23,19 @@ export const loadGlyphComponents = alphabet => (
     alphabet.map( glyph => {
 	if (glyph.regex.length === 1)
 	    return Object.assign({}, glyph, { component: regexMap[glyph.regex].component });
-	let r = Object.assign({}, glyph, { component: [], color: glyph.color.length ? glyph.color : [] });
+        const color = (glyph.color && glyph.color.map && glyph.color.length >= 1 ? glyph.color[0] : glyph.color) || "#000000";
+	let r = Object.assign({}, glyph, { component: [], color: glyph.color && glyph.color.map && glyph.color.length === glyph.regex.length ? glyph.color : [] });
 	for (let i = 0; i < r.regex.length; ++i) {
 	    r.component.push(regexMap[r.regex[i]].component);
-	    if (r.color.length === i) r.color.push(glyph.color);
+	    if (r.color.length === i) r.color.push(color);
 	}
 	return r;
     })
 );
 
-export const logLikelihood = alphabetSize => r => {
+export const logLikelihood = backgroundFrequencies => r => {
     let sum = 0.0;
-    r.map( x => ( sum += x === 0 ? 0 : x * Math.log2(x * alphabetSize) ) );
+    r.map( (x, i) => ( sum += x === 0 ? 0 : x * Math.log2(x / (backgroundFrequencies[i] || 0.01)) ) );
     return r.map( x => x * sum );
 };
 

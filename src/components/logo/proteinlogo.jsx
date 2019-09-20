@@ -40,7 +40,9 @@ export const ProteinAlphabet = [
  * to chemical properties (acidic, basic, and non-polar are red, blue, and black
  * shades, respectively).
  *
- * @prop pwm matrix containing values; rows are positions, columns are amino acids, alphabetically.
+ * @prop ppm position probability matrix. Rows are positions and should sum to 1.0; columns are nucleotides,
+ *           alphabetically. If this is provided, it takes precedence over PFM in computing symbol heights.
+ * @prop pfm position frequency matrix. Rows are positions and columns are nucleotides, alphabetically.
  * @prop mode the mode to use when computing letter heights; either information content or frequency.
  * @prop startpos number to assign the first position in the logo; defaults to 1.
  */

@@ -75,8 +75,8 @@ export const CompleteAlphabet = [
     { component: N9, regex: "9", color: "gold" }
 ];
 
-const CompleteLogo = ({ pwm, scale, startpos, mode }) => (
-    <Logo pwm={pwm} alphabet={CompleteAlphabet} scale={scale}
-      mode={mode} startpos={startpos} />
+const CompleteLogo = ({ ppm, pfm, scale, startpos, mode }) => (
+    <Logo ppm={ppm} alphabet={CompleteAlphabet} scale={scale}
+          mode={mode} startpos={startpos} pfm={pfm} />
 );
 export default CompleteLogo;

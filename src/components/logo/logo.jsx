@@ -19,12 +19,12 @@ const _position = (width, height) => (lv, transform, key, alphabet) => {
 /**
  * Renders a logo without axes.
  *
- * @prop pwm matrix containing symbol values.
+ * @prop values matrix containing symbol values.
  * @prop glyphWidth the width of a single glyph, relative to the containing SVG.
- * @prop stackHeight the height of each position, relative to the containing SVG.
+ * @prop stackHeight the height of each position, relative to the containing SVG; corresponds to a matrix value of 1.
  * @prop alphabet symbol list mapping columns to colored glyphs.
  */
-export const RawLogo = ({ pwm, glyphWidth, stackHeight, alphabet }) => {
+export const RawLogo = ({ values, glyphWidth, stackHeight, alphabet }) => {
     let gposition = _position(glyphWidth, stackHeight);
     for (const symbol in alphabet) {
         if (!symbol.component) {
@@ -32,7 +32,7 @@ export const RawLogo = ({ pwm, glyphWidth, stackHeight, alphabet }) => {
             break;
         }
     }
-    return pwm.map((lv, i) => (
+    return values.map((lv, i) => (
 	gposition(lv, 'translate(' + glyphWidth * i + ',0)', i, alphabet)
     ));
 };
@@ -47,7 +47,8 @@ const maxLabelLength = (startpos, length) => {
 /**
  * Renders a logo with x- and y-axes.
  *
- * @prop pwm matrix containing the symbol heights.
+ * @prop ppm position probability matrix. Rows are positions and should sum to 1; columns are symbols. If this is provided, it takes precedence over PFM in computing symbol heights.
+ * @prop pfm position frequency matrix. Rows are positions and columns are nucleotides, alphabetically.
  * @prop mode determines how symbol heights are computed; either FREQUENCY or INFORMATION_CONTENT.
  * @prop height the height of the logo relative to the containing SVG.
  * @prop width the width of the logo relative to the containing SVG.
@@ -57,16 +58,21 @@ const maxLabelLength = (startpos, length) => {
  * @prop showGridLines if set, shows vertical grid lines.
  * @prop inverted if set, renders negative letters upright rather than upside down.
  */
-const Logo = ({ pwm, mode, height, width, alphabet, glyphwidth, scale, startpos, showGridLines }) => {
+const Logo = ({ ppm, pfm, mode, height, width, alphabet, glyphwidth, scale, startpos, showGridLines, backgroundFrequencies }) => {
 
     /* compute likelihood; need at least one entry to continue */
-    if (pwm.length === 0 || pwm[0].length === 0) {
+    if (!ppm && pfm && pfm.map)
+        ppm = pfm.map( column => {
+            const sum = column.reduce( (a, c) => a + c );
+            return column.map( x => x / sum );
+        });
+    if (ppm.length === 0 || ppm[0].length === 0)
 	return <div />;
-    }
-    let alphabetSize = pwm[0].length;
+    let alphabetSize = ppm[0].length;
+    if (!backgroundFrequencies) backgroundFrequencies = ppm.map( _ => 1.0 / alphabetSize );
     let likelihood = ( mode !== FREQUENCY
-		       ? pwm.map(logLikelihood(alphabet.length))
-		       : pwm.map(x => x.map(v => v * Math.log2(alphabetSize))) );
+		       ? ppm.map(logLikelihood(backgroundFrequencies))
+		       : ppm.map(x => x.map(v => v * Math.log2(alphabetSize))) );
     
     /* misc options */
     startpos = !isNaN(parseFloat(startpos)) && isFinite(startpos) ? startpos : 1;
@@ -87,7 +93,7 @@ const Logo = ({ pwm, mode, height, width, alphabet, glyphwidth, scale, startpos,
               <YGridlines
                 {...{
                     minrange: startpos,
-                    maxrange: startpos + pwm.length,
+                    maxrange: startpos + ppm.length,
                     xstart: 70,
                     width: viewBoxW,
                     height: maxHeight,
@@ -101,7 +107,7 @@ const Logo = ({ pwm, mode, height, width, alphabet, glyphwidth, scale, startpos,
 	    ? <YAxisFrequency transform="translate(0,10)" width={65} height={maxHeight} ticks={2} />
             : <YAxis transform="translate(0,10)" width={65} height={maxHeight} bits={maxHeight / 100.0} /> }
           <g transform="translate(80,10)">
-            <RawLogo pwm={likelihood} glyphWidth={glyphWidth} stackHeight={maxHeight} alphabet={alphabet} />
+            <RawLogo values={likelihood} glyphWidth={glyphWidth} stackHeight={maxHeight} alphabet={alphabet} />
           </g>           
         </svg>
     );
