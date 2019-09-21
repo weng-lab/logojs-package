@@ -70,11 +70,11 @@ const Logo = ({ ppm, pfm, mode, height, width, alphabet, glyphwidth, scale, star
 	return <div />;
     let alphabetSize = ppm[0].length;
     if (!backgroundFrequencies)
-        backgroundFrequencies = ppm.map( _ => 1.0 / alphabetSize );
+        backgroundFrequencies = ppm[0].map( _ => 1.0 / alphabetSize );
     let likelihood = ( mode !== FREQUENCY
 		       ? ppm.map(logLikelihood(backgroundFrequencies))
 		       : ppm.map(x => x.map(v => v * Math.log2(alphabetSize))) );
-    const theights = likelihood.map( x => x.reduce( (c, x) => c + x ) );
+    const theights = backgroundFrequencies.map( x => Math.log2(1.0 / (x || 0.01)) );
     const max = Math.max(...theights), min = Math.min(...theights);
     const zeroPoint = min < 0 ? max / (max - min) : 1.0;
     
