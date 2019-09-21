@@ -69,16 +69,20 @@ const Logo = ({ ppm, pfm, mode, height, width, alphabet, glyphwidth, scale, star
     if (ppm.length === 0 || ppm[0].length === 0)
 	return <div />;
     let alphabetSize = ppm[0].length;
-    if (!backgroundFrequencies) backgroundFrequencies = ppm.map( _ => 1.0 / alphabetSize );
+    if (!backgroundFrequencies)
+        backgroundFrequencies = ppm.map( _ => 1.0 / alphabetSize );
     let likelihood = ( mode !== FREQUENCY
 		       ? ppm.map(logLikelihood(backgroundFrequencies))
 		       : ppm.map(x => x.map(v => v * Math.log2(alphabetSize))) );
+    const theights = likelihood.map( x => x.reduce( (c, x) => c + x ) );
+    const max = Math.max(...theights), min = Math.min(...theights);
+    const zeroPoint = min < 0 ? max / (max - min) : 1.0;
     
     /* misc options */
     startpos = !isNaN(parseFloat(startpos)) && isFinite(startpos) ? startpos : 1;
 
     /* compute scaling factors */
-    let maxHeight = 100.0 * Math.log2(alphabetSize);
+    let maxHeight = 100.0 * max;
     let glyphWidth = maxHeight / 6.0 * (glyphwidth || 1.0);
     
     /* compute viewBox and padding for the x-axis labels */
@@ -105,10 +109,10 @@ const Logo = ({ ppm, pfm, mode, height, width, alphabet, glyphwidth, scale, star
 	         glyphWidth={glyphWidth} startpos={startpos} />
 	  { mode === FREQUENCY
 	    ? <YAxisFrequency transform="translate(0,10)" width={65} height={maxHeight} ticks={2} />
-            : <YAxis transform="translate(0,10)" width={65} height={maxHeight} bits={maxHeight / 100.0} /> }
+            : <YAxis transform="translate(0,10)" width={65} height={maxHeight} bits={max} zeroPoint={zeroPoint} /> }
           <g transform="translate(80,10)">
             <RawLogo values={likelihood} glyphWidth={glyphWidth} stackHeight={maxHeight} alphabet={alphabet} />
-          </g>           
+          </g>
         </svg>
     );
 	
