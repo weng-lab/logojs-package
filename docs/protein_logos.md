@@ -14,17 +14,22 @@ If you need negative letter heights, use the `LogoWithNegatives` component inste
 
 `ProteinLogo` takes the following properties:
 
-* **pwm**: a matrix containing amino acid frequencies at each position. Each
-row is a position in the logo, and the columns are alphabetical.
+* **ppm**: a matrix containing amino acid frequencies at each position, ranging from 0.0 to 1.0.
+Each row is a position in the logo, and the columns are alphabetical.
+* **pfm**: a matrix containing the number of times each amino acid occurs at each position.
+This is only used if **ppm** is not provided. Column and row orders are the same as for **ppm**.
 * **mode**: determines how letter heights are computed; may be either
 `"INFORMATION_CONTENT"` (default) or `"FREQUENCY"`.
 * **startpos**: if set, the first base in the logo will be numbered with a
 value other than the default of 1.
+* **backgroundFrequencies**: optional; an array of background frequencies to use to
+compute information content in place of the default 1/20 for each amino acid. The order of the
+array is alphabetical. If **mode** is not INFORMATION_CONTENT, this is ignored.
 
 ```js
 import { ProteinLogo } from 'logosj-react';
 
-const CAP_PWM = [
+const CAP_PPM = [
   [0.09, 0.31, 0.08, 0.50], [0.18, 0.15, 0.45, 0.20], [0.30, 0.05, 0.49, 0.14],
   [0.06, 0.87, 0.02, 0.03], [0.00, 0.98, 0.00, 0.02], [0.81, 0.01, 0.07, 0.09], 
   [0.04, 0.57, 0.36, 0.01], [0.11, 0.47, 0.05, 0.35], [0.93, 0.01, 0.03, 0.01],
@@ -35,7 +40,7 @@ const CAP_PWM = [
 ];
 
 export const CAPLogo = props => (
-    <ProteinLogo pwm={CAP_PWM} />
+    <ProteinLogo ppm={CAP_PPM} />
 );
 ```
 
@@ -57,7 +62,7 @@ If you don't use React, the following code embeds the Protein logo in a `div` el
     <script src="http://bundle.logosj.wenglab.org/bundle.js" type="text/javascript"></script>
     <div id="logo" style="width:500px"></div>
     <script type="text/javascript">
-      const CAP_PWM = [
+      const CAP_PPM = [
         [0.09, 0.31, 0.08, 0.50], [0.18, 0.15, 0.45, 0.20], [0.30, 0.05, 0.49, 0.14],
         [0.06, 0.87, 0.02, 0.03], [0.00, 0.98, 0.00, 0.02], [0.81, 0.01, 0.07, 0.09], 
         [0.04, 0.57, 0.36, 0.01], [0.11, 0.47, 0.05, 0.35], [0.93, 0.01, 0.03, 0.01],
@@ -66,7 +71,7 @@ If you don't use React, the following code embeds the Protein logo in a `div` el
         [0.40, 0.01, 0.55, 0.01], [0.09, 0.53, 0.33, 0.04], [0.12, 0.35, 0.08, 0.43], 
         [0.44, 0.19, 0.29, 0.06]
       ];
-      logosj.embedProteinLogo(document.getElementById("logo"), { pwm: CAP_PWM });
+      logosj.embedProteinLogo(document.getElementById("logo"), { ppm: CAP_PPM });
     </script>
   </body>
 </html>
