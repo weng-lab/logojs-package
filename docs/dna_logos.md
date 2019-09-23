@@ -26,6 +26,9 @@ value other than the default of 1.
 * **backgroundFrequencies**: optional; an array of background frequencies to use to
 compute information content in place of the default 1/4 for each nucleotide. The order of the
 array is A, C, G, U. If **mode** is not INFORMATION_CONTENT, this is ignored.
+* **yAxisMax**: optional; if provided, uses the given value as an explicit maximum for the y-axis
+rather than the maximum number of bits possible. This is only used in `INFORMATION_CONTENT` mode;
+in `FREQUENCY` mode, it is ignored.
 
 ```js
 import { DNALogo } from 'logosj-react';
