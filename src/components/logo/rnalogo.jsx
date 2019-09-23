@@ -22,6 +22,7 @@ export const RNAAlphabet = [
  * @prop pfm position frequency matrix. Rows are positions and columns are nucleotides, alphabetically.
  * @prop mode the mode to use when computing letter heights; either information content or frequency.
  * @prop startpos number to assign the first position in the logo; defaults to 1.
+ * @prop yAxisMax if set, uses an explicit maximum value for the y-axis rather than the total number of bits possible. This is ignored in FREQUENCY mode.
  */
 const RNALogo = props => (
     <Logo alphabet={RNAAlphabet} {...props} />

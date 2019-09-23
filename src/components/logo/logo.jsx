@@ -57,8 +57,9 @@ const maxLabelLength = (startpos, length) => {
  * @prop negativealpha if set, gives negative symbols a lighter shade than positive symbols.
  * @prop showGridLines if set, shows vertical grid lines.
  * @prop inverted if set, renders negative letters upright rather than upside down.
+ * @prop yAxisMax if set, uses an explicit maximum value for the y-axis rather than the total number of bits possible. This is ignored in FREQUENCY mode.
  */
-const Logo = ({ ppm, pfm, mode, height, width, alphabet, glyphwidth, scale, startpos, showGridLines, backgroundFrequencies }) => {
+const Logo = ({ ppm, pfm, mode, height, width, alphabet, glyphwidth, scale, startpos, showGridLines, backgroundFrequencies, yAxisMax }) => {
 
     /* compute likelihood; need at least one entry to continue */
     if (!ppm && pfm && pfm.map)
@@ -75,7 +76,7 @@ const Logo = ({ ppm, pfm, mode, height, width, alphabet, glyphwidth, scale, star
 		       ? ppm.map(logLikelihood(backgroundFrequencies))
 		       : ppm.map(x => x.map(v => v * Math.log2(alphabetSize))) );
     const theights = mode === FREQUENCY ? [ Math.log2(alphabetSize) ] : backgroundFrequencies.map( x => Math.log2(1.0 / (x || 0.01)) );
-    const max = Math.max(...theights), min = Math.min(...theights);
+    const max = yAxisMax || Math.max(...theights), min = Math.min(...theights);
     const zeroPoint = min < 0 ? max / (max - min) : 1.0;
     
     /* misc options */
