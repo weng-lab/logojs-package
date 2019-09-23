@@ -4,6 +4,13 @@ import { CompleteAlphabet } from '../components/logo/completelogo';
 export const INFORMATION_CONTENT = 'INFORMATION_CONTENT';
 export const FREQUENCY = 'FREQUENCY';
 
+export const maxLabelLength = (startpos, length) => {
+    let max = ("" + startpos).length;
+    for (let i = startpos + 1; i < startpos + length; ++i)
+        if (("" + i).length > max) max = ("" + i).length;
+    return max;
+};
+
 const regexMap = ( () => {
     let r = {};
     CompleteAlphabet.forEach(glyph => {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { logLikelihood, sortedIndices, loadGlyphComponents, FREQUENCY } from '../../common/utils';
+import { maxLabelLength, logLikelihood, sortedIndices, loadGlyphComponents, FREQUENCY } from '../../common/utils';
 import GlyphStack from './glyphstack';
 import XAxis from './xaxis';
 import YAxis from './yaxis';
@@ -35,13 +35,6 @@ export const RawLogo = ({ values, glyphWidth, stackHeight, alphabet }) => {
     return values.map((lv, i) => (
 	gposition(lv, 'translate(' + glyphWidth * i + ',0)', i, alphabet)
     ));
-};
-
-const maxLabelLength = (startpos, length) => {
-    let max = ("" + startpos).length;
-    for (let i = startpos + 1; i < startpos + length; ++i)
-        if (("" + i).length > max) max = ("" + i).length;
-    return max;
 };
 
 /**

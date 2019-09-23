@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { loadGlyphComponents, sortedIndices, sortedIndicesNegative, possum, negsum } from '../../common/utils';
+import { loadGlyphComponents, sortedIndices, sortedIndicesNegative, possum, negsum, maxLabelLength } from '../../common/utils';
 import GlyphStack from './glyphstack';
 import XAxis from './xaxis';
 import YAxis from './yaxis';
@@ -58,7 +58,7 @@ const LogoWithNegatives = ({ values, height, width, alphabet, scale, startpos, n
 
     /* compute viewBox */
     let viewBoxW = values.length * glyphWidth + 80;
-    let viewBoxH = maxHeight +  + 20 * (Math.log10(Math.max(Math.abs(startpos), startpos + values.length)) + 1);
+    let viewBoxH = maxHeight + 18 * (maxLabelLength(startpos, values.length) + 1);
     let gposition = _position(glyphWidth, maxHeight / 2.05);
     let nposition = _position(glyphWidth, -maxHeight / 2.05, negativealpha / 255.0, inverted);
     if (scale)
