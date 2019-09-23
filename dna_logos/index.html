@@ -526,6 +526,9 @@ value other than the default of 1.</li>
 <li><strong>backgroundFrequencies</strong>: optional; an array of background frequencies to use to
 compute information content in place of the default &frac14; for each nucleotide. The order of the
 array is A, C, G, U. If <strong>mode</strong> is not INFORMATION_CONTENT, this is ignored.</li>
+<li><strong>yAxisMax</strong>: optional; if provided, uses the given value as an explicit maximum for the y-axis
+rather than the maximum number of bits possible. This is only used in <code>INFORMATION_CONTENT</code> mode;
+in <code>FREQUENCY</code> mode, it is ignored.</li>
 </ul>
 <div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">DNALogo</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;logosj-react&#39;</span><span class="p">;</span>
 
