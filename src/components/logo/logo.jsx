@@ -74,7 +74,7 @@ const Logo = ({ ppm, pfm, mode, height, width, alphabet, glyphwidth, scale, star
     let likelihood = ( mode !== FREQUENCY
 		       ? ppm.map(logLikelihood(backgroundFrequencies))
 		       : ppm.map(x => x.map(v => v * Math.log2(alphabetSize))) );
-    const theights = backgroundFrequencies.map( x => Math.log2(1.0 / (x || 0.01)) );
+    const theights = mode === FREQUENCY ? [ Math.log2(alphabetSize) ] : backgroundFrequencies.map( x => Math.log2(1.0 / (x || 0.01)) );
     const max = Math.max(...theights), min = Math.min(...theights);
     const zeroPoint = min < 0 ? max / (max - min) : 1.0;
     
