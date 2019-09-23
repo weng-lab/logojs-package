@@ -5,13 +5,13 @@ import Logo from './logo';
 
 /**
  * Represents the RNA alphabet, with the four nucleotides colored
- * in a similar scheme to the MEME default (U is green like T).
+ * in a similar scheme to the MEME default.
  */
 export const RNAAlphabet = [
     { component: A, regex: "A", color: "red" },
     { component: C, regex: "C", color: "blue" },
     { component: G, regex: "G", color: "orange" },
-    { component: U, regex: "U", color: "#228b22" }
+    { component: U, regex: "U", color: "seagreen" }
 ];
 
 /**

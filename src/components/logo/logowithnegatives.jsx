@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { sortedIndices, sortedIndicesNegative, possum, negsum } from '../../common/utils';
+import { loadGlyphComponents, sortedIndices, sortedIndicesNegative, possum, negsum } from '../../common/utils';
 import GlyphStack from './glyphstack';
 import XAxis from './xaxis';
 import YAxis from './yaxis';
@@ -30,12 +30,20 @@ const _position = (width, height, alpha, inverted) => (lv, transform, key, alpha
  */
 const LogoWithNegatives = ({ values, height, width, alphabet, scale, startpos, negativealpha, showGridLines, inverted }) => {
 
-    /* compute likelihood; need at least one entry to continue */
+    /* need at least one entry to continue */
     if (values.length === 0 || values[0].length === 0) {
 	return <div />;
     }
     let alphabetSize = values[0].length;
 
+    /* load alphabet components if necessary */
+    for (const symbol in alphabet) {
+        if (!symbol.component) {
+            alphabet = loadGlyphComponents(alphabet);
+            break;
+        }
+    }
+    
     /* misc options */
     startpos = (startpos !== null && startpos !== undefined ? startpos : 1);
     negativealpha = (negativealpha < 0 ? 0 : negativealpha);
