@@ -24,7 +24,7 @@ export const DNAAlphabet = [
  * @prop startpos number to assign the first position in the logo; defaults to 1.
  * @prop yAxisMax if set, uses an explicit maximum value for the y-axis rather than the total number of bits possible. This is ignored in FREQUENCY mode.
  */
-const DNALogo = props => (
-    <Logo alphabet={DNAAlphabet} {...props} />
-);
+const DNALogo = React.forwardRef( (props, ref) => (
+    <Logo alphabet={DNAAlphabet} {...props} ref={ref} />
+));
 export default DNALogo;

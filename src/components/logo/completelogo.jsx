@@ -75,8 +75,8 @@ export const CompleteAlphabet = [
     { component: N9, regex: "9", color: "firebrick" }
 ];
 
-const CompleteLogo = ({ ppm, pfm, scale, startpos, mode }) => (
+const CompleteLogo = React.forwardRef( ({ ppm, pfm, scale, startpos, mode }, ref) => (
     <Logo ppm={ppm} alphabet={CompleteAlphabet} scale={scale}
-          mode={mode} startpos={startpos} pfm={pfm} />
-);
+          mode={mode} startpos={startpos} pfm={pfm} ref={ref} />
+));
 export default CompleteLogo;

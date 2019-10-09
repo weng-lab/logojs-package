@@ -52,7 +52,7 @@ export const RawLogo = ({ values, glyphWidth, stackHeight, alphabet }) => {
  * @prop inverted if set, renders negative letters upright rather than upside down.
  * @prop yAxisMax if set, uses an explicit maximum value for the y-axis rather than the total number of bits possible. This is ignored in FREQUENCY mode.
  */
-const Logo = ({ ppm, pfm, mode, height, width, alphabet, glyphwidth, scale, startpos, showGridLines, backgroundFrequencies, yAxisMax }) => {
+const Logo = React.forwardRef( ({ ppm, pfm, mode, height, width, alphabet, glyphwidth, scale, startpos, showGridLines, backgroundFrequencies, yAxisMax }, ref) => {
 
     /* compute likelihood; need at least one entry to continue */
     if (!ppm && pfm && pfm.map)
@@ -86,7 +86,7 @@ const Logo = ({ ppm, pfm, mode, height, width, alphabet, glyphwidth, scale, star
 	viewBoxW > viewBoxH ? width = scale : height = scale;
 
     return (
-	<svg width={width} height={height} viewBox={'0 0 ' + viewBoxW + ' ' + viewBoxH}>
+	<svg width={width} height={height} viewBox={'0 0 ' + viewBoxW + ' ' + viewBoxH} ref={ref}>
           {showGridLines && (
               <YGridlines
                 {...{
@@ -110,5 +110,5 @@ const Logo = ({ ppm, pfm, mode, height, width, alphabet, glyphwidth, scale, star
         </svg>
     );
 	
-};
+});
 export default Logo;

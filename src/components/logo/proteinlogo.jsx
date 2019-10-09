@@ -47,7 +47,7 @@ export const ProteinAlphabet = [
  * @prop startpos number to assign the first position in the logo; defaults to 1.
  * @prop yAxisMax if set, uses an explicit maximum value for the y-axis rather than the total number of bits possible. This is ignored in FREQUENCY mode.
  */
-const ProteinLogo = props => (
-    <Logo alphabet={ProteinAlphabet} {...props} />
-);
+const ProteinLogo = React.forwardRef( (props, ref) => (
+    <Logo alphabet={ProteinAlphabet} {...props} ref={ref} />
+));
 export default ProteinLogo;
