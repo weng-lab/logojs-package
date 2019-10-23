@@ -28,7 +28,7 @@ const GlyphStack = ({ height, width, indices, alphabet, lv, transform, alpha, in
 	    return (
               <g transform={"translate(0," + ccy + ")"} key={index}>
 	        <Glyph xscale={xscale} yscale={lv[index]} inverted={inverted}>
-	          <G fill={alphabet[index].color} fillOpacity={alpha} />
+	          <G fill={alphabet[index].color} fillOpacity={alpha} {...alphabet[index]} />
 	        </Glyph>
 	      </g>
 	    );
@@ -40,7 +40,7 @@ const GlyphStack = ({ height, width, indices, alphabet, lv, transform, alpha, in
 	return alphabet[index].component.map( (G, i) => (
 	  <g transform={"translate(" + (i * width * 0.8 / alphabet[index].component.length + width * 0.1) + "," + ccy + ")"} key={index + "_" + i}>
 	    <Glyph xscale={_xscale} yscale={lv[index]} inverted={inverted}>
-              <G fill={alphabet[index].color[i]} fillOpacity={alpha} />
+              <G fill={alphabet[index].color[i]} fillOpacity={alpha} {...alphabet[index]} />
 	    </Glyph>
 	  </g>	    
 	));
