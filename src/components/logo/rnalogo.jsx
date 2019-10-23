@@ -24,7 +24,7 @@ export const RNAAlphabet = [
  * @prop startpos number to assign the first position in the logo; defaults to 1.
  * @prop yAxisMax if set, uses an explicit maximum value for the y-axis rather than the total number of bits possible. This is ignored in FREQUENCY mode.
  */
-const RNALogo = props => (
-    <Logo alphabet={RNAAlphabet} {...props} />
-);
+const RNALogo = React.forwardRef( (props, ref) => (
+    <Logo alphabet={RNAAlphabet} {...props} ref={ref} />
+));
 export default RNALogo;

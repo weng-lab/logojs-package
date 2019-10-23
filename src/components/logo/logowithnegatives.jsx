@@ -28,7 +28,7 @@ const _position = (width, height, alpha, inverted) => (lv, transform, key, alpha
  * @prop showGridLines if set, shows vertical grid lines.
  * @prop inverted if set, renders negative letters upright rather than upside down.
  */
-const LogoWithNegatives = ({ values, height, width, alphabet, scale, startpos, negativealpha, showGridLines, inverted }) => {
+const LogoWithNegatives = React.forwardRef( ({ values, height, width, alphabet, scale, startpos, negativealpha, showGridLines, inverted }, ref) => {
 
     /* need at least one entry to continue */
     if (values.length === 0 || values[0].length === 0) {
@@ -65,7 +65,7 @@ const LogoWithNegatives = ({ values, height, width, alphabet, scale, startpos, n
 	viewBoxW > viewBoxH ? width = scale : height = scale;
     
     return (
-	<svg width={width} height={height} viewBox={'0 0 ' + viewBoxW + ' ' + viewBoxH}>
+	<svg ref={ref} width={width} height={height} viewBox={'0 0 ' + viewBoxW + ' ' + viewBoxH}>
         {showGridLines && (
             <YGridlines
                 {...{
@@ -97,5 +97,5 @@ const LogoWithNegatives = ({ values, height, width, alphabet, scale, startpos, n
     </svg>
     );
     
-};
+});
 export default LogoWithNegatives;
