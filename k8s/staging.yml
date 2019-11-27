@@ -48,32 +48,13 @@ spec:
   selector:
     app: logosj-package
 ---
-apiVersion: certmanager.k8s.io/v1alpha1
-kind: Certificate
-metadata:
-  name: staging-logosj-package-tls
-  namespace: default
-spec:
-  secretName: logosj-package-tls
-  issuerRef:
-    name: letsencrypt
-    kind: ClusterIssuer
-  commonName: bundle.logosj.wenglab.org
-  dnsNames:
-  - bundle.logosj.wenglab.org
-  acme:
-    config:
-    - http01:
-        ingress: logosj-package-ingress
-      domains:
-      - bundle.logosj.wenglab.org
----
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: logosj-package-ingress
   annotations:
     kubernetes.io/ingress.global-static-ip-name: "logosj-package-external-ip"
+    cert-manager.io/cluster-issuer: letsencrypt
 spec:
   backend:
     serviceName: logosj-package-service
