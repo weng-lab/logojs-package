@@ -39,9 +39,9 @@ const GlyphStack = ({ height, width, indices, alphabet, lv, transform, alpha, in
 	    alphabet[index].color = alphabet[index].component.map(x => alphabet[index].color);
 	return alphabet[index].component.map( (G, i) => (
 	  <g transform={"translate(" + (i * width * 0.8 / alphabet[index].component.length + width * 0.1) + "," + ccy + ")"} key={index + "_" + i}
-	     onMouseOver={onSymbolMouseOver && onSymbolMouseOver(alphabet[index])}
-	     onMouseOut={onSymbolMouseOut && onSymbolMouseOut(alphabet[index])}
-	     onMouseClick={onSymbolMouseClick && onSymbolMouseClick(alphabet[index])}>
+	     onSymbolMouseOver={onSymbolMouseOver && onSymbolMouseOver(alphabet[index])}
+	     onSymbolMouseOut={onSymbolMouseOut && onSymbolMouseOut(alphabet[index])}
+	     onSymbolClick={onSymbolClick && onSymbolClick(alphabet[index])}>
 	    <Glyph xscale={_xscale} yscale={lv[index]} inverted={inverted}>
               <G fill={alphabet[index].color[i]} fillOpacity={alpha} {...alphabet[index]} />
 	    </Glyph>
