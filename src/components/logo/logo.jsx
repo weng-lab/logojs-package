@@ -7,14 +7,15 @@ import YAxis from './yaxis';
 import YAxisFrequency from './yaxisfreq';
 import { YGridlines } from './ygridlines';
 
-const _position = (width, height) => (lv, transform, key, alphabet, { onSymbolMouseOver, onSymbolMouseOut, onSymbolClick }) => {
+const _position = (width, height) => (lv, transform, key, alphabet, events) => {
     const indices = sortedIndices(lv); // tallest on top
+    const { onSymbolMouseOver, onSymbolMouseOut, onSymbolClick } = events || {};
     return (
 	    <GlyphStack indices={indices} alphabet={alphabet}
 	                onSymbolMouseOver={onSymbolMouseOver ? s => onSymbolMouseOver(key, s) : null}
 	                onSymbolClick={onSymbolClick ? s => onSymbolClick(key, s) : null}
 	                onSymbolMouseOut={onSymbolMouseOut ? s => onSymbolMouseOut(key, s) : null}
-	                lv={lv} transform={transform} width={width} height={height} onSymbolClick={onSymbolClick} key={key} />
+	                lv={lv} transform={transform} width={width} height={height} key={key} />
     );
 };
 

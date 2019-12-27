@@ -8,9 +8,10 @@ import YAxisWithNegatives from './yaxisneg';
 import { YGridlines } from './ygridlines';
 
 const _position = (width, height, alpha, inverted) => (
-    lv, transform, key, alphabet, negative, { onSymbolMouseOver, onSymbolMouseOut, onSymbolClick }
+    lv, transform, key, alphabet, negative, events
 ) => {
-    let indices = negative ? sortedIndicesNegative(lv) : sortedIndices(lv); // tallest on top
+    const indices = negative ? sortedIndicesNegative(lv) : sortedIndices(lv); // tallest on top
+    const { onSymbolMouseOver, onSymbolMouseOut, onSymbolClick } = events || {};
     return (
       <GlyphStack indices={indices} alphabet={alphabet} alpha={alpha}
 	              lv={lv} transform={transform} width={width} height={height}
