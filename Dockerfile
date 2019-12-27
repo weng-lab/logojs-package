@@ -1,5 +1,6 @@
 # intermediate base image
 FROM node:10.16-alpine AS build
+RUN npm config set unsafe-perm true
 
 # add `/usr/src/app/node_modules/.bin` to $PATH
 ENV PATH /usr/src/app/node_modules/.bin:$PATH
