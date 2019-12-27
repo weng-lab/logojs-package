@@ -7,12 +7,17 @@ import YAxis from './yaxis';
 import YAxisWithNegatives from './yaxisneg';
 import { YGridlines } from './ygridlines';
 
-const _position = (width, height, alpha, inverted) => (lv, transform, key, alphabet, negative) => {
+const _position = (width, height, alpha, inverted) => (
+    lv, transform, key, alphabet, negative, { onSymbolMouseOver, onSymbolMouseOut, onSymbolClick }
+) => {
     let indices = negative ? sortedIndicesNegative(lv) : sortedIndices(lv); // tallest on top
     return (
       <GlyphStack indices={indices} alphabet={alphabet} alpha={alpha}
-	  lv={lv} transform={transform} width={width} height={height}
-	  key={key} inverted={inverted} />
+	              lv={lv} transform={transform} width={width} height={height}
+	  	          onSymbolMouseOver={onSymbolMouseOver ? s => onSymbolMouseOver(key, s) : null}
+      	          onSymbolClick={onSymbolClick ? s => onSymbolClick(key, s) : null}
+      	          onSymbolMouseOut={onSymbolMouseOut ? s => onSymbolMouseOut(key, s) : null}
+	              key={key} inverted={inverted} />
     );
 };
 
@@ -28,7 +33,10 @@ const _position = (width, height, alpha, inverted) => (lv, transform, key, alpha
  * @prop showGridLines if set, shows vertical grid lines.
  * @prop inverted if set, renders negative letters upright rather than upside down.
  */
-const LogoWithNegatives = React.forwardRef( ({ values, height, width, alphabet, scale, startpos, negativealpha, showGridLines, inverted }, ref) => {
+const LogoWithNegatives = React.forwardRef(
+    ({ values, height, width, alphabet, scale, startpos, negativealpha, showGridLines, inverted, onSymbolMouseOver,
+       onSymbolMouseOut, onSymbolClick }, ref
+) => {
 
     /* need at least one entry to continue */
     if (values.length === 0 || values[0].length === 0) {
@@ -88,10 +96,12 @@ const LogoWithNegatives = React.forwardRef( ({ values, height, width, alphabet, 
 	          x1={0} x2={viewBoxW - 80} />
             <g transform="translate(80,10)">
                 {values.map((lv, i) =>
-		    gposition(lv.map(x => x > 0.0 ? x / mvalue : 0.0), 'translate(' + glyphWidth * i + ',0)', i, alphabet)
+		    gposition(lv.map(x => x > 0.0 ? x / mvalue : 0.0), 'translate(' + glyphWidth * i + ',0)', i, alphabet,
+		              { onSymbolMouseOver, onSymbolMouseOut, onSymbolClick })
 	        )}
 	        {values.map((lv, i) =>
-		    nposition(lv.map(x => x < 0.0 ? x / mvalue : 0.0), 'translate(' + glyphWidth * i + ',' + maxHeight + ')', i, alphabet, true)
+		    nposition(lv.map(x => x < 0.0 ? x / mvalue : 0.0), 'translate(' + glyphWidth * i + ',' + maxHeight + ')', i,
+		              alphabet, true, { onSymbolMouseOver, onSymbolMouseOut, onSymbolClick })
                 )}
             </g>           
     </svg>

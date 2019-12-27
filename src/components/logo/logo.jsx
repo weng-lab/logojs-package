@@ -7,12 +7,14 @@ import YAxis from './yaxis';
 import YAxisFrequency from './yaxisfreq';
 import { YGridlines } from './ygridlines';
 
-const _position = (width, height) => (lv, transform, key, alphabet) => {
-    let indices = sortedIndices(lv); // tallest on top
+const _position = (width, height) => (lv, transform, key, alphabet, { onSymbolMouseOver, onSymbolMouseOut, onSymbolClick }) => {
+    const indices = sortedIndices(lv); // tallest on top
     return (
-	<GlyphStack indices={indices} alphabet={alphabet}
-	  lv={lv} transform={transform} width={width} height={height}
-	  key={key} />
+	    <GlyphStack indices={indices} alphabet={alphabet}
+	                onSymbolMouseOver={onSymbolMouseOver ? s => onSymbolMouseOver(key, s) : null}
+	                onSymbolClick={onSymbolClick ? s => onSymbolClick(key, s) : null}
+	                onSymbolMouseOut={onSymbolMouseOut ? s => onSymbolMouseOut(key, s) : null}
+	                lv={lv} transform={transform} width={width} height={height} onSymbolClick={onSymbolClick} key={key} />
     );
 };
 
@@ -23,9 +25,12 @@ const _position = (width, height) => (lv, transform, key, alphabet) => {
  * @prop glyphWidth the width of a single glyph, relative to the containing SVG.
  * @prop stackHeight the height of each position, relative to the containing SVG; corresponds to a matrix value of 1.
  * @prop alphabet symbol list mapping columns to colored glyphs.
+ * @prop onSymbolMouseOver raised when a symbol is moused over; receives information about the moused over symbol.
+ * @prop onSymbolMousedOut raised when a symbol is moused out; receives information about the moused out symbol.
+ * @prop onSymbolClicked raised when a symbol is clicked; receives information about the clicked symbol.
  */
-export const RawLogo = ({ values, glyphWidth, stackHeight, alphabet }) => {
-    let gposition = _position(glyphWidth, stackHeight);
+export const RawLogo = ({ values, glyphWidth, stackHeight, alphabet, onSymbolMouseOver, onSymbolMouseOut, onSymbolClick }) => {
+    const gposition = _position(glyphWidth, stackHeight);
     for (const symbol in alphabet) {
         if (!symbol.component) {
             alphabet = loadGlyphComponents(alphabet);
@@ -33,7 +38,7 @@ export const RawLogo = ({ values, glyphWidth, stackHeight, alphabet }) => {
         }
     }
     return values.map((lv, i) => (
-	gposition(lv, 'translate(' + glyphWidth * i + ',0)', i, alphabet)
+	    gposition(lv, 'translate(' + glyphWidth * i + ',0)', i, alphabet, { onSymbolMouseOver, onSymbolMouseOut, onSymbolClick })
     ));
 };
 
@@ -52,7 +57,10 @@ export const RawLogo = ({ values, glyphWidth, stackHeight, alphabet }) => {
  * @prop inverted if set, renders negative letters upright rather than upside down.
  * @prop yAxisMax if set, uses an explicit maximum value for the y-axis rather than the total number of bits possible. This is ignored in FREQUENCY mode.
  */
-const Logo = React.forwardRef( ({ ppm, pfm, mode, height, width, alphabet, glyphwidth, scale, startpos, showGridLines, backgroundFrequencies, yAxisMax }, ref) => {
+const Logo = React.forwardRef(
+    ({ ppm, pfm, mode, height, width, alphabet, glyphwidth, scale, startpos, showGridLines, backgroundFrequencies,
+       yAxisMax, onSymbolMouseOver, onSymbolMouseOut, onSymbolClick }, ref
+) => {
 
     /* compute likelihood; need at least one entry to continue */
     if (!ppm && pfm && pfm.map)
@@ -105,7 +113,8 @@ const Logo = React.forwardRef( ({ ppm, pfm, mode, height, width, alphabet, glyph
 	    ? <YAxisFrequency transform="translate(0,10)" width={65} height={maxHeight} ticks={2} />
             : <YAxis transform="translate(0,10)" width={65} height={maxHeight} bits={max} zeroPoint={zeroPoint} /> }
           <g transform="translate(80,10)">
-            <RawLogo values={likelihood} glyphWidth={glyphWidth} stackHeight={maxHeight} alphabet={alphabet} />
+            <RawLogo values={likelihood} glyphWidth={glyphWidth} stackHeight={maxHeight} alphabet={alphabet}
+                     onSymbolMouseOver={onSymbolMouseOver} onSymbolMouseOut={onSymbolMouseOut} onSymbolClick={onSymbolClick} />
           </g>
         </svg>
     );
