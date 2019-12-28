@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { maxLabelLength, logLikelihood, sortedIndices, loadGlyphComponents, FREQUENCY } from '../../common/utils';
+import { parseFASTA, parseSequences } from '../../common/fasta';
 import GlyphStack from './glyphstack';
 import XAxis from './xaxis';
 import YAxis from './yaxis';
@@ -48,6 +49,9 @@ export const RawLogo = ({ values, glyphWidth, stackHeight, alphabet, onSymbolMou
  *
  * @prop ppm position probability matrix. Rows are positions and should sum to 1; columns are symbols. If this is provided, it takes precedence over PFM in computing symbol heights.
  * @prop pfm position frequency matrix. Rows are positions and columns are nucleotides, alphabetically.
+ * @prop fasta if provided, renders the logo from the given FASTA sequence. Only used if both ppm and pfm are not set.
+ * @prop noFastaNames if set and if FASTA is used to compute letter heights, specifies that the FASTA data contains one sequence per line without sequence names.
+ * @prop countUnaligned if set and if FASTA is used to compute letter heights, specifies that unaligned positions (dashes) should contribute to information content.
  * @prop mode determines how symbol heights are computed; either FREQUENCY or INFORMATION_CONTENT.
  * @prop height the height of the logo relative to the containing SVG.
  * @prop width the width of the logo relative to the containing SVG.
@@ -59,14 +63,20 @@ export const RawLogo = ({ values, glyphWidth, stackHeight, alphabet, onSymbolMou
  * @prop yAxisMax if set, uses an explicit maximum value for the y-axis rather than the total number of bits possible. This is ignored in FREQUENCY mode.
  */
 const Logo = React.forwardRef(
-    ({ ppm, pfm, mode, height, width, alphabet, glyphwidth, scale, startpos, showGridLines, backgroundFrequencies,
-       yAxisMax, onSymbolMouseOver, onSymbolMouseOut, onSymbolClick }, ref
+    ({ ppm, pfm, fasta, mode, height, width, alphabet, glyphwidth, scale, startpos, showGridLines, backgroundFrequencies,
+       yAxisMax, onSymbolMouseOver, onSymbolMouseOut, onSymbolClick, noFastaNames, countUnaligned }, ref
 ) => {
 
     /* compute likelihood; need at least one entry to continue */
+    let count = null;
+    if (!ppm && !pfm && fasta) {
+        const r = (noFastaNames ? parseSequences : parseFASTA)(alphabet, fasta);
+        pfm = r.pfm;
+        count = r.count;
+    }
     if (!ppm && pfm && pfm.map)
         ppm = pfm.map( column => {
-            const sum = column.reduce( (a, c) => a + c );
+            const sum = (count && countUnaligned ? count : column.reduce( (a, c) => a + c ));
             return column.map( x => x / sum );
         });
     if (ppm.length === 0 || ppm[0].length === 0)
