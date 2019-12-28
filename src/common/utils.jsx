@@ -1,4 +1,3 @@
-import namedColors from 'color-name-list';
 import { CompleteAlphabet } from '../components/logo/completelogo';
 
 export const INFORMATION_CONTENT = 'INFORMATION_CONTENT';
@@ -91,15 +90,6 @@ export const disymbolAlphabet = x => (
 	), []) ]
     ), [])
 );
-
-export const hexFromColorName = name => {
-    if (Array.isArray(name)) return name.map(hexFromColorName);
-    const _namedColors = (namedColors.find ? namedColors : namedColors.colorNameList);
-    if (name[0] === '#') { return name; }
-    if (!name || !name[0] || !name.substring || typeof name.substring !== "function") { return "#888888"; }
-    let color = _namedColors.find(x => x.name === name[0].toUpperCase() + name.substring(1));
-    return (color && color.hex) || "#888888";
-};
 
 const validHex = color => {
 

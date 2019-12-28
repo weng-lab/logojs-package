@@ -9,12 +9,12 @@ ENV PATH /usr/src/app/node_modules/.bin:$PATH
 WORKDIR /usr/src/app
 COPY package.json ./
 COPY . .
-RUN scripts/browserify.sh
+RUN npx webpack
 
 # final base image
 FROM nginx:alpine
 RUN mkdir -p /var/www
-COPY --from=build /usr/src/app/bundle.js /var/www/
+COPY --from=build /usr/src/app/dist/bundle.js /var/www/
 COPY nginx.conf /etc/nginx/nginx.conf
 EXPOSE 80
 
