@@ -508,7 +508,11 @@ array matches the order of <strong>alphabet</strong>. If <strong>mode</strong> i
 <li><strong>yAxisMax</strong>: optional; if provided, uses the given value as an explicit maximum for the y-axis
 rather than the maximum number of bits possible. This is only used in <code>INFORMATION_CONTENT</code> mode;
 in <code>FREQUENCY</code> mode, it is ignored.</li>
+<li><strong>onSymbolMouseOver</strong>: callback when a symbol in the logo is moused over.</li>
+<li><strong>onSymbolClick</strong>: callback when a symbol in the logo is clicked.</li>
+<li><strong>onSymbolMouseOut</strong>: callback when a symbol in the logo is moused out.</li>
 </ul>
+<p>The three mouse event callbacks receive two arguments: <em>position</em>, the 0-based index of the position in the logo; and <em>symbol</em>, the symbol&rsquo;s entry in the <em>alphabet</em> array.</p>
 <p>The following complete example renders a logo with <strong>M</strong> and <strong>W</strong> representing methylated <strong>CpG</strong>:</p>
 <div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Logo</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;logosj-react&#39;</span><span class="p">;</span>
 <span class="kr">const</span> <span class="nx">METHYL_VALUES</span> <span class="o">=</span> <span class="p">[</span>
@@ -553,7 +557,11 @@ value other than the default of 1.</li>
 <li><strong>negativealpha</strong> if provided, specifies that letters below the x-axis should be semi-transparent</li>
 <li><strong>inverted</strong> if provided, specifies that letters below the x-axis should be rendered upright
 rather than upside-down, which is the default.</li>
+<li><strong>onSymbolMouseOver</strong>: callback when a symbol in the logo is moused over.</li>
+<li><strong>onSymbolClick</strong>: callback when a symbol in the logo is clicked.</li>
+<li><strong>onSymbolMouseOut</strong>: callback when a symbol in the logo is moused out.</li>
 </ul>
+<p>The three mouse event callbacks receive two arguments: <em>position</em>, the 0-based index of the position in the logo; and <em>symbol</em>, the symbol&rsquo;s entry in the <em>alphabet</em> array.</p>
 <p>The following complete example renders a DNA logo with some negative letters:</p>
 <div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">LogoWithNegatives</span><span class="p">,</span> <span class="nx">DNAAlphabet</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;logosj-react&#39;</span><span class="p">;</span>
 <span class="kr">const</span> <span class="nx">DNA_VALUES</span> <span class="o">=</span> <span class="p">[</span>
@@ -589,7 +597,11 @@ are 100 units wide. <code>RawLogo</code> components support multiple letters per
 <li><strong>stackHeight</strong> the height of a single stack of glyphs relative to the containing SVG&rsquo;s coordinate system; defaults to 100.
 Individual letters can exceed this, in which case they may extend past the SVG&rsquo;s borders.</li>
 <li><strong>alphabet</strong> the custom alphabet containing the symbols the logos should render.</li>
+<li><strong>onSymbolMouseOver</strong>: callback when a symbol in the logo is moused over.</li>
+<li><strong>onSymbolClick</strong>: callback when a symbol in the logo is clicked.</li>
+<li><strong>onSymbolMouseOut</strong>: callback when a symbol in the logo is moused out.</li>
 </ul>
+<p>The three mouse event callbacks receive two arguments: <em>position</em>, the 0-based index of the position in the logo; and <em>symbol</em>, the symbol&rsquo;s entry in the <em>alphabet</em> array.</p>
 <p>The following example renders a <code>RawLogo</code> containing a DNA sequence with some letters grayed out. Note that the <code>RawLogo</code>
 must be rendered within a containing <code>svg</code>, and is shifted to the desired position by transforming a <code>g</code> element:</p>
 <div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">RawLogo</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;logosj-react&#39;</span><span class="p">;</span>

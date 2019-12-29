@@ -531,7 +531,11 @@ array is alphabetical. If <strong>mode</strong> is not INFORMATION_CONTENT, this
 <li><strong>yAxisMax</strong>: optional; if provided, uses the given value as an explicit maximum for the y-axis
 rather than the maximum number of bits possible. This is only used in <code>INFORMATION_CONTENT</code> mode;
 in <code>FREQUENCY</code> mode, it is ignored.</li>
+<li><strong>onSymbolMouseOver</strong>: callback when a symbol in the logo is moused over.</li>
+<li><strong>onSymbolClick</strong>: callback when a symbol in the logo is clicked.</li>
+<li><strong>onSymbolMouseOut</strong>: callback when a symbol in the logo is moused out.</li>
 </ul>
+<p>The three mouse event callbacks receive two arguments: <em>position</em>, the 0-based index of the position in the logo; and <em>symbol</em>, the symbol&rsquo;s entry in the <em>alphabet</em> array.</p>
 <div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">ProteinLogo</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;logosj-react&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">CAP_PPM</span> <span class="o">=</span> <span class="p">[</span>
