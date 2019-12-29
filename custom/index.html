@@ -488,8 +488,15 @@ of customization.</p>
 the <strong>Building blocks: glyphs and alphabets</strong> section has details. Once you have a custom alphabet,
 you can render a logo with it using the <code>Logo</code> component, which takes the following properties:</p>
 <ul>
-<li><strong>values</strong>: a matrix containing nucleotide frequencies at each position. Each
-row is a position in the logo, and the columns correspond to the symbol order defined in the alphabet array.</li>
+<li><strong>ppm</strong>: a matrix containing nucleotide frequencies at each position, ranging
+from 0.0 to 1.0. Each row is a position in the logo, and the columns are alphabetical
+(A, C, G, U).</li>
+<li><strong>pfm</strong>: a matrix containing the number of times a nucleotide occurs at each
+position; this is only used if <strong>ppm</strong> is not provided. The row and column orders
+are the same as for <strong>ppm</strong>.</li>
+<li><strong>fasta</strong>: sequences in FASTA format from which to compute the logo; only used if <strong>ppm</strong> and <strong>pfm</strong> are not provided.</li>
+<li><strong>noFastaNames</strong>: if specified, the string in FASTA contains exactly one sequence per line and no sequence names are included.</li>
+<li><strong>countUnaligned</strong>: if specified, unaligned positions in the FASTA sequence are inlcuded in the infomation content computation, which de-emphasizes them in the logo.</li>
 <li><strong>mode</strong>: determines how letter heights are computed; may be either
 <code>"INFORMATION_CONTENT"</code> (default) or <code>"FREQUENCY"</code>.</li>
 <li><strong>startpos</strong>: if set, the first base in the logo will be numbered with a

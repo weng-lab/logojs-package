@@ -518,6 +518,9 @@ If you need negative letter heights, use the <code>LogoWithNegatives</code> comp
 Each row is a position in the logo, and the columns are alphabetical.</li>
 <li><strong>pfm</strong>: a matrix containing the number of times each amino acid occurs at each position.
 This is only used if <strong>ppm</strong> is not provided. Column and row orders are the same as for <strong>ppm</strong>.</li>
+<li><strong>fasta</strong>: sequences in FASTA format from which to compute the logo; only used if <strong>ppm</strong> and <strong>pfm</strong> are not provided.</li>
+<li><strong>noFastaNames</strong>: if specified, the string in FASTA contains exactly one sequence per line and no sequence names are included.</li>
+<li><strong>countUnaligned</strong>: if specified, unaligned positions in the FASTA sequence are inlcuded in the infomation content computation, which de-emphasizes them in the logo.</li>
 <li><strong>mode</strong>: determines how letter heights are computed; may be either
 <code>"INFORMATION_CONTENT"</code> (default) or <code>"FREQUENCY"</code>.</li>
 <li><strong>startpos</strong>: if set, the first base in the logo will be numbered with a
