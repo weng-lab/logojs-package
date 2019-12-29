@@ -34,6 +34,11 @@ array matches the order of **alphabet**. If **mode** is not INFORMATION_CONTENT,
 * **yAxisMax**: optional; if provided, uses the given value as an explicit maximum for the y-axis
 rather than the maximum number of bits possible. This is only used in `INFORMATION_CONTENT` mode;
 in `FREQUENCY` mode, it is ignored.
+* **onSymbolMouseOver**: callback when a symbol in the logo is moused over.
+* **onSymbolClick**: callback when a symbol in the logo is clicked.
+* **onSymbolMouseOut**: callback when a symbol in the logo is moused out.
+
+The three mouse event callbacks receive two arguments: *position*, the 0-based index of the position in the logo; and *symbol*, the symbol's entry in the *alphabet* array.
 
 The following complete example renders a logo with **M** and **W** representing methylated **CpG**:
 
@@ -82,6 +87,11 @@ value other than the default of 1.
 * **negativealpha** if provided, specifies that letters below the x-axis should be semi-transparent
 * **inverted** if provided, specifies that letters below the x-axis should be rendered upright
 rather than upside-down, which is the default.
+* **onSymbolMouseOver**: callback when a symbol in the logo is moused over.
+* **onSymbolClick**: callback when a symbol in the logo is clicked.
+* **onSymbolMouseOut**: callback when a symbol in the logo is moused out.
+
+The three mouse event callbacks receive two arguments: *position*, the 0-based index of the position in the logo; and *symbol*, the symbol's entry in the *alphabet* array.
 
 The following complete example renders a DNA logo with some negative letters:
 
@@ -123,6 +133,11 @@ A `RawLogo` takes the following properties:
 * **stackHeight** the height of a single stack of glyphs relative to the containing SVG's coordinate system; defaults to 100.
 Individual letters can exceed this, in which case they may extend past the SVG's borders.
 * **alphabet** the custom alphabet containing the symbols the logos should render.
+* **onSymbolMouseOver**: callback when a symbol in the logo is moused over.
+* **onSymbolClick**: callback when a symbol in the logo is clicked.
+* **onSymbolMouseOut**: callback when a symbol in the logo is moused out.
+
+The three mouse event callbacks receive two arguments: *position*, the 0-based index of the position in the logo; and *symbol*, the symbol's entry in the *alphabet* array.
 
 The following example renders a `RawLogo` containing a DNA sequence with some letters grayed out. Note that the `RawLogo`
 must be rendered within a containing `svg`, and is shifted to the desired position by transforming a `g` element:

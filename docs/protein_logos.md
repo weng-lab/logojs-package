@@ -31,6 +31,11 @@ array is alphabetical. If **mode** is not INFORMATION_CONTENT, this is ignored.
 * **yAxisMax**: optional; if provided, uses the given value as an explicit maximum for the y-axis
 rather than the maximum number of bits possible. This is only used in `INFORMATION_CONTENT` mode;
 in `FREQUENCY` mode, it is ignored.
+* **onSymbolMouseOver**: callback when a symbol in the logo is moused over.
+* **onSymbolClick**: callback when a symbol in the logo is clicked.
+* **onSymbolMouseOut**: callback when a symbol in the logo is moused out.
+
+The three mouse event callbacks receive two arguments: *position*, the 0-based index of the position in the logo; and *symbol*, the symbol's entry in the *alphabet* array.
 
 ```js
 import { ProteinLogo } from 'logosj-react';
