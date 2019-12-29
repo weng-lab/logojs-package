@@ -78,7 +78,7 @@ const Logo = React.forwardRef(
     }
     if (!ppm && pfm && pfm.map)
         ppm = pfm.map( column => {
-            const sum = (count && countUnaligned ? count : column.reduce( (a, c) => a + c ) + pseudocount * alphabet.length);
+            const sum = (count && countUnaligned ? count : column.reduce( (a, c) => a + c ) + pseudocount * alphabet.length) || 1;
             return column.map( x => (x + pseudocount) / sum );
         });
     if (ppm.length === 0 || ppm[0].length === 0)
