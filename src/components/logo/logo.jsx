@@ -52,6 +52,7 @@ export const RawLogo = ({ values, glyphWidth, stackHeight, alphabet, onSymbolMou
  * @prop fasta if provided, renders the logo from the given FASTA sequence. Only used if both ppm and pfm are not set.
  * @prop noFastaNames if set and if FASTA is used to compute letter heights, specifies that the FASTA data contains one sequence per line without sequence names.
  * @prop countUnaligned if set and if FASTA is used to compute letter heights, specifies that unaligned positions (dashes) should contribute to information content.
+ * @prop constantPseudocount if set and if FASTA is used to compute letter heights, adds this value divided by the alphabet length to the resulting PFM.
  * @prop mode determines how symbol heights are computed; either FREQUENCY or INFORMATION_CONTENT.
  * @prop height the height of the logo relative to the containing SVG.
  * @prop width the width of the logo relative to the containing SVG.
@@ -63,21 +64,22 @@ export const RawLogo = ({ values, glyphWidth, stackHeight, alphabet, onSymbolMou
  * @prop yAxisMax if set, uses an explicit maximum value for the y-axis rather than the total number of bits possible. This is ignored in FREQUENCY mode.
  */
 const Logo = React.forwardRef(
-    ({ ppm, pfm, fasta, mode, height, width, alphabet, glyphwidth, scale, startpos, showGridLines, backgroundFrequencies,
+    ({ ppm, pfm, fasta, mode, height, width, alphabet, glyphwidth, scale, startpos, showGridLines, backgroundFrequencies, constantPseudocount,
        yAxisMax, onSymbolMouseOver, onSymbolMouseOut, onSymbolClick, noFastaNames, countUnaligned }, ref
 ) => {
 
     /* compute likelihood; need at least one entry to continue */
     let count = null;
+    const pseudocount = (constantPseudocount || 0) / alphabet.length;
     if (!ppm && !pfm && fasta) {
         const r = (noFastaNames ? parseSequences : parseFASTA)(alphabet, fasta);
         pfm = r.pfm;
-        count = r.count;
+        count = r.count || 1;
     }
     if (!ppm && pfm && pfm.map)
         ppm = pfm.map( column => {
             const sum = (count && countUnaligned ? count : column.reduce( (a, c) => a + c ));
-            return column.map( x => x / sum );
+            return column.map( x => (x + pseudocount) / sum );
         });
     if (ppm.length === 0 || ppm[0].length === 0)
 	return <div />;
