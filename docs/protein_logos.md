@@ -18,6 +18,9 @@ If you need negative letter heights, use the `LogoWithNegatives` component inste
 Each row is a position in the logo, and the columns are alphabetical.
 * **pfm**: a matrix containing the number of times each amino acid occurs at each position.
 This is only used if **ppm** is not provided. Column and row orders are the same as for **ppm**.
+* **fasta**: sequences in FASTA format from which to compute the logo; only used if **ppm** and **pfm** are not provided.
+* **noFastaNames**: if specified, the string in FASTA contains exactly one sequence per line and no sequence names are included.
+* **countUnaligned**: if specified, unaligned positions in the FASTA sequence are inlcuded in the infomation content computation, which de-emphasizes them in the logo.
 * **mode**: determines how letter heights are computed; may be either
 `"INFORMATION_CONTENT"` (default) or `"FREQUENCY"`.
 * **startpos**: if set, the first base in the logo will be numbered with a

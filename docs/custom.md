@@ -14,8 +14,15 @@ You can use any combination of symbols you like in your logos. The **custom alph
 the **Building blocks: glyphs and alphabets** section has details. Once you have a custom alphabet,
 you can render a logo with it using the `Logo` component, which takes the following properties:
 
-* **values**: a matrix containing nucleotide frequencies at each position. Each
-row is a position in the logo, and the columns correspond to the symbol order defined in the alphabet array.
+* **ppm**: a matrix containing nucleotide frequencies at each position, ranging
+from 0.0 to 1.0. Each row is a position in the logo, and the columns are alphabetical
+(A, C, G, U).
+* **pfm**: a matrix containing the number of times a nucleotide occurs at each
+position; this is only used if **ppm** is not provided. The row and column orders
+are the same as for **ppm**.
+* **fasta**: sequences in FASTA format from which to compute the logo; only used if **ppm** and **pfm** are not provided.
+* **noFastaNames**: if specified, the string in FASTA contains exactly one sequence per line and no sequence names are included.
+* **countUnaligned**: if specified, unaligned positions in the FASTA sequence are inlcuded in the infomation content computation, which de-emphasizes them in the logo.
 * **mode**: determines how letter heights are computed; may be either
 `"INFORMATION_CONTENT"` (default) or `"FREQUENCY"`.
 * **startpos**: if set, the first base in the logo will be numbered with a
