@@ -62,6 +62,6 @@ spec:
     serviceName: logosj-package-service
     servicePort: 80
   tls:
-  - secretName: logosj-package-tls
+  - secretName: logosj-package-tls-secret
     hosts:
     - bundle.logosj.wenglab.org
