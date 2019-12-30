@@ -55,6 +55,8 @@ metadata:
   annotations:
     kubernetes.io/ingress.global-static-ip-name: "logosj-package-external-ip"
     cert-manager.io/cluster-issuer: letsencrypt
+    cert-manager.io/issue-temporary-certificate: "true"
+    acme.cert-manager.io/http01-edit-in-place: "true"
 spec:
   backend:
     serviceName: logosj-package-service
