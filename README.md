@@ -1,16 +1,16 @@
-# Logojs: Embeddable SVG Sequence Logos
+# LogoJS: Embeddable SVG Sequence Logos
 
-Logojs is a Javascipt package for creating SVG sequence logos.
-Logojs supports a wide range of biological use cases. This README provides a quick overview
-of Logojs installation and usage. For detailed examples with code samples
+LogoJS is a Javascipt package for creating SVG sequence logos.
+LogoJS supports a wide range of biological use cases. This README provides a quick overview
+of LogoJS installation and usage. For detailed examples with code samples
 are available at our [companion site](http://logojs.wenglab.org/app/gallery) and documentation
 at [GitHub Pages](https://weng-lab.github.io/logojs-package/).
 
-Logojs can be used with and without ReactJS. A companion web app makes it easy to share
+LogoJS can be used with and without ReactJS. A companion web app makes it easy to share
 SVG logos and generate them in batches from the output of common tools such as the MEME Suite.
 
 ## Using in your web application
-You can add Logojs to your project using NPM or Yarn:
+You can add LogoJS to your project using NPM or Yarn:
 ```sh
 yarn add logojs-react
 ```
@@ -19,8 +19,8 @@ or
 npm install logojs-react
 ```
 
-If you want to use Logojs in a static web page, you can simply include the package with a
-static script tag, which will add Logojs to the global namespace as `logojs`:
+If you want to use LogoJS in a static web page, you can simply include the package with a
+static script tag, which will add LogoJS to the global namespace as `logojs`:
 
 ```html
 <script src="https://bundle.logojs.wenglab.org/bundle.js" type="text/javascript">
@@ -29,7 +29,7 @@ static script tag, which will add Logojs to the global namespace as `logojs`:
 
 ## Quick example: a DNA logo
 
-The transcription factor CTCF binds a well-known consensus DNA sequence, rendered below with Logojs:
+The transcription factor CTCF binds a well-known consensus DNA sequence, rendered below with LogoJS:
 
 <img src="https://logojs.wenglab.org/svg/eyJwcG0iOltbMC4wOSwwLjMxLDAuMDgsMC41XSxbMC4xOCwwLjE1LDAuNDUsMC4yXSxbMC4zLDAuMDUsMC40OSwwLjE0XSxbMC4wNiwwLjg3LDAuMDIsMC4wM10sWzAsMC45OCwwLDAuMDJdLFswLjgxLDAuMDEsMC4wNywwLjA5XSxbMC4wNCwwLjU3LDAuMzYsMC4wMV0sWzAuMTEsMC40NywwLjA1LDAuMzVdLFswLjkzLDAuMDEsMC4wMywwLjAxXSxbMCwwLDAuOTksMC4wMV0sWzAuMzYsMCwwLjY0LDBdLFswLjA1LDAuMDEsMC41NSwwLjM3XSxbMC4wMywwLDAuOTcsMF0sWzAuMDYsMCwwLjg1LDAuMDddLFswLjExLDAuOCwwLDAuMDddLFswLjQsMC4wMSwwLjU1LDAuMDFdLFswLjA5LDAuNTMsMC4zMywwLjA0XSxbMC4xMiwwLjM1LDAuMDgsMC40M10sWzAuNDQsMC4xOSwwLjI5LDAuMDZdXSwidHlwZWlkIjowLCJzY2FsZSI6MSwiaXNmcmVxIjpmYWxzZSwiZmlyc3RiYXNlIjoxLCJhbHBoYWJldCI6W3sicmVnZXgiOiJBIiwiY29sb3IiOiJyZWQifSx7InJlZ2V4IjoiQyIsImNvbG9yIjoiYmx1ZSJ9LHsicmVnZXgiOiJHIiwiY29sb3IiOiJvcmFuZ2UifSx7InJlZ2V4IjoiVCIsImNvbG9yIjoiIzIyOGIyMiJ9XX0=" alt="CTCF logo" width="50%">
 
