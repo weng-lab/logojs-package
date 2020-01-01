@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: logosj-package-deployment
+  name: logojs-package-deployment
   labels:
-    app: logosj-package
+    app: logojs-package
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: logosj-package
+      app: logojs-package
   template:
     metadata:
       labels:
-        app: logosj-package
+        app: logojs-package
     spec:
       containers:
-      - name: logosj-package
-        image: gcr.io/devenv-215523/logosj-package
+      - name: logojs-package
+        image: gcr.io/devenv-215523/logojs-package
         env:
         - name: ENVIRONMENT
           value: staging
@@ -36,9 +36,9 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: logosj-package-service
+  name: logojs-package-service
   labels:
-    app: logosj-package
+    app: logojs-package
 spec:
   type: NodePort
   ports:
@@ -46,22 +46,22 @@ spec:
     protocol: TCP
     targetPort: 80
   selector:
-    app: logosj-package
+    app: logojs-package
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: logosj-package-ingress
+  name: logojs-package-ingress
   annotations:
-    kubernetes.io/ingress.global-static-ip-name: "logosj-package-external-ip"
+    kubernetes.io/ingress.global-static-ip-name: "logojs-package-external-ip"
     cert-manager.io/cluster-issuer: letsencrypt
     cert-manager.io/issue-temporary-certificate: "true"
     acme.cert-manager.io/http01-edit-in-place: "true"
 spec:
   backend:
-    serviceName: logosj-package-service
+    serviceName: logojs-package-service
     servicePort: 80
   tls:
-  - secretName: logosj-package-tls-secret
+  - secretName: logojs-package-tls-secret
     hosts:
-    - bundle.logosj.wenglab.org
+    - bundle.logojs.wenglab.org

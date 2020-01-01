@@ -25,11 +25,11 @@ LC_b, etc. and numbers as N1, N2, etc. For example the following code imports ca
 lower case a, and the number 1:
 
 ```js
-import { A, LC_a, N1 } from 'logosj';
+import { A, LC_a, N1 } from 'logojs';
 ```
 
-In plain Javascript, these are available in the `logosj` namespace as `logosj.A`, `logosj.LC_a`,
-`logosj.N1`, etc.
+In plain Javascript, these are available in the `logojs` namespace as `logojs.A`, `logojs.LC_a`,
+`logojs.N1`, etc.
 
 ## Custom glyphs
 

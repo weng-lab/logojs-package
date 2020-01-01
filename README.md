@@ -1,42 +1,42 @@
-# LogosJ: Embeddable SVG Sequence Logos
+# Logojs: Embeddable SVG Sequence Logos
 
-LogosJ is a Javascipt package for creating SVG sequence logos.
-LogosJ supports a wide range of biological use cases. This README provides a quick overview
-of LogosJ installation and usage. For detailed examples with code samples
-are available at our [companion site](http://logosj.wenglab.org/app/gallery) and documentation
-at [GitHub Pages](https://weng-lab.github.io/logosj-package/).
+Logojs is a Javascipt package for creating SVG sequence logos.
+Logojs supports a wide range of biological use cases. This README provides a quick overview
+of Logojs installation and usage. For detailed examples with code samples
+are available at our [companion site](http://logojs.wenglab.org/app/gallery) and documentation
+at [GitHub Pages](https://weng-lab.github.io/logojs-package/).
 
-LogosJ can be used with and without ReactJS. A companion web app makes it easy to share
+Logojs can be used with and without ReactJS. A companion web app makes it easy to share
 SVG logos and generate them in batches from the output of common tools such as the MEME Suite.
 
 ## Using in your web application
-You can add LogosJ to your project using NPM or Yarn:
+You can add Logojs to your project using NPM or Yarn:
 ```sh
-yarn add logosj-react
+yarn add logojs-react
 ```
 or
 ```sh
-npm install logosj-react
+npm install logojs-react
 ```
 
-If you want to use LogosJ in a static web page, you can simply include the package with a
-static script tag, which will add LogosJ to the global namespace as `logosj`:
+If you want to use Logojs in a static web page, you can simply include the package with a
+static script tag, which will add Logojs to the global namespace as `logojs`:
 
 ```html
-<script src="https://bundle.logosj.wenglab.org/bundle.js" type="text/javascript">
+<script src="https://bundle.logojs.wenglab.org/bundle.js" type="text/javascript">
 </script>
 ```
 
 ## Quick example: a DNA logo
 
-The transcription factor CTCF binds a well-known consensus DNA sequence, rendered below with LogosJ:
+The transcription factor CTCF binds a well-known consensus DNA sequence, rendered below with Logojs:
 
-<img src="https://logosj.wenglab.org/svg/eyJwcG0iOltbMC4wOSwwLjMxLDAuMDgsMC41XSxbMC4xOCwwLjE1LDAuNDUsMC4yXSxbMC4zLDAuMDUsMC40OSwwLjE0XSxbMC4wNiwwLjg3LDAuMDIsMC4wM10sWzAsMC45OCwwLDAuMDJdLFswLjgxLDAuMDEsMC4wNywwLjA5XSxbMC4wNCwwLjU3LDAuMzYsMC4wMV0sWzAuMTEsMC40NywwLjA1LDAuMzVdLFswLjkzLDAuMDEsMC4wMywwLjAxXSxbMCwwLDAuOTksMC4wMV0sWzAuMzYsMCwwLjY0LDBdLFswLjA1LDAuMDEsMC41NSwwLjM3XSxbMC4wMywwLDAuOTcsMF0sWzAuMDYsMCwwLjg1LDAuMDddLFswLjExLDAuOCwwLDAuMDddLFswLjQsMC4wMSwwLjU1LDAuMDFdLFswLjA5LDAuNTMsMC4zMywwLjA0XSxbMC4xMiwwLjM1LDAuMDgsMC40M10sWzAuNDQsMC4xOSwwLjI5LDAuMDZdXSwidHlwZWlkIjowLCJzY2FsZSI6MSwiaXNmcmVxIjpmYWxzZSwiZmlyc3RiYXNlIjoxLCJhbHBoYWJldCI6W3sicmVnZXgiOiJBIiwiY29sb3IiOiJyZWQifSx7InJlZ2V4IjoiQyIsImNvbG9yIjoiYmx1ZSJ9LHsicmVnZXgiOiJHIiwiY29sb3IiOiJvcmFuZ2UifSx7InJlZ2V4IjoiVCIsImNvbG9yIjoiIzIyOGIyMiJ9XX0=" alt="CTCF logo" width="50%">
+<img src="https://logojs.wenglab.org/svg/eyJwcG0iOltbMC4wOSwwLjMxLDAuMDgsMC41XSxbMC4xOCwwLjE1LDAuNDUsMC4yXSxbMC4zLDAuMDUsMC40OSwwLjE0XSxbMC4wNiwwLjg3LDAuMDIsMC4wM10sWzAsMC45OCwwLDAuMDJdLFswLjgxLDAuMDEsMC4wNywwLjA5XSxbMC4wNCwwLjU3LDAuMzYsMC4wMV0sWzAuMTEsMC40NywwLjA1LDAuMzVdLFswLjkzLDAuMDEsMC4wMywwLjAxXSxbMCwwLDAuOTksMC4wMV0sWzAuMzYsMCwwLjY0LDBdLFswLjA1LDAuMDEsMC41NSwwLjM3XSxbMC4wMywwLDAuOTcsMF0sWzAuMDYsMCwwLjg1LDAuMDddLFswLjExLDAuOCwwLDAuMDddLFswLjQsMC4wMSwwLjU1LDAuMDFdLFswLjA5LDAuNTMsMC4zMywwLjA0XSxbMC4xMiwwLjM1LDAuMDgsMC40M10sWzAuNDQsMC4xOSwwLjI5LDAuMDZdXSwidHlwZWlkIjowLCJzY2FsZSI6MSwiaXNmcmVxIjpmYWxzZSwiZmlyc3RiYXNlIjoxLCJhbHBoYWJldCI6W3sicmVnZXgiOiJBIiwiY29sb3IiOiJyZWQifSx7InJlZ2V4IjoiQyIsImNvbG9yIjoiYmx1ZSJ9LHsicmVnZXgiOiJHIiwiY29sb3IiOiJvcmFuZ2UifSx7InJlZ2V4IjoiVCIsImNvbG9yIjoiIzIyOGIyMiJ9XX0=" alt="CTCF logo" width="50%">
 
 If you use ReactJS, the following code creates the CTCF consensus binding logo:
 
 ```jsx
-import { DNALogo } from 'logosj-react';
+import { DNALogo } from 'logojs-react';
 
 const CTCF_PPM = [
   [0.09, 0.31, 0.08, 0.50], [0.18, 0.15, 0.45, 0.20], [0.30, 0.05, 0.49, 0.14],
@@ -59,7 +59,7 @@ If you don't use React, the following code embeds the DNA logo in a `div` elemen
 <!doctype html>
 <html>
   <body>
-    <script src="https://bundle.logosj.wenglab.org/bundle.js" type="text/javascript"></script>
+    <script src="https://bundle.logojs.wenglab.org/bundle.js" type="text/javascript"></script>
     <div id="logo" style="width:500px"></div>
     <script type="text/javascript">
       const CTCF_PPM = [
@@ -71,7 +71,7 @@ If you don't use React, the following code embeds the DNA logo in a `div` elemen
         [0.40, 0.01, 0.55, 0.01], [0.09, 0.53, 0.33, 0.04], [0.12, 0.35, 0.08, 0.43], 
         [0.44, 0.19, 0.29, 0.06]
       ];
-      logosj.embedDNALogo(document.getElementById("logo"), { ppm: CTCF_PPM });
+      logojs.embedDNALogo(document.getElementById("logo"), { ppm: CTCF_PPM });
     </script>
   </body>
 </html>

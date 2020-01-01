@@ -9,7 +9,7 @@ position. If you need custom axes, custom colors, or a custom alphabet, use the 
 If you need negative letter heights, use the `LogoWithNegatives` component instead. The following is a CTCF logo
 rendered with the default `DNALogo` component:
 
-<img src="http://logosj.wenglab.org/svg/eyJwcG0iOltbMC4wOSwwLjMxLDAuMDgsMC41XSxbMC4xOCwwLjE1LDAuNDUsMC4yXSxbMC4zLDAuMDUsMC40OSwwLjE0XSxbMC4wNiwwLjg3LDAuMDIsMC4wM10sWzAsMC45OCwwLDAuMDJdLFswLjgxLDAuMDEsMC4wNywwLjA5XSxbMC4wNCwwLjU3LDAuMzYsMC4wMV0sWzAuMTEsMC40NywwLjA1LDAuMzVdLFswLjkzLDAuMDEsMC4wMywwLjAxXSxbMCwwLDAuOTksMC4wMV0sWzAuMzYsMCwwLjY0LDBdLFswLjA1LDAuMDEsMC41NSwwLjM3XSxbMC4wMywwLDAuOTcsMF0sWzAuMDYsMCwwLjg1LDAuMDddLFswLjExLDAuOCwwLDAuMDddLFswLjQsMC4wMSwwLjU1LDAuMDFdLFswLjA5LDAuNTMsMC4zMywwLjA0XSxbMC4xMiwwLjM1LDAuMDgsMC40M10sWzAuNDQsMC4xOSwwLjI5LDAuMDZdXSwidHlwZWlkIjowLCJzY2FsZSI6MSwiaXNmcmVxIjpmYWxzZSwiZmlyc3RiYXNlIjoxLCJhbHBoYWJldCI6W3sicmVnZXgiOiJBIiwiY29sb3IiOiJyZWQifSx7InJlZ2V4IjoiQyIsImNvbG9yIjoiYmx1ZSJ9LHsicmVnZXgiOiJHIiwiY29sb3IiOiJvcmFuZ2UifSx7InJlZ2V4IjoiVCIsImNvbG9yIjoiIzIyOGIyMiJ9XX0" alt="CTCF logo" width="50%">
+<img src="http://logojs.wenglab.org/svg/eyJwcG0iOltbMC4wOSwwLjMxLDAuMDgsMC41XSxbMC4xOCwwLjE1LDAuNDUsMC4yXSxbMC4zLDAuMDUsMC40OSwwLjE0XSxbMC4wNiwwLjg3LDAuMDIsMC4wM10sWzAsMC45OCwwLDAuMDJdLFswLjgxLDAuMDEsMC4wNywwLjA5XSxbMC4wNCwwLjU3LDAuMzYsMC4wMV0sWzAuMTEsMC40NywwLjA1LDAuMzVdLFswLjkzLDAuMDEsMC4wMywwLjAxXSxbMCwwLDAuOTksMC4wMV0sWzAuMzYsMCwwLjY0LDBdLFswLjA1LDAuMDEsMC41NSwwLjM3XSxbMC4wMywwLDAuOTcsMF0sWzAuMDYsMCwwLjg1LDAuMDddLFswLjExLDAuOCwwLDAuMDddLFswLjQsMC4wMSwwLjU1LDAuMDFdLFswLjA5LDAuNTMsMC4zMywwLjA0XSxbMC4xMiwwLjM1LDAuMDgsMC40M10sWzAuNDQsMC4xOSwwLjI5LDAuMDZdXSwidHlwZWlkIjowLCJzY2FsZSI6MSwiaXNmcmVxIjpmYWxzZSwiZmlyc3RiYXNlIjoxLCJhbHBoYWJldCI6W3sicmVnZXgiOiJBIiwiY29sb3IiOiJyZWQifSx7InJlZ2V4IjoiQyIsImNvbG9yIjoiYmx1ZSJ9LHsicmVnZXgiOiJHIiwiY29sb3IiOiJvcmFuZ2UifSx7InJlZ2V4IjoiVCIsImNvbG9yIjoiIzIyOGIyMiJ9XX0" alt="CTCF logo" width="50%">
 
 `DNALogo` takes the following properties:
 
@@ -39,7 +39,7 @@ in `FREQUENCY` mode, it is ignored.
 The three mouse event callbacks receive two arguments: *position*, the 0-based index of the position in the logo; and *symbol*, the symbol's entry in the *alphabet* array.
 
 ```js
-import { DNALogo } from 'logosj-react';
+import { DNALogo } from 'logojs-react';
 
 const CTCF_PPM = [
   [0.09, 0.31, 0.08, 0.50], [0.18, 0.15, 0.45, 0.20], [0.30, 0.05, 0.49, 0.14],
@@ -58,8 +58,8 @@ export const CTCFLogo = props => (
 
 ## Without React: embedDNALogo function
 
-Outside of React, use the `logosj.embedDNALogo` function to embed a `DNALogo` component in a `div`.
-`logosj.embedDNALogo` takes two arguments:
+Outside of React, use the `logojs.embedDNALogo` function to embed a `DNALogo` component in a `div`.
+`logojs.embedDNALogo` takes two arguments:
 
 * **div**: HTML element in which to embed the DNA logo; its `innerHTML` will be
 replaced by the rendered logo.
@@ -71,7 +71,7 @@ If you don't use React, the following code embeds the DNA logo in a `div` elemen
 <!doctype html>
 <html>
   <body>
-    <script src="http://bundle.logosj.wenglab.org/bundle.js" type="text/javascript"></script>
+    <script src="http://bundle.logojs.wenglab.org/bundle.js" type="text/javascript"></script>
     <div id="logo" style="width:500px"></div>
     <script type="text/javascript">
       const CTCF_PPM = [
@@ -83,7 +83,7 @@ If you don't use React, the following code embeds the DNA logo in a `div` elemen
         [0.40, 0.01, 0.55, 0.01], [0.09, 0.53, 0.33, 0.04], [0.12, 0.35, 0.08, 0.43], 
         [0.44, 0.19, 0.29, 0.06]
       ];
-      logosj.embedDNALogo(document.getElementById("logo"), { ppm: CTCF_PPM });
+      logojs.embedDNALogo(document.getElementById("logo"), { ppm: CTCF_PPM });
     </script>
   </body>
 </html>

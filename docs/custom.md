@@ -43,7 +43,7 @@ The three mouse event callbacks receive two arguments: *position*, the 0-based i
 The following complete example renders a logo with **M** and **W** representing methylated **CpG**:
 
 ```js
-import { Logo } from 'logosj-react';
+import { Logo } from 'logojs-react';
 const METHYL_VALUES = [
   [0,0,0,1,0,0]
   [0,0,0,1,0,0]
@@ -96,7 +96,7 @@ The three mouse event callbacks receive two arguments: *position*, the 0-based i
 The following complete example renders a DNA logo with some negative letters:
 
 ```js
-import { LogoWithNegatives, DNAAlphabet } from 'logosj-react';
+import { LogoWithNegatives, DNAAlphabet } from 'logojs-react';
 const DNA_VALUES = [
   [0,0,0,0], [-0.5,0.5,-0.5,0.5], [0.5,-2,-2,3],
   [2.5,-2,0.5,-0.5], [4.5,-1,-2,-2.5], [-1,-1,0,2],
@@ -143,7 +143,7 @@ The following example renders a `RawLogo` containing a DNA sequence with some le
 must be rendered within a containing `svg`, and is shifted to the desired position by transforming a `g` element:
 
 ```js
-import { RawLogo } from 'logosj-react';
+import { RawLogo } from 'logojs-react';
 const ANNOTATED_VALUES = [
   [2,0,0,0,0,0,0,0]
   [0,0,2,0,0,0,0,0]
@@ -193,10 +193,10 @@ arguments:
 When a `RawLogo` is rendered within an `svg`, a variety of custom annotations can be layered on as desired
 using custom SVG components. The following example renders two logos on top of each other, one representing
 a reference sequence with a SNP and the other a motif interrupted by the SNP. The SNP is highlighted in gray
-and the logos labeled with text labels. For more examples, see our companion site, http://logosj.wenglab.org/.
+and the logos labeled with text labels. For more examples, see our companion site, http://logojs.wenglab.org/.
 
 ```js
-import { RawLogo, DNAAlphabet } from 'logosj-react';
+import { RawLogo, DNAAlphabet } from 'logojs-react';
 const SNP_VALUES = [
   [0.05,0.05,0,0]
   [0,0,0.3,0.7]

@@ -30,8 +30,8 @@ matching built-in letters and digits if you leave it empty.
 
 LogosJ provides built-in alphabets for common use cases for convenience. If you need to render
 a custom logo with these symbol sets, you can import these alphabets rather than build them
-yourself. In React, these can be imported directly from the `logosj` package; without React, they
-are accessible under the `logosj` namespace (i.e. `logosj.DNAAlphabet`).
+yourself. In React, these can be imported directly from the `logojs` package; without React, they
+are accessible under the `logojs` namespace (i.e. `logojs.DNAAlphabet`).
 
 The `DNAAlphabet` renders logos with a DNA symbol set. **A** is red, **C** is blue, **G** is gold,
 and **T** is green; columns in the PWM are in that order.
@@ -56,7 +56,7 @@ and **W** representing methylated **CpG** on the plus and minus strands (the syn
 first includes the core of the `DNAAlphabet`, then extends it with **M** and **W**):
 
 ```js
-import { DNAAlphabet, loadGlyphComponents } from 'logosj';
+import { DNAAlphabet, loadGlyphComponents } from 'logojs';
 
 export const METHYL_ALPHABET = loadGlyphComponents([
    ...DNAAlphabet,

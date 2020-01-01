@@ -1,7 +1,7 @@
 theme: jekyll-theme-slate
 site_name: LogosJ
-repo_name: logosj-package
-repo_url: https://www.github.com/weng-lab/logosj-package
+repo_name: logojs-package
+repo_url: https://www.github.com/weng-lab/logojs-package
 site_description: "LogosJ Javascript sequence logos"
 site_author: Henry Pratt
 remote_branch: master

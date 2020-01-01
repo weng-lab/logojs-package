@@ -1,6 +1,6 @@
 site_name: LogosJ
-repo_name: logosj-package
-repo_url: https://github.com/weng-lab/logosj-package
+repo_name: logojs-package
+repo_url: https://github.com/weng-lab/logojs-package
 site_description: "LogosJ embeddable sequence logos"
 site_author: Henry Pratt
 remote_branch: master
@@ -9,7 +9,7 @@ copyright: 'Copyright &copy; 2019 Weng Lab'
 
 theme:
   name: 'material'
-  logo: img/logosj.svg
+  logo: img/logojs.svg
   favicon: img/favicon.ico
   palette:
     primary: 'blue grey'
