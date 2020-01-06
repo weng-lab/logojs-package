@@ -17,7 +17,8 @@ module.exports = {
     path: __dirname + '/dist',
     publicPath: '/',
     filename: 'bundle.js',
-    library: 'logojs'  
+    library: 'logojs'
+    target: 'umd'
   },
   devServer: {
     contentBase: './dist'
