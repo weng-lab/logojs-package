@@ -1,7 +1,7 @@
 {
   "name": "logojs-react",
   "license": "MIT",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "description": "React Components for rendering sequence logos",
   "main": "index.js",
   "author": "Henry Pratt",
