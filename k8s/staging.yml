@@ -62,6 +62,6 @@ spec:
     serviceName: logojs-package-service
     servicePort: 80
   tls:
-  - secretName: logojs-package-tls-secret
+  - secretName: logojs-package-tls-newsecret
     hosts:
     - bundle.logojs.wenglab.org
