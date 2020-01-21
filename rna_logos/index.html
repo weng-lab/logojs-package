@@ -102,7 +102,7 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href=".." title="LogosJ" class="md-header-nav__button md-logo">
           
-            <img src="../img/logosj.svg" width="24" height="24">
+            <img src="../img/logojs.svg" width="24" height="24">
           
         </a>
       </div>
@@ -159,7 +159,7 @@
 
   
 
-<a href="https://github.com/weng-lab/logosj-package/" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/weng-lab/logojs-package/" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -168,7 +168,7 @@
     </div>
   
   <div class="md-source__repository">
-    logosj-package
+    logojs-package
   </div>
 </a>
           </div>
@@ -194,7 +194,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href=".." title="LogosJ" class="md-nav__button md-logo">
       
-        <img src="../img/logosj.svg" width="48" height="48">
+        <img src="../img/logojs.svg" width="48" height="48">
       
     </a>
     LogosJ
@@ -206,7 +206,7 @@
 
   
 
-<a href="https://github.com/weng-lab/logosj-package/" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/weng-lab/logojs-package/" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -215,7 +215,7 @@
     </div>
   
   <div class="md-source__repository">
-    logosj-package
+    logojs-package
   </div>
 </a>
     </div>
@@ -499,7 +499,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/weng-lab/logosj-package/edit/master/docs/rna_logos.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/weng-lab/logojs-package/edit/master/docs/rna_logos.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                 <h1 id="rendering-rna-logos">Rendering RNA logos<a class="headerlink" href="#rendering-rna-logos" title="Permanent link">&para;</a></h1>
@@ -510,7 +510,7 @@ The logo can use either information content (0-2 bits) or base frequency (0%-100
 position. If you need custom axes, custom colors, or a custom alphabet, use the <code>Logo</code> or <code>RawLogo</code> compoenent instead.
 If you need negative letter heights, use the <code>LogoWithNegatives</code> component instead. The following is a logo for the
 <strong>QKI</strong> RNA binding protein, which binds a consensus sequence of <strong>ACUAAC</strong>:</p>
-<p><img alt="QKI logo" src="http://logosj.wenglab.org/svg/eyJwcG0iOltbMC43LDAuMSwwLjEsMC4xXSxbMCwxLDAsMF0sWzAsMCwwLDFdLFsxLDAsMCwwXSxbMSwwLDAsMF0sWzAsMSwwLDBdLFswLjMsMC4yLDAuMywwLjJdXSwidHlwZWlkIjoxLCJzY2FsZSI6MSwiaXNmcmVxIjpmYWxzZSwiZmlyc3RiYXNlIjoxLCJhbHBoYWJldCI6W3sicmVnZXgiOiJBIiwiY29sb3IiOiJyZWQifSx7InJlZ2V4IjoiQyIsImNvbG9yIjoiYmx1ZSJ9LHsicmVnZXgiOiJHIiwiY29sb3IiOiJvcmFuZ2UifSx7InJlZ2V4IjoiVSIsImNvbG9yIjoiIzIyOGIyMiJ9XX0=" width="50%" /></p>
+<p><img alt="QKI logo" src="http://logojs.wenglab.org/svg/eyJwcG0iOltbMC43LDAuMSwwLjEsMC4xXSxbMCwxLDAsMF0sWzAsMCwwLDFdLFsxLDAsMCwwXSxbMSwwLDAsMF0sWzAsMSwwLDBdLFswLjMsMC4yLDAuMywwLjJdXSwidHlwZWlkIjoxLCJzY2FsZSI6MSwiaXNmcmVxIjpmYWxzZSwiZmlyc3RiYXNlIjoxLCJhbHBoYWJldCI6W3sicmVnZXgiOiJBIiwiY29sb3IiOiJyZWQifSx7InJlZ2V4IjoiQyIsImNvbG9yIjoiYmx1ZSJ9LHsicmVnZXgiOiJHIiwiY29sb3IiOiJvcmFuZ2UifSx7InJlZ2V4IjoiVSIsImNvbG9yIjoiIzIyOGIyMiJ9XX0=" width="50%" /></p>
 <p><code>RNALogo</code> takes the following properties:</p>
 <ul>
 <li><strong>ppm</strong>: a matrix containing nucleotide frequencies at each position, ranging
@@ -537,7 +537,7 @@ in <code>FREQUENCY</code> mode, it is ignored.</li>
 <li><strong>onSymbolMouseOut</strong>: callback when a symbol in the logo is moused out.</li>
 </ul>
 <p>The three mouse event callbacks receive two arguments: <em>position</em>, the 0-based index of the position in the logo; and <em>symbol</em>, the symbol&rsquo;s entry in the <em>alphabet</em> array.</p>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">RNALogo</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;logosj-react&#39;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">RNALogo</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;logojs-react&#39;</span><span class="p">;</span>
 
 <span class="kr">const</span> <span class="nx">QKI_PPM</span> <span class="o">=</span> <span class="p">[</span>
   <span class="p">[</span><span class="mf">0.09</span><span class="p">,</span> <span class="mf">0.31</span><span class="p">,</span> <span class="mf">0.08</span><span class="p">,</span> <span class="mf">0.50</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.18</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.45</span><span class="p">,</span> <span class="mf">0.20</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.30</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.49</span><span class="p">,</span> <span class="mf">0.14</span><span class="p">],</span>
@@ -555,8 +555,8 @@ in <code>FREQUENCY</code> mode, it is ignored.</li>
 </pre></div>
 
 <h2 id="without-react-embedrnalogo-function">Without React: embedRNALogo function<a class="headerlink" href="#without-react-embedrnalogo-function" title="Permanent link">&para;</a></h2>
-<p>Outside of React, use the <code>logosj.embedRNALogo</code> function to embed a <code>RNALogo</code> component in a <code>div</code>.
-<code>logosj.embedRNALogo</code> takes two arguments:</p>
+<p>Outside of React, use the <code>logojs.embedRNALogo</code> function to embed a <code>RNALogo</code> component in a <code>div</code>.
+<code>logojs.embedRNALogo</code> takes two arguments:</p>
 <ul>
 <li><strong>div</strong>: HTML element in which to embed the RNA logo; its <code>innerHTML</code> will be
 replaced by the rendered logo.</li>
@@ -566,7 +566,7 @@ replaced by the rendered logo.</li>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;!doctype html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://bundle.logosj.wenglab.org/bundle.js&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://bundle.logojs.wenglab.org/bundle.js&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;logo&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;width:500px&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
       <span class="kr">const</span> <span class="nx">QKI_PPM</span> <span class="o">=</span> <span class="p">[</span>
@@ -578,7 +578,7 @@ replaced by the rendered logo.</li>
         <span class="p">[</span><span class="mf">0.40</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.55</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.09</span><span class="p">,</span> <span class="mf">0.53</span><span class="p">,</span> <span class="mf">0.33</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.12</span><span class="p">,</span> <span class="mf">0.35</span><span class="p">,</span> <span class="mf">0.08</span><span class="p">,</span> <span class="mf">0.43</span><span class="p">],</span> 
         <span class="p">[</span><span class="mf">0.44</span><span class="p">,</span> <span class="mf">0.19</span><span class="p">,</span> <span class="mf">0.29</span><span class="p">,</span> <span class="mf">0.06</span><span class="p">]</span>
       <span class="p">];</span>
-      <span class="nx">logosj</span><span class="p">.</span><span class="nx">embedRNALogo</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;logo&quot;</span><span class="p">),</span> <span class="p">{</span> <span class="nx">ppm</span><span class="o">:</span> <span class="nx">QKI_PPM</span> <span class="p">});</span>
+      <span class="nx">logojs</span><span class="p">.</span><span class="nx">embedRNALogo</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;logo&quot;</span><span class="p">),</span> <span class="p">{</span> <span class="nx">ppm</span><span class="o">:</span> <span class="nx">QKI_PPM</span> <span class="p">});</span>
     <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
