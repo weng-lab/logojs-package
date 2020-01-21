@@ -53,6 +53,7 @@ export const RawLogo = ({ values, glyphWidth, stackHeight, alphabet, onSymbolMou
  * @prop noFastaNames if set and if FASTA is used to compute letter heights, specifies that the FASTA data contains one sequence per line without sequence names.
  * @prop countUnaligned if set and if FASTA is used to compute letter heights, specifies that unaligned positions (dashes) should contribute to information content.
  * @prop constantPseudocount if set and if FASTA is used to compute letter heights, adds this value divided by the alphabet length to the resulting PFM.
+ * @prop smallSampleCorrectionOff if set, no small sample correction is performed.
  * @prop mode determines how symbol heights are computed; either FREQUENCY or INFORMATION_CONTENT.
  * @prop height the height of the logo relative to the containing SVG.
  * @prop width the width of the logo relative to the containing SVG.
@@ -64,21 +65,25 @@ export const RawLogo = ({ values, glyphWidth, stackHeight, alphabet, onSymbolMou
  * @prop yAxisMax if set, uses an explicit maximum value for the y-axis rather than the total number of bits possible. This is ignored in FREQUENCY mode.
  */
 const Logo = React.forwardRef(
-    ({ ppm, pfm, values, fasta, mode, height, width, alphabet, glyphwidth, scale, startpos, showGridLines, backgroundFrequencies, constantPseudocount,
+    ({ ppm, pfm, values, fasta, mode, height, width, alphabet, glyphwidth, scale, startpos, showGridLines, backgroundFrequencies, constantPseudocount, smallSampleCorrectionOff,
        yAxisMax, onSymbolMouseOver, onSymbolMouseOut, onSymbolClick, noFastaNames, countUnaligned }, ref
 ) => {
 
     /* compute likelihood; need at least one entry to continue */
     let count = null;
-    const pseudocount = (constantPseudocount || 0) / alphabet.length;
+    const relativePseudocount = (pfm || fasta) && !constantPseudocount && !countUnaligned ? !smallSampleCorrectionOff : false;
+    const pseudocount = relativePseudocount ? 0 : (constantPseudocount || 0) / alphabet.length;
     if (!ppm && !pfm && fasta) {
         const r = (noFastaNames ? parseSequences : parseFASTA)(alphabet, fasta.toUpperCase());
         pfm = r.pfm;
         count = r.count || 1;
     }
+    console.log(relativePseudocount, pfm, pfm && pfm.map && pfm.map( x => x.reduce( (t, v, i) => i === undefined ? t : v + t, 0.0 )));
+    const sums = relativePseudocount && pfm && pfm.map && pfm.map( x => x.reduce( (t, v, i) => i === undefined ? t : v + t, 0.0 )).map( x => x === 0 ? 0 : (alphabet.length - 1) / (2 * Math.log(2) * x));
+    console.log(sums);
     if (!ppm && pfm && pfm.map)
-        ppm = pfm.map( column => {
-            const sum = (count && countUnaligned ? count : column.reduce( (a, c) => a + c ) + pseudocount * alphabet.length) || 1;
+        ppm = pfm.map( (column, i) => {
+            const sum = (count && countUnaligned ? count : column.reduce( (a, c) => a + c, 0.0 ) + pseudocount * alphabet.length) || 1;
             return column.map( x => (x + pseudocount) / sum );
         });
     if (ppm.length === 0 || ppm[0].length === 0)
@@ -87,7 +92,7 @@ const Logo = React.forwardRef(
     if (!backgroundFrequencies)
         backgroundFrequencies = ppm[0].map( _ => 1.0 / alphabetSize );
     let likelihood = values || ( mode !== FREQUENCY
-		       ? ppm.map(logLikelihood(backgroundFrequencies))
+		                 ? ppm.map((x, i) => logLikelihood(backgroundFrequencies)(x, sums[i]))
 		       : ppm.map(x => x.map(v => v * Math.log2(alphabetSize))) );
     const theights = mode === FREQUENCY ? [ Math.log2(alphabetSize) ] : backgroundFrequencies.map( x => Math.log2(1.0 / (x || 0.01)) );
     const max = yAxisMax || Math.max(...theights), min = Math.min(...theights);

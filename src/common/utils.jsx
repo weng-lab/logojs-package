@@ -39,10 +39,10 @@ export const loadGlyphComponents = alphabet => (
     })
 );
 
-export const logLikelihood = backgroundFrequencies => r => {
-    let sum = 0.0;
+export const logLikelihood = backgroundFrequencies => (r, e) => {
+    let sum = 0.0, es = e || 0.0;
     r.map( (x, i) => ( sum += x === 0 ? 0 : x * Math.log2(x / (backgroundFrequencies[i] || 0.01)) ) );
-    return r.map( x => x * sum );
+    return r.map( x => { const v = x * (sum - es); return v <= 0.0 ? 0.0 : v; });
 };
 
 export const sortedIndices = x => {
