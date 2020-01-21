@@ -40,7 +40,7 @@
     
     
       
-        <title>LogosJ: Embeddable SVG Sequence Logos</title>
+        <title>LogoJS: Embeddable SVG Sequence Logos</title>
       
     
     
@@ -117,7 +117,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                LogosJ: Embeddable SVG Sequence Logos
+                LogoJS: Embeddable SVG Sequence Logos
               
             </span>
           
@@ -460,15 +460,15 @@
                   <a href="https://github.com/weng-lab/logojs-package/edit/master/docs/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>LogosJ: Embeddable SVG Sequence Logos</h1>
+                  <h1>LogoJS: Embeddable SVG Sequence Logos</h1>
                 
-                <p>LogosJ is a Javascipt package for creating SVG sequence logos.
+                <p>LogoJS is a Javascipt package for creating SVG sequence logos.
 In addition to basic DNA, RNA, and protein logos, we support
 custom alphabets and variety of advanced logo types and custom annotations.</p>
-<p>LogosJ can be used with and without ReactJS. A companion web app makes it easy to share
+<p>LogoJS can be used with and without ReactJS. A companion web app makes it easy to share
 SVG logos and generate them in batches from the output of common tools such as the MEME Suite.</p>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
-<p>LogosJ supports a wide range of biological use cases. Detailed examples with code samples
+<p>LogoJS supports a wide range of biological use cases. Detailed examples with code samples
 are available in this documentation and through our <a href="http://logojs.wenglab.org/app/gallery">companion site</a>.
 Shown below are protein, RNA, methyl DNA, dinucleotide, and protein/DNA interaction logos.</p>
 <p><center></p>
@@ -484,20 +484,20 @@ protein logo<br></p>
 advanced annotations<br></p>
 <p></center></p>
 <h2 id="using-in-your-web-application">Using in your web application<a class="headerlink" href="#using-in-your-web-application" title="Permanent link">&para;</a></h2>
-<p>You can add LogosJ to your project using NPM or Yarn:
+<p>You can add LogoJS to your project using NPM or Yarn:
 <div class="codehilite"><pre><span></span>yarn add logojs-react
 </pre></div>
 or
 <div class="codehilite"><pre><span></span>npm install logojs-react
 </pre></div></p>
-<p>If you want to use LogosJ in a static web page, you can simply include the package with a
-static script tag, which will add LogosJ to the global namespace as <code>logojs</code>:</p>
+<p>If you want to use LogoJS in a static web page, you can simply include the package with a
+static script tag, which will add LogoJS to the global namespace as <code>logojs</code>:</p>
 <div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://bundle.logojs.wenglab.org/bundle.js&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 
 <h2 id="quick-example-a-dna-logo">Quick example: a DNA logo<a class="headerlink" href="#quick-example-a-dna-logo" title="Permanent link">&para;</a></h2>
-<p>The transcription factor CTCF binds a well-known consensus DNA sequence, rendered below with LogosJ:</p>
+<p>The transcription factor CTCF binds a well-known consensus DNA sequence, rendered below with LogoJS:</p>
 <p><img src="http://logojs.wenglab.org/svg/eyJwcG0iOltbMC4wOSwwLjMxLDAuMDgsMC41XSxbMC4xOCwwLjE1LDAuNDUsMC4yXSxbMC4zLDAuMDUsMC40OSwwLjE0XSxbMC4wNiwwLjg3LDAuMDIsMC4wM10sWzAsMC45OCwwLDAuMDJdLFswLjgxLDAuMDEsMC4wNywwLjA5XSxbMC4wNCwwLjU3LDAuMzYsMC4wMV0sWzAuMTEsMC40NywwLjA1LDAuMzVdLFswLjkzLDAuMDEsMC4wMywwLjAxXSxbMCwwLDAuOTksMC4wMV0sWzAuMzYsMCwwLjY0LDBdLFswLjA1LDAuMDEsMC41NSwwLjM3XSxbMC4wMywwLDAuOTcsMF0sWzAuMDYsMCwwLjg1LDAuMDddLFswLjExLDAuOCwwLDAuMDddLFswLjQsMC4wMSwwLjU1LDAuMDFdLFswLjA5LDAuNTMsMC4zMywwLjA0XSxbMC4xMiwwLjM1LDAuMDgsMC40M10sWzAuNDQsMC4xOSwwLjI5LDAuMDZdXSwidHlwZWlkIjowLCJzY2FsZSI6MSwiaXNmcmVxIjpmYWxzZSwiZmlyc3RiYXNlIjoxLCJhbHBoYWJldCI6W3sicmVnZXgiOiJBIiwiY29sb3IiOiJyZWQifSx7InJlZ2V4IjoiQyIsImNvbG9yIjoiYmx1ZSJ9LHsicmVnZXgiOiJHIiwiY29sb3IiOiJvcmFuZ2UifSx7InJlZ2V4IjoiVCIsImNvbG9yIjoiIzIyOGIyMiJ9XX0" alt="CTCF logo" width="50%"></p>
 <p>If you use ReactJS, the following code creates the CTCF consensus binding logo:</p>
 <div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">DNALogo</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;logojs-react&#39;</span><span class="p">;</span>

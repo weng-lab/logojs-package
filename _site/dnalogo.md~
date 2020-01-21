@@ -1,7 +1,7 @@
 ## DNA logos
 
 Perhaps the most common use case for sequence logos is the standard
-DNA logo illustrating a consensus sequence. LogosJ comes with a DNALogo
+DNA logo illustrating a consensus sequence. LogoJS comes with a DNALogo
 component built in. Letters are colored similarly to the MEME Suite
 default color scheme, and x- and y-axes are rendered alongside the logo.
 
@@ -24,7 +24,7 @@ binding sequence logo.
 
 ## RNA logos
 
-LogosJ also provides an RNALogo component. It uses the same color scheme
+LogoJS also provides an RNALogo component. It uses the same color scheme
 as the DNA logo (U is green) and accepts the same properties as the DNALogo.
 To embed it, use the `RNALogo` React component or the `embedRNALogo` function.
 

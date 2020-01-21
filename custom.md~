@@ -2,7 +2,7 @@
 
 ## Overview
 
-LogosJ supports a wide array of customizations for logos. You can use custom alphabets, make
+LogoJS supports a wide array of customizations for logos. You can use custom alphabets, make
 logos where some letters extend below the x-axis, or take advantage of SVG components to layer
 on custom annotations. Several advanced React components are available offering varying degrees
 of customization.
@@ -92,7 +92,7 @@ takes the following arguments:
 
 ## Logos without axes
 
-Logos do not need to be rendered with the default, built-in axes. LogosJ provides a `RawLogo` component
+Logos do not need to be rendered with the default, built-in axes. LogoJS provides a `RawLogo` component
 which just renders glyphs. A `RawLogo` component does not render its own `<svg>` tag; you need to provide it
 yourself. This adds flexibility, however, to render the logo on top of other SVG annotations.
 

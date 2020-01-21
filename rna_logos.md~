@@ -47,7 +47,7 @@ Outside of React, use the `logojs.embedRNALogo` function to embed a `RNALogo` co
 replaced by the rendered logo.
 * **properties**: an object containing the above properties.
 
-The transcription factor CTCF binds a well-known consensus RNA sequence, rendered below with LogosJ:
+The transcription factor CTCF binds a well-known consensus RNA sequence, rendered below with LogoJS:
 
 If you don't use React, the following code embeds the RNA logo in a `div` element:
 

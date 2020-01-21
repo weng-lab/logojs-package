@@ -532,7 +532,7 @@
                 
                 <h1 id="built-in-and-custom-alphabets">Built-in and custom alphabets<a class="headerlink" href="#built-in-and-custom-alphabets" title="Permanent link">&para;</a></h1>
 <h2 id="alphabet-overview">Alphabet overview<a class="headerlink" href="#alphabet-overview" title="Permanent link">&para;</a></h2>
-<p>LogosJ combines sets of individual glyphs into alphabets. An alphabet is an array of <strong>symbols</strong>,
+<p>LogoJS combines sets of individual glyphs into alphabets. An alphabet is an array of <strong>symbols</strong>,
 each of which should have a unique color and glyph combination. Symbols are not restricted to
 just one glyph; if you are rendering a dinucleotide logo, for example, you might use symbols with
 two glyphs each. Alphabets can also have multiple symbols that use the same glyph with different
@@ -546,16 +546,16 @@ letter, a single value may be used in place of an array.</li>
 <li><strong>component</strong> an array of components used to render the glyphs in this symbol. Should be the
 same length as <strong>color</strong>. If your alphabet uses custom glyphs, import your custom glyph
 components and use them here. If the symbol is only one letter, a single component may be used
-in place of an array. If you are only using letters and digits which are built in to LogosJ, you
-can use the <strong>regex</strong> field instead, and LogosJ will populate this field for you using the
+in place of an array. If you are only using letters and digits which are built in to LogoJS, you
+can use the <strong>regex</strong> field instead, and LogoJS will populate this field for you using the
 <code>loadGlyphComponents</code> function.</li>
 <li><strong>regex</strong> a string representing the sequence of letters in this symbol. This field is not
 required, but may be used as a shorthand rather than explicitly including components in the
-<strong>component</strong> field. LogosJ will populate the <strong>components</strong> field for you automatically with
+<strong>component</strong> field. LogoJS will populate the <strong>components</strong> field for you automatically with
 matching built-in letters and digits if you leave it empty.</li>
 </ul>
 <h2 id="built-in-alphabets">Built-in alphabets<a class="headerlink" href="#built-in-alphabets" title="Permanent link">&para;</a></h2>
-<p>LogosJ provides built-in alphabets for common use cases for convenience. If you need to render
+<p>LogoJS provides built-in alphabets for common use cases for convenience. If you need to render
 a custom logo with these symbol sets, you can import these alphabets rather than build them
 yourself. In React, these can be imported directly from the <code>logojs</code> package; without React, they
 are accessible under the <code>logojs</code> namespace (i.e. <code>logojs.DNAAlphabet</code>).</p>
@@ -571,7 +571,7 @@ the digits 0-9, all in that order and with custom colors. This can be used for e
 with different symbols.</p>
 <h2 id="custom-alphabets">Custom alphabets<a class="headerlink" href="#custom-alphabets" title="Permanent link">&para;</a></h2>
 <p>To make a custom alphabet, simply create a custom array of symbol objects as described above.
-If you have custom React components for custom glyphs not built-in to LogosJ, you can include
+If you have custom React components for custom glyphs not built-in to LogoJS, you can include
 them in the <strong>components</strong> field. The following is an example of a custom alphabet with <strong>M</strong>
 and <strong>W</strong> representing methylated <strong>CpG</strong> on the plus and minus strands (the syntax below
 first includes the core of the <code>DNAAlphabet</code>, then extends it with <strong>M</strong> and <strong>W</strong>):</p>
@@ -585,11 +585,11 @@ first includes the core of the <code>DNAAlphabet</code>, then extends it with <s
 </pre></div>
 
 <h2 id="alphabet-utilities">Alphabet utilities<a class="headerlink" href="#alphabet-utilities" title="Permanent link">&para;</a></h2>
-<p>LogosJ provides two utility functions to make generating custom alphabets easier in particular
+<p>LogoJS provides two utility functions to make generating custom alphabets easier in particular
 use cases.</p>
 <p>The <code>loadGlyphComponents</code> function reads the optional <strong>regex</strong> field of each symbol in a
 custom alphabet and automatically populates the corresponding <strong>component</strong> field with built-in
-glyphs from LogosJ. If a symbol has a <strong>component</strong> field already but has no <strong>regex</strong> field,
+glyphs from LogoJS. If a symbol has a <strong>component</strong> field already but has no <strong>regex</strong> field,
 it will be left unchanged; however, if it has a <strong>regex</strong> field and a <strong>components</strong> field the
 contents of the <strong>components</strong> field will be overwritten. The regex field must only contain the
 letters A-Z and a-z and the digits 0-9. The function takes the following argument:</p>
