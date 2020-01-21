@@ -64,7 +64,7 @@ export const RawLogo = ({ values, glyphWidth, stackHeight, alphabet, onSymbolMou
  * @prop yAxisMax if set, uses an explicit maximum value for the y-axis rather than the total number of bits possible. This is ignored in FREQUENCY mode.
  */
 const Logo = React.forwardRef(
-    ({ ppm, pfm, fasta, mode, height, width, alphabet, glyphwidth, scale, startpos, showGridLines, backgroundFrequencies, constantPseudocount,
+    ({ ppm, pfm, values, fasta, mode, height, width, alphabet, glyphwidth, scale, startpos, showGridLines, backgroundFrequencies, constantPseudocount,
        yAxisMax, onSymbolMouseOver, onSymbolMouseOut, onSymbolClick, noFastaNames, countUnaligned }, ref
 ) => {
 
@@ -86,7 +86,7 @@ const Logo = React.forwardRef(
     let alphabetSize = ppm[0].length;
     if (!backgroundFrequencies)
         backgroundFrequencies = ppm[0].map( _ => 1.0 / alphabetSize );
-    let likelihood = ( mode !== FREQUENCY
+    let likelihood = values || ( mode !== FREQUENCY
 		       ? ppm.map(logLikelihood(backgroundFrequencies))
 		       : ppm.map(x => x.map(v => v * Math.log2(alphabetSize))) );
     const theights = mode === FREQUENCY ? [ Math.log2(alphabetSize) ] : backgroundFrequencies.map( x => Math.log2(1.0 / (x || 0.01)) );

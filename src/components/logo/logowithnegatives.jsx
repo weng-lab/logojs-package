@@ -97,7 +97,7 @@ const LogoWithNegatives = React.forwardRef(
 	          x1={0} x2={viewBoxW - 80} />
             <g transform="translate(80,10)">
                 {values.map((lv, i) =>
-		    gposition(lv.map(x => x > 0.0 ? x / mvalue : 0.0), 'translate(' + glyphWidth * i + ',0)', i, alphabet,
+		            gposition(lv.map(x => x > 0.0 ? x / mvalue : 0.0), 'translate(' + glyphWidth * i + ',0)', i, alphabet, false,
 		              { onSymbolMouseOver, onSymbolMouseOut, onSymbolClick })
 	        )}
 	        {values.map((lv, i) =>

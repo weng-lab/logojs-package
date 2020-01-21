@@ -1,17 +1,17 @@
 ---
-title: 'LogosJ: Embeddable SVG Sequence Logos'
+title: 'LogoJS: Embeddable SVG Sequence Logos'
 ---
 
-LogosJ is a Javascipt package for creating SVG sequence logos.
+LogoJS is a Javascipt package for creating SVG sequence logos.
 In addition to basic DNA, RNA, and protein logos, we support
 custom alphabets and variety of advanced logo types and custom annotations.
 
-LogosJ can be used with and without ReactJS. A companion web app makes it easy to share
+LogoJS can be used with and without ReactJS. A companion web app makes it easy to share
 SVG logos and generate them in batches from the output of common tools such as the MEME Suite.
 
 ## Examples
 
-LogosJ supports a wide range of biological use cases. Detailed examples with code samples
+LogoJS supports a wide range of biological use cases. Detailed examples with code samples
 are available in this documentation and through our [companion site](http://logojs.wenglab.org/app/gallery).
 Shown below are protein, RNA, methyl DNA, dinucleotide, and protein/DNA interaction logos.
 
@@ -33,7 +33,7 @@ advanced annotations<br>
 </center>
 
 ## Using in your web application
-You can add LogosJ to your project using NPM or Yarn:
+You can add LogoJS to your project using NPM or Yarn:
 ```sh
 yarn add logojs-react
 ```
@@ -42,8 +42,8 @@ or
 npm install logojs-react
 ```
 
-If you want to use LogosJ in a static web page, you can simply include the package with a
-static script tag, which will add LogosJ to the global namespace as `logojs`:
+If you want to use LogoJS in a static web page, you can simply include the package with a
+static script tag, which will add LogoJS to the global namespace as `logojs`:
 
 ```html
 <script src="http://bundle.logojs.wenglab.org/bundle.js" type="text/javascript">
@@ -52,7 +52,7 @@ static script tag, which will add LogosJ to the global namespace as `logojs`:
 
 ## Quick example: a DNA logo
 
-The transcription factor CTCF binds a well-known consensus DNA sequence, rendered below with LogosJ:
+The transcription factor CTCF binds a well-known consensus DNA sequence, rendered below with LogoJS:
 
 <img src="http://logojs.wenglab.org/svg/eyJwcG0iOltbMC4wOSwwLjMxLDAuMDgsMC41XSxbMC4xOCwwLjE1LDAuNDUsMC4yXSxbMC4zLDAuMDUsMC40OSwwLjE0XSxbMC4wNiwwLjg3LDAuMDIsMC4wM10sWzAsMC45OCwwLDAuMDJdLFswLjgxLDAuMDEsMC4wNywwLjA5XSxbMC4wNCwwLjU3LDAuMzYsMC4wMV0sWzAuMTEsMC40NywwLjA1LDAuMzVdLFswLjkzLDAuMDEsMC4wMywwLjAxXSxbMCwwLDAuOTksMC4wMV0sWzAuMzYsMCwwLjY0LDBdLFswLjA1LDAuMDEsMC41NSwwLjM3XSxbMC4wMywwLDAuOTcsMF0sWzAuMDYsMCwwLjg1LDAuMDddLFswLjExLDAuOCwwLDAuMDddLFswLjQsMC4wMSwwLjU1LDAuMDFdLFswLjA5LDAuNTMsMC4zMywwLjA0XSxbMC4xMiwwLjM1LDAuMDgsMC40M10sWzAuNDQsMC4xOSwwLjI5LDAuMDZdXSwidHlwZWlkIjowLCJzY2FsZSI6MSwiaXNmcmVxIjpmYWxzZSwiZmlyc3RiYXNlIjoxLCJhbHBoYWJldCI6W3sicmVnZXgiOiJBIiwiY29sb3IiOiJyZWQifSx7InJlZ2V4IjoiQyIsImNvbG9yIjoiYmx1ZSJ9LHsicmVnZXgiOiJHIiwiY29sb3IiOiJvcmFuZ2UifSx7InJlZ2V4IjoiVCIsImNvbG9yIjoiIzIyOGIyMiJ9XX0" alt="CTCF logo" width="50%">
 

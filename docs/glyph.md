@@ -2,14 +2,14 @@
 
 ## Glyph overview
 
-Glyphs are the smallest building blocks of LogosJ logos. Each glyph is a self-contained SVG
+Glyphs are the smallest building blocks of LogoJS logos. Each glyph is a self-contained SVG
 object which renders itself within a 100 by 100 square. Logo components are responsible for
 applying the appropriate transforms to the glyph objects they contain to adjust their positions
 within the logo and their heights.  
 
 ## Built-in glyphs
 
-LogosJ uses a custom font to render its glyphs, which include the capital letters A-Z, the lower
+LogoJS uses a custom font to render its glyphs, which include the capital letters A-Z, the lower
 case letters a-z, and the digits 0-9. Most glyphs contain a single SVG `path` element, and apply
 their props directly to it. You can apply properties including, but not limited to:
 
@@ -20,7 +20,7 @@ being opaque.
 In general, it is not necessary to render glyphs directly; instead, they should be passed as
 properties to logo components in alphabet arrays (see the alphabet page for details). When you need
 to include built-in symbols in a custom alphabet, you can import built-in glyphs directly from the
-LogosJ package. Capital letters are their own components; lower case letters are represented as LC_a,
+LogoJS package. Capital letters are their own components; lower case letters are represented as LC_a,
 LC_b, etc. and numbers as N1, N2, etc. For example the following code imports capital A,
 lower case a, and the number 1:
 
@@ -33,13 +33,13 @@ In plain Javascript, these are available in the `logojs` namespace as `logojs.A`
 
 ## Custom glyphs
 
-If you want to add a custom symbol which is not built in to LogosJ, you can make a custom glyph
+If you want to add a custom symbol which is not built in to LogoJS, you can make a custom glyph
 component. Glyph components should render an SVG element, such as a `path` or a collection of
 `path`s contained with a `g`, with a width of 100 and a height of 100. When rendered in a logo,
 your custom glyph will be scaled automatically.
 
 It is best practice to pass the full collection of properties your glyph receives on to the SVG
-element it renders. For example, here is the source code for LogosJ's built-in **C**, which passes
+element it renders. For example, here is the source code for LogoJS's built-in **C**, which passes
 all its properties on to a single child `path`:
 
 ```js
