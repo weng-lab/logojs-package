@@ -78,9 +78,7 @@ const Logo = React.forwardRef(
         pfm = r.pfm;
         count = r.count || 1;
     }
-    console.log(relativePseudocount, pfm, pfm && pfm.map && pfm.map( x => x.reduce( (t, v, i) => i === undefined ? t : v + t, 0.0 )));
     const sums = relativePseudocount && pfm && pfm.map && pfm.map( x => x.reduce( (t, v, i) => i === undefined ? t : v + t, 0.0 )).map( x => x === 0 ? 0 : (alphabet.length - 1) / (2 * Math.log(2) * x));
-    console.log(sums);
     if (!ppm && pfm && pfm.map)
         ppm = pfm.map( (column, i) => {
             const sum = (count && countUnaligned ? count : column.reduce( (a, c) => a + c, 0.0 ) + pseudocount * alphabet.length) || 1;
