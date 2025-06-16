@@ -2,9 +2,4 @@
 /node_modules
 yarn-error.log
 
-# backups
-*~
-\#*\#
-/docs/_site
-/out
-/site
+/dist
